@@ -43,7 +43,7 @@ export default function Navbar() {
     };
 
     return (
-        <nav className="fixed top-0 left-0 w-full md:h-[6rem] z-[1000] p-4 flex items-center justify-center">
+        <nav className="fixed top-1 mx-auto w-full max-w-[1800px] md:h-[5rem] z-[1000] p-4 flex items-center justify-center">
             <div
                 className={`relative w-full px-4 py-2 md:p-0 flex items-center justify-between
                 transition-all duration-300 ease-in-out ${isScrolledStyles} ${isMobileMenuOpen ? '!bg-white !shadow-none rounded-t-2xl md:rounded-t-3xl' : 'rounded-2xl md:rounded-t-3xl'}`}
@@ -87,7 +87,7 @@ export default function Navbar() {
                 </div>
 
                 {/* Desktop Nav */}
-                <div className="hidden md:flex items-center justify-between w-full transition-all duration-300 ease-in-out text-sm font-semibold">
+                <div className="hidden md:flex items-center justify-between w-full transition-all duration-300 ease-in-out text-sm font-semibold px-2">
                     <Link
                         href="/"
                         aria-label="logo"

@@ -18,11 +18,30 @@ const sen = Sen({
 export const metadata = {
   title: "AI + Compassion",
   description: "The Global Forum on AI + Compassion unites innovators, policymakers, and cultural leaders to explore how artificial intelligence can serve humanity and the planet. ",
+  openGraph: {
+    title: "AI + Compassion",
+    description: "The Global Forum on AI + Compassion unites innovators, policymakers, and cultural leaders to explore how artificial intelligence can serve humanity and the planet. ",
+    url: 'https://ai+compassion.netlify.app/',
+    siteName: 'AI + Compassion',
+    images: [
+      {
+        url: 'https:/ai+compassion.netlify.app/web-app-manifest-192x192.png',
+        width: 256,
+        height: 75,
+        alt: "AI + Compassion",
+      },
+    ],
+    locale: 'en_IN',
+    type: 'website',
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <meta name="apple-mobile-web-app-title" content="AI + Compassion" />
+      </head>
       <body
         className={`${libre.variable} ${sen.variable} antialiased`}
       >
