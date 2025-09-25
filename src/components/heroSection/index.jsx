@@ -14,7 +14,7 @@ export default function Herosection() {
                 <p className="text-sm md:text-base font-libre lg:w-3/4 xl:w-[60%] leading-relaxed lg:py-4">
                     The Global Forum on AI + Compassion unites innovators, policymakers, and cultural leaders to explore how artificial intelligence can serve humanity and the planet. Together, we’ll launch a global alliance, spark a new narrative, and activate projects that place compassion at the heart of technology.
                 </p>
-                <Link href='/#' className="w-full md:w-fit h-fit bg-[#E7E17E] relative top-18 md:top-0 px-10 py-4 md:py-3 text-lg rounded-full font-libre font-semibold text-black">Register Now</Link>
+                <Link href='https://peatix.com/us/event/4584550/' className="w-full md:w-fit h-fit bg-[#E7E17E] relative top-18 md:top-0 px-10 py-4 md:py-3 text-lg rounded-full font-libre font-semibold text-black">Register Now</Link>
             </div>
         </div>
     )

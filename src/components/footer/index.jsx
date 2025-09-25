@@ -22,8 +22,8 @@ export default function Footer() {
                 </p>
                 <p>
                     Sponsorship opportunities{" "}
-                    <Link className="underline" href="mailto:ajsuto@SCUBEDLLC.com">
-                        ajsuto@SCUBEDLLC.com
+                    <Link className="underline" href="mailto:jsuto@SCUBEDLLC.com">
+                        jsuto@SCUBEDLLC.com
                     </Link>
                 </p>
                 <p>

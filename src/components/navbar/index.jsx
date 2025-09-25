@@ -120,8 +120,8 @@ export default function Navbar() {
                     </div>
 
                     <Link
-                        href="#contact"
-                        onClick={() => handleLinkClick('#contact')}
+                        href="https://peatix.com/us/event/4584550/"
+                        onClick={() => handleLinkClick('https://peatix.com/us/event/4584550/')}
                         className="px-6 py-2 rounded-full bg-[#E7E17E] hover:bg-[#E7E17E]/80 transition-colors duration-200"
                     >
                         Register
@@ -142,8 +142,7 @@ export default function Navbar() {
                             </Link>
                         ))}
                         <Link
-                            href="#contact"
-                            onClick={() => handleLinkClick('#contact')}
+                            href="https://peatix.com/us/event/4584550/"
                             className="px-6 py-3 rounded-full text-center bg-[#E7E17E] text-black"
                         >
                             Register
