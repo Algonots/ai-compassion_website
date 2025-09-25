@@ -1,21 +1,79 @@
-import Link from "next/link";
+"use client";
 import Image from "next/image";
-import Bg from "@/../public/heroImg.webp";
-
-export default function Herosection() {
-    return (
-        <div id="info" className="relative h-screen md:m-4">
-            <div className="overflow-hidden relative md:absolute bottom-0 left-0 h-full md:h-[calc(100%-4.5rem)] text-white text-center md:rounded-4xl lg:rounded-[4rem] p-4 md:p-8 lg:p-16 bg-gradient-to-b from-[#7CAB4D70]/44 to-[#273A14] flex flex-col justify-center items-center gap-4">
-                <Image src={Bg} alt="bg" className="absolute -z-10 w-full h-full object-cover" draggable={false} />
-                <h1 className="text-[2rem] md:text-5xl lg:text-6xl font-bold lg:w-[80%] xl:w-[50%] leading-normal">
-                    AI+Compassion Global Forum 2025
-                </h1>
-                <p className="text-sm md:text-base font-libre font-semibold">October 2, 2025 | USA Pavilion, Expo 2025 Osaka</p>
-                <p className="text-sm md:text-base font-libre lg:w-3/4 xl:w-[60%] leading-relaxed lg:py-4">
-                    The Global Forum on AI + Compassion unites innovators, policymakers, and cultural leaders to explore how artificial intelligence can serve humanity and the planet. Together, we’ll launch a global alliance, spark a new narrative, and activate projects that place compassion at the heart of technology.
-                </p>
-                <Link href='https://peatix.com/us/event/4584550/' className="w-full md:w-fit h-fit bg-[#E7E17E] relative top-18 md:top-0 px-10 py-4 md:py-3 text-lg rounded-full font-libre font-semibold text-black">Register Now</Link>
-            </div>
+import plant from '@/../public/1st block image.png';
+import pot from '@/../public/second block image.png';
+import dance from '@/../public/fourth block image.png';
+import temple from '@/../public/third block image.png';
+export default function Hero() {
+  return (
+    <section className="relative bg-white">
+      <div className="mx-auto max-w-7xl px-20 py-20 lg:grid lg:grid-cols-2 lg:gap-12 lg:px-8">
+        {/* Left Content */}
+        <div className="flex flex-col justify-center h-full max-w-xl">
+          <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl">
+            AI+Compassion <br />
+            Global Forum 2025
+          </h1>
+          <p className="mt-6 font-bold text-black-700 text-[32px]">
+            October 2, 2025 | USA Pavilion, Expo 2025 Osaka
+          </p>
+          <p className="mt-4 text-base text-gray-600">
+            The Global Forum on AI + Compassion unites innovators, policymakers,
+            and cultural leaders to explore how artificial intelligence can
+            serve humanity and the planet. Together, we’ll launch a global
+            alliance, spark a new narrative, and activate projects that place
+            compassion at the heart of technology.
+          </p>
+          <div className="mt-8">
+            <a
+              href="#register"
+              className="inline-block rounded-full bg-purple-600 px-6 py-3 text-sm font-semibold text-white shadow-md hover:bg-purple-700 transition"
+            >
+              Register Now
+            </a>
+          </div>
         </div>
-    )
+
+        {/* Right Content - Images Grid */}
+        <div className="mt-12 grid grid-cols-2 gap-6 lg:mt-0">
+          <div className="overflow-hidden rounded-2xl ">
+            <Image
+              src={plant}
+              alt="Plant in hands"
+              width={500}
+              height={500}
+              className="h-full w-full"
+            />
+          </div>
+          <div className="overflow-hidden rounded-2xl mt-10">
+            <Image
+              src={pot}
+              alt="Clay pots"
+              width={500}
+              height={500}
+              className="h-full w-full object-cover"
+            />
+          </div>
+          <div className="overflow-hidden">
+            <Image
+              src={temple}
+              alt="Temple"
+              width={500}
+              height={500}
+              className="h-full w-full object-fit"
+            />
+          </div>
+          <div className="overflow-hidden rounded-2xlx mt-10">
+            <Image
+              src={dance}
+              alt="Traditional dancer"
+              width={500}
+              height={500}
+              className="h-full w-full object-cover"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }
