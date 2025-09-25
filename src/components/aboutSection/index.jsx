@@ -107,14 +107,14 @@ export default function AboutSection() {
       </div>
 
       {/* Section Title */}
-      <h2 className="text-2xl font-bold text-gray-900 mb-1 justify-center flex">
+      <h2 className="text-2xl font-bold text-gray-900 mt-15 justify-center flex">
         Why Now : The Critical Moment
       </h2>
 
       {/* Two-Column Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2">
         {/* Left Card */}
-        <div className="rounded-2xl bg-pink-300 p-10 shadow-lg flex flex-col justify-center">
+        <div className="rounded-2xl bg-pink-300 p-10 shadow-lg flex flex-col justify-center w-90 mx-auto">
           <h3 className="justify-center flex text-5xl font-extrabold text-gray-900">
             5
           </h3>
@@ -128,7 +128,7 @@ export default function AboutSection() {
         </div>
 
         {/* Right Card */}
-        <div className="rounded-2xl bg-purple-400 p-20 shadow-lg flex flex-col justify-center">
+        <div className="rounded-2xl bg-purple-400 p-10 shadow-lg flex flex-col justify-center w-90 mx-auto">
           <h3 className="text-5xl font-extrabold text-white justify-center flex">
             54%
           </h3>

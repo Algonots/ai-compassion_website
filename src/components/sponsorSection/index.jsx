@@ -15,12 +15,12 @@ export default function SponsorSection() {
             <Marquee>
                 {slider.map((item, index) => (
                     <div key={index}>
-                        <Image src={item} alt="sponsor" width={200} height={200} className="object-contain w-fit md:h-14 px-5 md:px-8" />
+                        <Image src={item} alt="sponsor" width={200} height={200} className="object-contain w-fit md:h-30 px-5 md:px-8" />
                     </div>
                 ))}
                 {slider.map((item, index) => (
                     <div key={index}>
-                        <Image src={item} alt="sponsor" width={200} height={200} className="object-contain w-fit md:h-14 px-5 md:px-8" />
+                        <Image src={item} alt="sponsor" width={200} height={200} className="object-contain w-fit md:h-30 px-5 md:px-8" />
                     </div>
                 ))}
             </Marquee>
