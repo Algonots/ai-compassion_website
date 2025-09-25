@@ -350,8 +350,11 @@ function TimelineSection({
             {/* Mobile: dropdown */}
             <div className="flex md:hidden justify-center mb-6">
               <select
-                className="border-2 border-[#89478D] rounded px-4 py-2 text-white font-semibold"
-                style={{ backgroundColor: "#89478D" }}
+                className="border-2 border-[#89478D] rounded px-4 py-2 font-semibold"
+                style={{
+                  backgroundColor: "#89478D",
+                  color: "#fff"
+                }}
                 value={locationKey}
                 onChange={e => {
                   const selected = locations.find(l => l.key === e.target.value);
@@ -359,7 +362,14 @@ function TimelineSection({
                 }}
               >
                 {locations.map(loc => (
-                  <option key={loc.key} value={loc.key}>
+                  <option
+                    key={loc.key}
+                    value={loc.key}
+                    style={{
+                      backgroundColor: locationKey === loc.key ? "#89478D" : "#fff",
+                      color: locationKey === loc.key ? "#fff" : "#89478D"
+                    }}
+                  >
                     {loc.label}
                   </option>
                 ))}
@@ -371,13 +381,11 @@ function TimelineSection({
                 <button
                   key={loc.key}
                   type="button"
-                  className={`px-4 py-2 rounded font-semibold border-2 transition focus:outline-none ${
-                    locationKey === loc.key
-                      ? "text-white border-[#89478D] shadow"
-                      : "text-white border-[#89478D] hover:opacity-90"
-                  }`}
+                  className={`px-4 py-2 rounded font-semibold border-2 transition focus:outline-none`}
                   style={{
-                    backgroundColor: "#89478D",
+                    backgroundColor: locationKey === loc.key ? "#89478D" : "#fff",
+                    color: locationKey === loc.key ? "#fff" : "#89478D",
+                    borderColor: "#89478D"
                   }}
                   onClick={() => onLocationChange(loc.key, loc.offset)}
                 >
@@ -390,8 +398,11 @@ function TimelineSection({
         {showDropdown && (
           <div className="flex justify-center mb-6">
             <select
-              className="border-4 border-[#89478D] rounded px-4 py-2 text-white font-semibold"
-              style={{ backgroundColor: "#89478D" }}
+              className="border-4 border-[#89478D] rounded px-4 py-2 font-semibold"
+              style={{
+                backgroundColor: "#89478D",
+                color: "#fff"
+              }}
               value={locationKey}
               onChange={e => {
                 const selected = locations.find(l => l.key === e.target.value);
@@ -399,7 +410,14 @@ function TimelineSection({
               }}
             >
               {locations.map(loc => (
-                <option key={loc.key} value={loc.key}>
+                <option
+                  key={loc.key}
+                  value={loc.key}
+                  style={{
+                    backgroundColor: locationKey === loc.key ? "#89478D" : "#fff",
+                    color: locationKey === loc.key ? "#fff" : "#89478D"
+                  }}
+                >
                   {loc.label}
                 </option>
               ))}
@@ -409,7 +427,13 @@ function TimelineSection({
         {/* For fixed time zone, show a label */}
         {fixedLocationKey && !showDropdown && (
           <div className="flex justify-center mb-4">
-            <span className="inline-block px-4 py-2 rounded font-semibold border-2 border-[#89478D] bg-[#89478D] text-white">
+            <span
+              className="inline-block px-4 py-2 rounded font-semibold border-2 border-[#89478D]"
+              style={{
+                backgroundColor: "#89478D",
+                color: "#fff"
+              }}
+            >
               {locations.find(l => l.key === fixedLocationKey)?.label || fixedLocationKey}
             </span>
           </div>
@@ -531,8 +555,7 @@ export default function Timeline() {
         style={{
           width: "100%",
           maxWidth: "1100px",
-          height: "300px",
-          overflowY: "auto",
+          // Remove height and overflowY to disable scrolling for pre-event
           boxSizing: "border-box",
         }}
       >
