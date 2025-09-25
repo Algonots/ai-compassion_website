@@ -1,5 +1,6 @@
 import Image from "next/image";
 import ab1 from "@/../public/ab1.webp";
+import pillarsImg from "@/../public/pillars.png";
 import {
   GlobeAltIcon,
   BookOpenIcon,
@@ -182,60 +183,9 @@ export default function AboutSection() {
             className="relative"
             style={{ width: 320, height: 320, minWidth: 320 }}
           >
-            {/* Pie Segments */}
-            {pieSegments.map((pillar, idx) => (
-              <div
-                key={idx}
-                className="absolute left-1/2 top-1/2 origin-center"
-                style={{
-                  width: 320,
-                  height: 320,
-                  transform: `translate(-50%, -50%) rotate(${pillar.rotate}deg)`,
-                  pointerEvents: "none",
-                }}
-              >
-                <svg
-                  width={320}
-                  height={320}
-                  viewBox="0 0 320 320"
-                  style={{
-                    position: "absolute",
-                    left: 0,
-                    top: 0,
-                  }}
-                >
-                  <path
-                    d="M160,160 L160,20 A140,140 0 0,1 281.9615,70.0 Z"
-                    fill={[
-                      "#f3e8ff",
-                      "#fce7f3",
-                      "#e0e7ff",
-                      "#d1fae5",
-                      "#e0f2fe",
-                      "#fef9c3",
-                    ][idx]}
-                    transform={`rotate(${idx * 60},160,160)`}
-                  />
-                </svg>
-                {/* Icon in the middle of the segment */}
-                <div
-                  className="absolute"
-                  style={{
-                    left: "50%",
-                    top: "50%",
-                    transform: `translate(-50%, -50%) rotate(${-pillar.rotate}deg) translateY(-110px)`,
-                    pointerEvents: "auto",
-                  }}
-                >
-                  <div className="bg-white rounded-full shadow p-2 flex items-center justify-center">
-                    {pillar.icon}
-                  </div>
-                </div>
-              </div>
-            ))}
-            {/* Center Globe Icon */}
-            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
-              <GlobeAltIcon className="w-16 h-16 text-purple-400 mb-2" />
+            {/* Center Globe Image */}
+            <div className="items-center">
+              <Image src={pillarsImg} alt="Pillars Globe" width={1000} height={1000} />
             </div>
           </div>
           {/* Right 3 pillar descriptions */}
@@ -258,3 +208,4 @@ export default function AboutSection() {
     </div>
   );
 }
+

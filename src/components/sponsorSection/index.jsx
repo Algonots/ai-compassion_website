@@ -1,14 +1,12 @@
 import Marquee from "react-fast-marquee";
 import Image from "next/image";
-import s1 from "@/../public/1.webp";
-import s2 from "@/../public/2.webp";
-import s3 from "@/../public/3.webp";
-import s4 from "@/../public/4.webp";
-import s5 from "@/../public/5.webp";
-import s6 from "@/../public/6.webp";
-import s7 from "@/../public/7.webp";
+import s1 from "@/../public/goi-peace.svg";
+import s2 from "@/../public/health.jpg";
+import s3 from "@/../public/be.jpg";
+import s4 from "@/../public/usa.jpg";
+import s5 from "@/../public/ai.jpg";
 
-const slider = [s1, s2, s3, s4, s5, s6, s7];
+const slider = [s1, s2, s3, s4, s5];
 
 export default function SponsorSection() {
     return (
