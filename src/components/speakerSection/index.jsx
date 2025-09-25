@@ -11,7 +11,7 @@ import stephin from "@/../public/stephin.png";
 import alex from "@/../public/alex.png";
 import nell from "@/../public/nell.png";
 import sandra from "@/../public/sandra.png";
-import olaf from "@/../public/olaf.png";
+import olaf from "@/../public/olaf1.png";
 import schwartz from "@/../public/schwartz.png";
 import tim from "@/../public/tim.png";
 import sadhviji from "@/../public/sadhviji.png";
