@@ -350,7 +350,8 @@ function TimelineSection({
             {/* Mobile: dropdown */}
             <div className="flex md:hidden justify-center mb-6">
               <select
-                className="border-2 border-[#CB4B4B] rounded px-4 py-2 text-[#CB4B4B] font-semibold"
+                className="border-2 border-[#89478D] rounded px-4 py-2 text-white font-semibold"
+                style={{ backgroundColor: "#89478D" }}
                 value={locationKey}
                 onChange={e => {
                   const selected = locations.find(l => l.key === e.target.value);
@@ -370,13 +371,14 @@ function TimelineSection({
                 <button
                   key={loc.key}
                   type="button"
-                  className={`px-4 py-2 rounded font-semibold border-2 transition focus:outline-none
-                    ${
-                      locationKey === loc.key
-                        ? "bg-[#CB4B4B] text-white border-[#CB4B4B] shadow"
-                        : "bg-white text-[#CB4B4B] border-[#CB4B4B] hover:bg-[#CB4B4B] hover:text-white"
-                    }
-                  `}
+                  className={`px-4 py-2 rounded font-semibold border-2 transition focus:outline-none ${
+                    locationKey === loc.key
+                      ? "text-white border-[#89478D] shadow"
+                      : "text-white border-[#89478D] hover:opacity-90"
+                  }`}
+                  style={{
+                    backgroundColor: "#89478D",
+                  }}
                   onClick={() => onLocationChange(loc.key, loc.offset)}
                 >
                   {loc.label}
@@ -388,7 +390,8 @@ function TimelineSection({
         {showDropdown && (
           <div className="flex justify-center mb-6">
             <select
-              className="border-2 border-[#CB4B4B] rounded px-4 py-2 text-[#CB4B4B] font-semibold"
+              className="border-4 border-[#89478D] rounded px-4 py-2 text-white font-semibold"
+              style={{ backgroundColor: "#89478D" }}
               value={locationKey}
               onChange={e => {
                 const selected = locations.find(l => l.key === e.target.value);
@@ -406,7 +409,7 @@ function TimelineSection({
         {/* For fixed time zone, show a label */}
         {fixedLocationKey && !showDropdown && (
           <div className="flex justify-center mb-4">
-            <span className="inline-block px-4 py-2 rounded font-semibold border-2 border-[#CB4B4B] bg-[#CB4B4B] text-white">
+            <span className="inline-block px-4 py-2 rounded font-semibold border-2 border-[#89478D] bg-[#89478D] text-white">
               {locations.find(l => l.key === fixedLocationKey)?.label || fixedLocationKey}
             </span>
           </div>
