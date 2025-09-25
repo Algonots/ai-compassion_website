@@ -1,14 +1,15 @@
 "use client";
+import React, { useState } from "react";
 
 const schedule = [
     {
-        time: "11:00 AM - 12:00 PM JST",
-        title: "Opening & Foundation",
-        subtitle: "“Setting Intention in the Space Between”",
+        time: "11:00 AM - 5:00 PM JST",
+        title: "USA Pavilion Opening",
+        subtitle: "Osaka: October 2, 2025",
         items: [
-            "11:00–11:15: Welcome ceremony with traditional Japanese elements",
-            "11:15–11:30: Mindful opening practice",
-            "11:30–12:00: Keynote — The Neuroscience of Compassion",
+            "11:00a - 5:00p Osaka",
+            "7:30a - 1:30p Mumbai",
+            "7:00p - 1:00a San Francisco",
         ],
     },
     {
@@ -72,75 +73,82 @@ const schedule = [
 
 const global = [
     {
-        time: "5:00 PM - 8:00 PM JST",
-        title: "South Asia Region (Mumbai)",
+        subtitle: "October 2, 2025",
+        time: "1:30 PM - 4:30 PM IST",
+        title: "South Asia",
         items: [
-            "5:00-5:30 PM: Regional opening with traditional Indian music/cultural expression",
-            '5:30-6:30 PM: Panel - "AI for Human Development in Emerging Markets"',
-            '6:30-7:30 PM: Workshop - "Inclusive AI Design for Diverse Communities"',
-            "7:30-8:00 PM: Regional commitments and handoff to GCC/Europe"
+            "1:30p - 4:30p Mumbai",
+            "5:00p - 8:00p Osaka",
+            "4:00a - 7:00a New York",
         ],
     },
     {
-        time: "8:00 PM - 11:00 PM JST",
-        title: "GCC/Europe Region (Dubai/London)",
+        subtitle: "October 2, 2025",
+        time: "3:00 PM - 6:00 PM GST",
+        title: "GCC/Europe",
         items: [
-            "8:00-8:30 PM: Multi-regional opening ceremony",
-            '8:30-9:30 PM: "AI Governance Across Cultures" - featuring potential Polish Deputy PM remarks',
-            '9:30-10:30 PM: "Ethics in AI: European Perspectives" with Edi Pyrek (Poland)',
-            "10:30-11:00 PM: Regional synthesis and handoff to Africa"
+            "3:00p - 6:00p Dubai",
+            "8:00p - 11:00p Osaka",
+            "7:00a - 10:00a New York",
         ],
     },
     {
-        time: "11:00 PM JST - 2:00 AM JST (Oct 3)",
-        title: "Africa Region",
+        subtitle: "October 2, 2025",
+        time: "3:00 PM - 6:00 PM WAT",
+        title: "Africa",
         items: [
-            "11:00-11:30 PM: Regional opening with African musical traditions",
-            '11:30 PM-12:30 AM: "AI for Social Development and Community Resilience"',
-            '12:30-1:30 AM: "Indigenous Knowledge and Technology Integration"',
-            "1:30-2:00 AM: Regional commitments and handoff to South America"
+            "3:00p - 6:00p Lagos",
+            "11:00p - 2:00a Osaka",
+            "7:00a - 10:00a San Francisco",
         ],
     },
     {
-        time: "2:00 AM - 5:00 AM JST (Oct 3)",
-        title: "South America Region",
+        subtitle: "October 2, 2025",
+        time: "2:00 PM - 5:00 PM BRT",
+        title: "Latin America",
         items: [
-            "2:00-2:30 AM: Regional opening with Latin American cultural expression",
-            '2:30-3:30 AM: "AI for Social Justice and Community Development"',
-            '3:30-4:30 AM: "Technology and Environmental Stewardship in Latin America"',
-            "4:30-5:00 AM: Regional commitments and handoff to North America"
+            "2:00p - 5:00p Rio de Janeiro",
+            "2:00a - 5:00a Osaka",
+            "10:00a - 1:00p San Francisco",
         ],
     },
     {
-        time: "5:00 AM - 8:00 AM JST (Oct 3)",
-        title: "North America Region",
+        subtitle: "October 2, 2025",
+        time: "1:00 PM - 4:00 PM PDT",
+        title: "North America",
         items: [
-            "5:00-5:30 AM: Regional opening",
-            '5:30-6:30 AM: "Silicon Valley Meets Compassionate Design" - Douglas Thomas (USC)',
-            '6:30-7:30 AM: "The Future of Human-AI Collaboration" - Ben Waber (MIT Media Lab)',
-            "7:30-8:00 AM: Regional commitments and handoff to Oceania"
+            "1:00p - 4:00p San Francisco",
+            "5:00a - 8:00a Osaka",
+            "9:00p - 12:00a London",
         ],
     },
     {
-        time: "8:00 AM - 11:00 AM JST (Oct 3)",
-        title: "Oceania Region (Sydney)",
+        subtitle: "October 3, 2025",
+        time: "9:00 AM - 12:00 PM AEST",
+        title: "Oceania",
         items: [
-            "8:00-8:30 AM: Regional opening with Indigenous Australian perspectives",
-            '8:30-9:30 AM: "Cultural Philosophy and AI Ethics" - Tim Moriarty (Indigenous Artist)',
-            '9:30-10:30 AM: Workshop - "AI and Environmental Stewardship"',
+            "9:00a - 12:00p Sydney",
+            "8:00a - 11:00a Osaka",
+            "7:00p - 10:00p New York",
         ],
+    },
+    {
+        time: "<1 hour Ma break>",
+        title: "",
+        items: [],
     },
 ];
 
+// Add Kyoto session for October 3, 2025
 const kyoto = [
     {
-        time: "12:00 - 1:00 PM JST",
-        title: "Gathering & Reflection",
-        subtitle: '"Ancient Wisdom, Future Innovation"',
+        time: "12:00 PM - 2:00 PM JST",
+        title: "Kyoto",
+        subtitle: "October 3, 2025",
         items: [
-            "12:00-12:15 PM: Welcome to historic Kyoto venue",
-            '12:15-12:45 PM: Synthesis presentation - "24 Hours Around the World: What We Learned"',
-            "12:45-1:00 PM: Individual reflection and journaling",
+            "12:00p - 2:00p Kyoto",
+            "8:30a - 10:30a Mumbai",
+            "8:00p - 11:00p San Francisco",
         ],
     },
     {
@@ -183,22 +191,232 @@ const kyoto = [
         ],
     }
 ];
-function TimelineSection({ title, events, lineColor, showProducer = false }) {
+
+// Add pre-event schedule data
+const preEvent = [
+  {
+    title: "Lab A",
+    items: [
+      "Los Angeles (PDT): Sept 29, 8:00–9:00 PM",
+      "Vienna (CEST): Sept 30, 5:00–6:00 AM",
+      "Tokyo (JST): Sept 30, 12:00–1:00 PM",
+    ],
+  },
+  {
+    title: "Lab B",
+    items: [
+      "Los Angeles (PDT): Sept 29, 12:00–1:00 AM",
+      "Vienna (CEST): Sept 30, 9:00–10:00 AM",
+      "Tokyo (JST): Sept 30, 4:00–5:00 PM",
+    ],
+  },
+];
+
+// Add mapping for locations and their time conversions
+const locations = [
+  { label: "UTC", key: "UTC", offset: -9 },
+  { label: "San Francisco (PDT)", key: "PDT", offset: -16 },      // UTC-7, JST-16
+  { label: "Osaka (JST)", key: "JST", offset: 0 },                // JST+0
+  { label: "Mumbai (IST)", key: "IST", offset: -3.5 },            // UTC+5:30, JST-3.5
+  { label: "Abu Dhabi (GST)", key: "GST", offset: -5 },           // UTC+4, JST-5
+  { label: "London (BST)", key: "BST", offset: -8 },              // UTC+1, JST-8
+  { label: "New York (EDT)", key: "EDT", offset: -13 },           // UTC-4, JST-13
+  { label: "Lagos (WAT)", key: "WAT", offset: -8 },               // UTC+1, JST-8
+  { label: "Rio de Janeiro (BRT)", key: "BRT", offset: -12 },     // UTC-3, JST-12
+  { label: "Sydney (AEST)", key: "AEST", offset: +1 },            // UTC+10, JST+1
+];
+
+// Helper to convert time string from JST to other timezones
+function convertTimeRange(jstRange, offset) {
+  // Example input: "11:00 AM - 12:00 PM JST"
+  // Returns: "7:00 PM - 8:00 PM PDT" (if offset = -16)
+  if (!jstRange) return "";
+  const match = jstRange.match(/(\d{1,2}:\d{2})\s*(AM|PM)\s*-\s*(\d{1,2}:\d{2})\s*(AM|PM)/i);
+  if (!match) return jstRange;
+  let [ , start, startPeriod, end, endPeriod ] = match;
+
+  function to24h(time, period) {
+    let [h, m] = time.split(":").map(Number);
+    if (period.toUpperCase() === "PM" && h !== 12) h += 12;
+    if (period.toUpperCase() === "AM" && h === 12) h = 0;
+    return h * 60 + m;
+  }
+  function from24h(mins) {
+    mins = (mins + 24 * 60) % (24 * 60);
+    let h = Math.floor(mins / 60);
+    let m = mins % 60;
+    let period = h >= 12 ? "PM" : "AM";
+    if (h === 0) h = 12;
+    else if (h > 12) h -= 12;
+    return `${h}:${m.toString().padStart(2, "0")} ${period}`;
+  }
+  const startMins = to24h(start, startPeriod) + offset * 60;
+  const endMins = to24h(end, endPeriod) + offset * 60;
+  return `${from24h(startMins)} - ${from24h(endMins)}`;
+}
+
+// Helper to convert inner time strings (e.g., "11:00–11:15: ...") for schedule items
+function convertInnerTime(item, offset, locationKey) {
+  // Match patterns like "11:00–11:15: ..." or "11:00–11:15 ..."
+  const match = item.match(/^(\d{1,2}:\d{2})[–-](\d{1,2}:\d{2})(?::)?\s*(.*)$/);
+  if (!match) return item;
+  let [, start, end, rest] = match;
+
+  function to24h(time) {
+    let [h, m] = time.split(":").map(Number);
+    return h * 60 + m;
+  }
+  function from24h(mins) {
+    mins = (mins + 24 * 60) % (24 * 60);
+    let h = Math.floor(mins / 60);
+    let m = mins % 60;
+    let period = h >= 12 ? "PM" : "AM";
+    if (h === 0) h = 12;
+    else if (h > 12) h -= 12;
+    return `${h}:${m.toString().padStart(2, "0")} ${period}`;
+  }
+  // Assume original times are JST and in 24h format
+  const startMins = to24h(start) + offset * 60;
+  const endMins = to24h(end) + offset * 60;
+  return `${from24h(startMins)}–${from24h(endMins)}${rest ? ": " + rest : ""} ${locationKey}`;
+}
+
+// Helper to convert global time strings (e.g., "5:00-5:30 PM: ...") for global schedule items
+function convertGlobalTime(item, offset, locationKey) {
+  // Match patterns like "5:00-5:30 PM: ..." or "11:30 PM-12:30 AM: ..."
+  const match = item.match(/^(\d{1,2}:\d{2})\s*(AM|PM)[–-](\d{1,2}:\d{2})\s*(AM|PM):?\s*(.*)$/i);
+  if (!match) return item;
+  let [, start, startPeriod, end, endPeriod, rest] = match;
+
+  function to24h(time, period) {
+    let [h, m] = time.split(":").map(Number);
+    if (period.toUpperCase() === "PM" && h !== 12) h += 12;
+    if (period.toUpperCase() === "AM" && h === 12) h = 0;
+    return h * 60 + m;
+  }
+  function from24h(mins) {
+    mins = (mins + 24 * 60) % (24 * 60);
+    let h = Math.floor(mins / 60);
+    let m = mins % 60;
+    let period = h >= 12 ? "PM" : "AM";
+    if (h === 0) h = 12;
+    else if (h > 12) h -= 12;
+    return `${h}:${m.toString().padStart(2, "0")} ${period}`;
+  }
+  const startMins = to24h(start, startPeriod) + offset * 60;
+  const endMins = to24h(end, endPeriod) + offset * 60;
+  return `${from24h(startMins)}-${from24h(endMins)}: ${rest} ${locationKey}`;
+}
+
+function TimelineSection({
+  title,
+  events,
+  lineColor,
+  showProducer = false,
+  locationKey = "JST",
+  locationOffset = 0,
+  showLocationButtons = false,
+  onLocationChange = () => {},
+  stickyTitle = false,
+  fixedLocationKey,
+  fixedLocationOffset,
+  showDropdown = false,
+  useParentLocation = false, // NEW: use parent location state
+  parentLocationKey,
+  parentLocationOffset,
+}) {
+  // Use parent location if requested (for global relay)
+  const effectiveLocationKey = useParentLocation ? parentLocationKey : (fixedLocationKey ?? locationKey);
+  const effectiveLocationOffset = useParentLocation ? parentLocationOffset : (fixedLocationOffset ?? locationOffset);
+
+  // Responsive: show dropdown on all screens if showDropdown, otherwise dropdown on mobile and buttons on md+
   return (
     <div className="mb-12">
-      <h1
-        className={`text-3xl font-bold pl-4 md:text-center my-6`}
-        style={{ color: lineColor }}
+      <div
+        className={
+          stickyTitle
+            ? "sticky top-0 z-10 bg-white border-b border-gray-200"
+            : ""
+        }
       >
-        {title}
-      </h1>
-
+        <h1
+          className={`text-3xl font-bold pl-4 md:text-center my-6`}
+          style={{ color: lineColor }}
+        >
+          {title}
+        </h1>
+        {showLocationButtons && !showDropdown && (
+          <>
+            {/* Mobile: dropdown */}
+            <div className="flex md:hidden justify-center mb-6">
+              <select
+                className="border-2 border-[#CB4B4B] rounded px-4 py-2 text-[#CB4B4B] font-semibold"
+                value={locationKey}
+                onChange={e => {
+                  const selected = locations.find(l => l.key === e.target.value);
+                  if (selected) onLocationChange(selected.key, selected.offset);
+                }}
+              >
+                {locations.map(loc => (
+                  <option key={loc.key} value={loc.key}>
+                    {loc.label}
+                  </option>
+                ))}
+              </select>
+            </div>
+            {/* Desktop: buttons */}
+            <div className="gap-4 justify-center mb-6 hidden md:flex">
+              {locations.map((loc) => (
+                <button
+                  key={loc.key}
+                  type="button"
+                  className={`px-4 py-2 rounded font-semibold border-2 transition focus:outline-none
+                    ${
+                      locationKey === loc.key
+                        ? "bg-[#CB4B4B] text-white border-[#CB4B4B] shadow"
+                        : "bg-white text-[#CB4B4B] border-[#CB4B4B] hover:bg-[#CB4B4B] hover:text-white"
+                    }
+                  `}
+                  onClick={() => onLocationChange(loc.key, loc.offset)}
+                >
+                  {loc.label}
+                </button>
+              ))}
+            </div>
+          </>
+        )}
+        {showDropdown && (
+          <div className="flex justify-center mb-6">
+            <select
+              className="border-2 border-[#CB4B4B] rounded px-4 py-2 text-[#CB4B4B] font-semibold"
+              value={locationKey}
+              onChange={e => {
+                const selected = locations.find(l => l.key === e.target.value);
+                if (selected) onLocationChange(selected.key, selected.offset);
+              }}
+            >
+              {locations.map(loc => (
+                <option key={loc.key} value={loc.key}>
+                  {loc.label}
+                </option>
+              ))}
+            </select>
+          </div>
+        )}
+        {/* For fixed time zone, show a label */}
+        {fixedLocationKey && !showDropdown && (
+          <div className="flex justify-center mb-4">
+            <span className="inline-block px-4 py-2 rounded font-semibold border-2 border-[#CB4B4B] bg-[#CB4B4B] text-white">
+              {locations.find(l => l.key === fixedLocationKey)?.label || fixedLocationKey}
+            </span>
+          </div>
+        )}
+      </div>
       <div className="relative w-full max-w-5xl mx-auto px-4 md:px-0">
         <div
           className="absolute top-0 left-6 md:left-1/2 md:-translate-x-1/2 w-1 h-full"
           style={{ backgroundColor: lineColor }}
         />
-
         {events.map((event, index) => (
           <div
             key={index}
@@ -207,10 +425,15 @@ function TimelineSection({ title, events, lineColor, showProducer = false }) {
             {/* Left Column */}
             <div className="md:col-span-4 md:pr-6 flex md:justify-end">
               {index % 2 === 0 && (
-                <EventCard event={event} lineColor={lineColor} showProducer={showProducer} />
+                <EventCard
+                  event={event}
+                  lineColor={lineColor}
+                  showProducer={showProducer}
+                  locationKey={effectiveLocationKey}
+                  locationOffset={effectiveLocationOffset}
+                />
               )}
             </div>
-
             {/* Center Line */}
             <div className="md:col-span-1 flex justify-center">
               <div className="hidden md:flex items-start">
@@ -220,11 +443,16 @@ function TimelineSection({ title, events, lineColor, showProducer = false }) {
                 />
               </div>
             </div>
-
             {/* Right Column */}
             <div className="md:col-span-4 md:pl-6 flex md:justify-start">
               {index % 2 === 1 && (
-                <EventCard event={event} lineColor={lineColor} showProducer={showProducer} />
+                <EventCard
+                  event={event}
+                  lineColor={lineColor}
+                  showProducer={showProducer}
+                  locationKey={effectiveLocationKey}
+                  locationOffset={effectiveLocationOffset}
+                />
               )}
             </div>
           </div>
@@ -234,21 +462,52 @@ function TimelineSection({ title, events, lineColor, showProducer = false }) {
   );
 }
 
-function EventCard({ event, lineColor, showProducer }) {
+function EventCard({
+  event,
+  lineColor,
+  showProducer,
+  locationKey = "UTC",
+  locationOffset = -9,
+}) {
+  // For schedule section, convert time if present
+  const displayTime =
+    event.time && locationKey !== "JST"
+      ? `${convertTimeRange(event.time, locationOffset)} ${locationKey}`
+      : event.time
+      ? `${event.time.replace("JST", "JST")}`
+      : undefined;
   return (
-    <div className="p-6 pl-10 md:pl-6 w-full md:max-w-md relative" style={{ color: lineColor }}>
+    <div
+      className="p-6 pl-10 md:pl-6 w-full md:max-w-md relative"
+      style={{ color: lineColor }}
+    >
       <span
         className="absolute top-6 left-0 md:hidden w-5 h-5 rounded-full"
         style={{ backgroundColor: lineColor }}
       />
-      <p className="text-sm md:text-base font-semibold">{event.time}</p>
+      {/* Show date before time if subtitle exists and looks like a date */}
+      {event.subtitle && event.subtitle.match(/\d{4}/) && (
+        <p className="text-sm md:text-base font-semibold">{event.subtitle}</p>
+      )}
+      {displayTime && (
+        <p className="text-sm md:text-base font-semibold">{displayTime}</p>
+      )}
+      {/* If subtitle is not a date, show it below the title as before */}
       <h3 className="text-xl md:text-2xl py-1 font-bold">{event.title}</h3>
-      {event.subtitle && <p>{event.subtitle}</p>}
+      {event.subtitle && !event.subtitle.match(/\d{4}/) && <p>{event.subtitle}</p>}
       {showProducer && <b>Producer: [TBD] | Programming: 3 hours</b>}
       {event.items && (
         <ul className="mt-3 text-sm md:text-base list-disc list-inside space-y-1">
           {event.items.map((item, i) => (
-            <li key={i}>{item}</li>
+            <li key={i}>
+              {/* Only convert inner times for schedule and global sections */}
+              {event.time
+                ? convertInnerTime(item, locationOffset, locationKey)
+                : (
+                  // For global section, convert if matches time pattern
+                  convertGlobalTime(item, locationOffset, locationKey)
+                )}
+            </li>
           ))}
         </ul>
       )}
@@ -257,11 +516,71 @@ function EventCard({ event, lineColor, showProducer }) {
 }
 
 export default function Timeline() {
+  // State for location selection in Complete 24-Hour Schedule
+  const [locationKey, setLocationKey] = useState("UTC");
+  const [locationOffset, setLocationOffset] = useState(-9);
+
   return (
-    <div id="schedule" className="py-12">
-      <TimelineSection title="Complete 24-Hour Schedule" events={schedule} lineColor="#CB4B4B" />
-      <TimelineSection title="Global 24-Hour Relay Schedule" events={global} lineColor="#CB4B4B" showProducer />
-      <TimelineSection title="Kyoto Closing Ceremony" events={kyoto} lineColor="#8851A5" />
+    <div id="schedule" className="py-12 flex flex-col items-center space-y-8">
+      {/* Pre-Event Frame */}
+      <div
+        className="border-4 border-gray-300 rounded-xl shadow-lg bg-white"
+        style={{
+          width: "100%",
+          maxWidth: "1100px",
+          height: "300px",
+          overflowY: "auto",
+          boxSizing: "border-box",
+        }}
+      >
+        <TimelineSection
+          title="Pre-Event Global Labs"
+          events={preEvent}
+          lineColor="#2D8C4B"
+          stickyTitle
+        />
+      </div>
+      {/* Main Timeline Frames */}
+      <div
+        className="border-4 border-gray-300 rounded-xl shadow-lg bg-white"
+        style={{
+          width: "100%",
+          maxWidth: "1100px",
+          height: "700px",
+          overflowY: "auto",
+          boxSizing: "border-box",
+        }}
+      >
+        {/* Timeline content inside scrollable frame */}
+        <TimelineSection
+          title="Complete 24-Hour Schedule"
+          events={schedule}
+          lineColor="#CB4B4B"
+          showLocationButtons
+          locationKey={locationKey}
+          locationOffset={locationOffset}
+          onLocationChange={(key, offset) => {
+            setLocationKey(key);
+            setLocationOffset(offset);
+          }}
+          stickyTitle
+        />
+        <TimelineSection
+          title="Global 24-Hour Relay Schedule"
+          events={global}
+          lineColor="#CB4B4B"
+          showProducer
+          useParentLocation // NEW: use the same time zone as Complete 24-Hour
+          parentLocationKey={locationKey}
+          parentLocationOffset={locationOffset}
+          stickyTitle
+        />
+        <TimelineSection
+          title="Kyoto Closing Ceremony"
+          events={kyoto}
+          lineColor="#8851A5"
+        />
+      </div>
     </div>
   );
 }
