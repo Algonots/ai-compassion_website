@@ -536,7 +536,7 @@ export default function Timeline() {
         <TimelineSection
           title="Pre-Event Global Labs"
           events={preEvent}
-          lineColor="#2D8C4B"
+          lineColor="#89478D"
           stickyTitle
         />
       </div>
@@ -555,7 +555,7 @@ export default function Timeline() {
         <TimelineSection
           title="Complete 24-Hour Schedule"
           events={schedule}
-          lineColor="#CB4B4B"
+          lineColor="#89478D"
           showLocationButtons
           locationKey={locationKey}
           locationOffset={locationOffset}
@@ -568,7 +568,7 @@ export default function Timeline() {
         <TimelineSection
           title="Global 24-Hour Relay Schedule"
           events={global}
-          lineColor="#CB4B4B"
+          lineColor="#89478D"
           showProducer
           useParentLocation // NEW: use the same time zone as Complete 24-Hour
           parentLocationKey={locationKey}

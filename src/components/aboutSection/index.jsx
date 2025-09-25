@@ -49,17 +49,16 @@ const pillars = [
 ];
 
 export default function AboutSection() {
-  // Globe layout for thematic pillars
-  // Arrange pillars in a circle using absolute positioning
-  const globePillars = [
-    { ...pillars[0], angle: 270 }, // Top
-    { ...pillars[1], angle: 330 },
-    { ...pillars[2], angle: 30 },
-    { ...pillars[3], angle: 90 }, // Bottom
-    { ...pillars[4], angle: 150 },
-    { ...pillars[5], angle: 210 },
+  // Globe layout for thematic pillars (pie segments)
+  // Each segment will be a rotated div with icon in the center
+  const pieSegments = [
+    { ...pillars[0], rotate: 0 },
+    { ...pillars[1], rotate: 60 },
+    { ...pillars[2], rotate: 120 },
+    { ...pillars[3], rotate: 180 },
+    { ...pillars[4], rotate: 240 },
+    { ...pillars[5], rotate: 300 },
   ];
-  const globeRadius = 160; // px, adjust for size
 
   return (
     <div
@@ -161,45 +160,98 @@ export default function AboutSection() {
           ensuring a holistic approach to AI development.
         </p>
 
-        {/* Globe layout */}
-        <div
-          className="relative mx-auto my-12"
-          style={{ width: 400, height: 400, maxWidth: "100%" }}
-        >
-          {/* Globe background */}
+        {/* Globe Pie Layout */}
+        <div className="flex flex-col md:flex-row items-center justify-center gap-8">
+          {/* Left 3 pillar descriptions */}
+          <div className="flex flex-col gap-12 items-end justify-center flex-1">
+            <div className="max-w-xs text-right">
+              <h3 className="font-bold">{pillars[0].title}</h3>
+              <p className="text-gray-600 text-sm">{pillars[0].description}</p>
+            </div>
+            <div className="max-w-xs text-right">
+              <h3 className="font-bold">{pillars[5].title}</h3>
+              <p className="text-gray-600 text-sm">{pillars[5].description}</p>
+            </div>
+            <div className="max-w-xs text-right">
+              <h3 className="font-bold">{pillars[4].title}</h3>
+              <p className="text-gray-600 text-sm">{pillars[4].description}</p>
+            </div>
+          </div>
+          {/* Globe Pie */}
           <div
-            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-blue-100 to-purple-200 border-4 border-purple-200 shadow-lg"
-            style={{ width: 320, height: 320 }}
-          />
-          {/* Pillars positioned around the globe */}
-          {globePillars.map((pillar, idx) => {
-            const angleRad = (pillar.angle * Math.PI) / 180;
-            const x =
-              Math.cos(angleRad) * globeRadius + 200 - 80; // center + offset - half card width
-            const y =
-              Math.sin(angleRad) * globeRadius + 200 - 60; // center + offset - half card height
-            return (
+            className="relative"
+            style={{ width: 320, height: 320, minWidth: 320 }}
+          >
+            {/* Pie Segments */}
+            {pieSegments.map((pillar, idx) => (
               <div
                 key={idx}
-                className="absolute w-40 h-28 flex flex-col items-center justify-center bg-gradient-to-br from-pink-100 to-purple-100 p-3 rounded-2xl shadow-md hover:shadow-lg transition"
+                className="absolute left-1/2 top-1/2 origin-center"
                 style={{
-                  left: x,
-                  top: y,
-                  textAlign: "center",
+                  width: 320,
+                  height: 320,
+                  transform: `translate(-50%, -50%) rotate(${pillar.rotate}deg)`,
+                  pointerEvents: "none",
                 }}
               >
-                <div className="flex justify-center mb-2">{pillar.icon}</div>
-                <h3 className="text-base font-semibold mb-1">{pillar.title}</h3>
-                <p className="text-gray-600 text-xs">{pillar.description}</p>
+                <svg
+                  width={320}
+                  height={320}
+                  viewBox="0 0 320 320"
+                  style={{
+                    position: "absolute",
+                    left: 0,
+                    top: 0,
+                  }}
+                >
+                  <path
+                    d="M160,160 L160,20 A140,140 0 0,1 281.9615,70.0 Z"
+                    fill={[
+                      "#f3e8ff",
+                      "#fce7f3",
+                      "#e0e7ff",
+                      "#d1fae5",
+                      "#e0f2fe",
+                      "#fef9c3",
+                    ][idx]}
+                    transform={`rotate(${idx * 60},160,160)`}
+                  />
+                </svg>
+                {/* Icon in the middle of the segment */}
+                <div
+                  className="absolute"
+                  style={{
+                    left: "50%",
+                    top: "50%",
+                    transform: `translate(-50%, -50%) rotate(${-pillar.rotate}deg) translateY(-110px)`,
+                    pointerEvents: "auto",
+                  }}
+                >
+                  <div className="bg-white rounded-full shadow p-2 flex items-center justify-center">
+                    {pillar.icon}
+                  </div>
+                </div>
               </div>
-            );
-          })}
-          {/* Center Globe Icon */}
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
-            <GlobeAltIcon className="w-20 h-20 text-purple-400 mb-2" />
-            <span className="font-bold text-lg text-purple-700">
-              AI+Compassion
-            </span>
+            ))}
+            {/* Center Globe Icon */}
+            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+              <GlobeAltIcon className="w-16 h-16 text-purple-400 mb-2" />
+            </div>
+          </div>
+          {/* Right 3 pillar descriptions */}
+          <div className="flex flex-col gap-12 items-start justify-center flex-1">
+            <div className="max-w-xs text-left">
+              <h3 className="font-bold">{pillars[1].title}</h3>
+              <p className="text-gray-600 text-sm">{pillars[1].description}</p>
+            </div>
+            <div className="max-w-xs text-left">
+              <h3 className="font-bold">{pillars[2].title}</h3>
+              <p className="text-gray-600 text-sm">{pillars[2].description}</p>
+            </div>
+            <div className="max-w-xs text-left">
+              <h3 className="font-bold">{pillars[3].title}</h3>
+              <p className="text-gray-600 text-sm">{pillars[3].description}</p>
+            </div>
           </div>
         </div>
       </div>

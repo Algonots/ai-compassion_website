@@ -79,34 +79,38 @@ export default function SpeakerSection() {
         culture, policy, and the environment.
       </p>
 
-      <div className="mt-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
-        {speakers.map((speaker, index) => (
-          <div
-            key={index}
-            className="relative w-full aspect-[3/4] overflow-hidden rounded-3xl cursor-pointer group"
-            onClick={() => handleClick(index)}
-          >
-            <Image
-              src={speaker.img}
-              alt={speaker.name}
-              fill
-              className="object-cover"
-            />
-
-            {/* Overlay */}
+      {/* Horizontal slider */}
+      <div className="mt-10 overflow-x-auto">
+        <div className="flex gap-6 px-4 py-2 w-max">
+          {speakers.map((speaker, index) => (
             <div
-              className={`absolute inset-0 bg-[#D1462E] flex flex-col items-center justify-center gap-2 md:gap-4 text-center text-white px-2 transition-opacity duration-300
-                ${
-                  activeIndex === index
-                    ? "opacity-100"
-                    : "opacity-0 group-hover:opacity-100"
-                }`}
+              key={index}
+              className="relative min-w-[200px] md:min-w-[240px] max-w-[240px] aspect-[3/4] overflow-hidden rounded-3xl cursor-pointer group flex-shrink-0"
+              onClick={() => handleClick(index)}
+              style={{ transition: "box-shadow 0.2s" }}
             >
-              <h2 className="font-semibold md:text-2xl">{speaker.name}</h2>
-              <p className="text-[.65rem] md:text-sm">{speaker.title}</p>
+              <Image
+                src={speaker.img}
+                alt={speaker.name}
+                fill
+                className="object-cover"
+              />
+
+              {/* Overlay */}
+              <div
+                className={`absolute inset-0 bg-[#D1462E] flex flex-col items-center justify-center gap-2 md:gap-4 text-center text-white px-2 transition-opacity duration-300
+                  ${
+                    activeIndex === index
+                      ? "opacity-100"
+                      : "opacity-0 group-hover:opacity-100"
+                  }`}
+              >
+                <h2 className="font-semibold md:text-2xl">{speaker.name}</h2>
+                <p className="text-[.65rem] md:text-sm">{speaker.title}</p>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );
