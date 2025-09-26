@@ -1,9 +1,9 @@
 "use client";
 import Image from "next/image";
-import plant from '@/../public/1st block image.webp';
-import pot from '@/../public/second block image.webp';
-import dance from '@/../public/fourth block image.webp';
-import temple from '@/../public/temple.webp';
+import plant from '@/../public/road.png';
+import pot from '@/../public/paper.png';
+import dance from '@/../public/light.png';
+import temple from '@/../public/temple.png';
 export default function Hero() {
   return (
     <section className="mt-24 md:mt-8 p-4 md:px-8 lg:px-16 flex flex-col md:flex-row items-center justify-center gap-8">

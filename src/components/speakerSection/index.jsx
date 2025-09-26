@@ -82,7 +82,7 @@ export default function SpeakerSection() {
             />
             {/* Overlay */}
             <div
-              className={`absolute inset-0 bg-[#D1462E] flex flex-col items-center justify-center gap-2 md:gap-4 text-center text-white px-2 transition-opacity duration-300
+              className={`absolute inset-0 bg-[#E69F46] flex flex-col items-center justify-center gap-2 md:gap-4 text-center text-white px-2 transition-opacity duration-300
                 ${activeIndex === index ? "opacity-100" : "opacity-0 group-hover:opacity-100"}`}
             >
               <h2 className="font-semibold md:text-2xl">{speaker.name}</h2>

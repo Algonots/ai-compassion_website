@@ -2,141 +2,210 @@
 import React, { useState } from "react";
 
 const schedule = [
-  {
-    time: "11:00 AM - 5:00 PM JST",
-    title: "USA Pavilion Opening",
-    subtitle: "Osaka: October 2, 2025",
-    items: [
-      "11:00a - 5:00p Osaka",
-      "7:30a - 1:30p Mumbai",
-      "7:00p - 1:00a San Francisco",
-    ],
-  },
-  {
-    time: "12:00 PM - 1:00 PM JST",
-    title: "Cultural Foundations",
-    subtitle: "“East Meets West: Integrating Wisdom Traditions”",
-    items: [
-      "12:00–12:45: From Storytelling to System Building",
-      "12:45–1:00: Interactive synthesis & table discussions",
-    ],
-  },
-  {
-    time: "1:00 PM - 2:00 PM JST",
-    title: "Working Lunch & Academic Leadership",
-    subtitle: "“Research Frontiers in Compassionate AI”",
-    items: [
-      "1:00–1:30: Working lunch with structured networking",
-      "1:30–2:00: Education in the Age of Empathy",
-    ],
-  },
-  {
-    time: "2:00 PM - 3:00 PM JST",
-    title: "Innovation Showcase",
-    subtitle: "“Compassionate AI in Action”",
-    items: [
-      "2:00–2:20: Healthcare AI demonstration",
-      "2:20–2:40: Future of Work applications",
-      "2:40–3:00: Interactive Q&A",
-    ],
-  },
-  {
-    time: "3:00 PM - 4:00 PM JST",
-    title: "Co-Creation Workshop",
-    subtitle: "“Building Frameworks Together”",
-    items: [
-      "Hands-on framework development (parallel sessions)",
-      "Bias mitigation, wisdom integration, measurement frameworks",
-      "Cross-track synthesis & commitments",
-    ],
-  },
-  {
-    time: "4:00 PM - 5:00 PM JST",
-    title: "Alliance Launch & Global Handoff",
-    subtitle: "“The Osaka Compact Ceremony”",
-    items: [
-      "Platform launch & group signing",
-      "Global AI+Compassion Alliance commitments",
-      "Handoff to South Asia",
-    ],
-  },
-  {
-    time: "5:00 PM - 8:00 PM JST",
-    title: "South Asia Region (Mumbai)",
-    items: [
-      "Regional opening with traditional Indian music",
-      "Workshop: Inclusive AI Design for Diverse Communities",
-      "Regional commitments & handoff to GCC/Europe",
-    ],
-  },
+    // {
+    //     time: "11:00 AM - 5:00 PM JST",
+    //     title: "USA Pavilion Opening",
+    //     subtitle: "Osaka: October 2, 2025",
+    //     items: [
+    //         "11:00a - 5:00p Osaka",
+    //         "7:30a - 1:30p Mumbai",
+    //         "7:00p - 1:00a San Francisco",
+    //     ],
+    // },
+    {
+        time: "",
+        title: "Tamami Tono",
+        subtitle: "",
+        items: [
+            ,
+        ],
+    },
+    // {
+    //     time: "12:00 PM - 1:00 PM JST",
+    //     title: "Cultural Foundations",
+    //     subtitle: "“East Meets West: Integrating Wisdom Traditions”",
+    //     items: [
+    //         "12:00–12:45: From Storytelling to System Building",
+    //         "12:45–1:00: Interactive synthesis & table discussions",
+    //     ],
+    // },
+    {
+        time: "",
+        title: "Dr. Olaf Witkowski",
+        subtitle: "",
+        // items: [
+        //     "12:00–12:45: From Storytelling to System Building",
+        //     "12:45–1:00: Interactive synthesis & table discussions",
+        // ],
+    },
+    // {
+    //     time: "1:00 PM - 2:00 PM JST",
+    //     title: "Working Lunch & Academic Leadership",
+    //     subtitle: "“Research Frontiers in Compassionate AI”",
+    //     items: [
+    //         "1:00–1:30: Working lunch with structured networking",
+    //         "1:30–2:00: Education in the Age of Empathy",
+    //     ],
+    // },
+    {
+        time: "",
+        title: "Sister Jenna",
+        subtitle: "",
+        // items: [
+        //     "1:00–1:30: Working lunch with structured networking",
+        //     "1:30–2:00: Education in the Age of Empathy",
+        // ],
+    },
+    // {
+    //     time: "2:00 PM - 3:00 PM JST",
+    //     title: "Innovation Showcase",
+    //     subtitle: "“Compassionate AI in Action”",
+    //     items: [
+    //         "2:00–2:20: Healthcare AI demonstration",
+    //         "2:20–2:40: Future of Work applications",
+    //         "2:40–3:00: Interactive Q&A",
+    //     ],
+    // },
+    {
+        time: "",
+        title: "Toshie Takahashi",
+        subtitle: "",
+        // items: [
+        //     "2:00–2:20: Healthcare AI demonstration",
+        //     "2:20–2:40: Future of Work applications",
+    //     "2:40–3:00: Interactive Q&A",
+    // ],
+    },
+    // {
+    //     time: "3:00 PM - 4:00 PM JST",
+    //     title: "Co-Creation Workshop",
+    //     subtitle: "“Building Frameworks Together”",
+    //     items: [
+    //         "Hands-on framework development (parallel sessions)",
+    //         "Bias mitigation, wisdom integration, measurement frameworks",
+    //         "Cross-track synthesis & commitments",
+    //     ],
+    // },
+    {
+        time: "",
+        title: "Toshie Takahashi",
+        subtitle: "",
+        // items: [
+        //     "Hands-on framework development (parallel sessions)",
+        //     "Bias mitigation, wisdom integration, measurement frameworks",
+        //     "Cross-track synthesis & commitments",
+        // ],
+    },
+    // {
+    //     time: "4:00 PM - 5:00 PM JST",
+    //     title: "Alliance Launch & Global Handoff",
+    //     subtitle: "“The Osaka Compact Ceremony”",
+    //     items: [
+    //         "Platform launch & group signing",
+    //         "Global AI+Compassion Alliance commitments",
+    //         "Handoff to South Asia",
+    //     ],
+    // },
+    {
+        time: "",
+        title: "Hiroshi Ishiguro & Edi Pyrek",
+        subtitle: "",
+        // items: [
+        //     "Platform launch & group signing",
+        //     "Global AI+Compassion Alliance commitments",
+        //     "Handoff to South Asia",
+        // ],
+    },
+    // {
+    //     time: "5:00 PM - 8:00 PM JST",
+    //     title: "South Asia Region (Mumbai)",
+    //     items: [
+    //         "Regional opening with traditional Indian music",
+    //         "Workshop: Inclusive AI Design for Diverse Communities",
+    //         "Regional commitments & handoff to GCC/Europe",
+    //     ],
+    // },
+    {
+        time: "",
+        title: "Alex Cahana",
+        // items: [
+        //     "Regional opening with traditional Indian music",
+        //     "Workshop: Inclusive AI Design for Diverse Communities",
+        //     "Regional commitments & handoff to GCC/Europe",
+        // ],
+    },
+    {
+        time: "",
+        title: "Yoichi Ochiai / Narumi Yoshikawa",
+        // items: [
+        //     "Regional opening with traditional Indian music",
+        //     "Workshop: Inclusive AI Design for Diverse Communities",
+        //     "Regional commitments & handoff to GCC/Europe",
+        // ],
+    },
 ];
 
 const global = [
-  {
-    subtitle: "October 2, 2025",
-    time: "1:30 PM - 4:30 PM IST",
-    title: "South Asia",
-    items: [
-      "1:30p - 4:30p Mumbai",
-      "5:00p - 8:00p Osaka",
-      "4:00a - 7:00a New York",
-    ],
-  },
-  {
-    subtitle: "October 2, 2025",
-    time: "3:00 PM - 6:00 PM GST",
-    title: "GCC/Europe",
-    items: [
-      "3:00p - 6:00p Dubai",
-      "8:00p - 11:00p Osaka",
-      "7:00a - 10:00a New York",
-    ],
-  },
-  {
-    subtitle: "October 2, 2025",
-    time: "3:00 PM - 6:00 PM WAT",
-    title: "Africa",
-    items: [
-      "3:00p - 6:00p Lagos",
-      "11:00p - 2:00a Osaka",
-      "7:00a - 10:00a San Francisco",
-    ],
-  },
-  {
-    subtitle: "October 2, 2025",
-    time: "2:00 PM - 5:00 PM BRT",
-    title: "Latin America",
-    items: [
-      "2:00p - 5:00p Rio de Janeiro",
-      "2:00a - 5:00a Osaka",
-      "10:00a - 1:00p San Francisco",
-    ],
-  },
-  {
-    subtitle: "October 2, 2025",
-    time: "1:00 PM - 4:00 PM PDT",
-    title: "North America",
-    items: [
-      "1:00p - 4:00p San Francisco",
-      "5:00a - 8:00a Osaka",
-      "9:00p - 12:00a London",
-    ],
-  },
-  {
-    subtitle: "October 3, 2025",
-    time: "9:00 AM - 12:00 PM AEST",
-    title: "Oceania",
-    items: [
-      "9:00a - 12:00p Sydney",
-      "8:00a - 11:00a Osaka",
-      "7:00p - 10:00p New York",
-    ],
-  },
-  {
-    time: "<1 hour Ma break>",
-    title: "",
-    items: [],
-  },
+    {
+        subtitle: "October 2, 2025",
+        time: "",
+        title: "South Asia",
+        items: [
+            "Sadhvi Bhagawati Saraswati",
+        ],
+    },
+    {
+        subtitle: "October 2, 2025",
+        time: "",
+        title: "GCC/Europe",
+        items: [
+            "Nell Watson",
+            
+        ],
+    },
+    {
+        subtitle: "October 2, 2025",
+        time: "",
+        title: "Africa",
+        items: [
+            "Gary Bolles",
+        ],
+    },
+    {
+        subtitle: "October 2, 2025",
+        time: "",
+        title: "Latin America",
+        items: [
+            "Theodore H. Schwartz, MD",
+            
+        ],
+    },
+    {
+        subtitle: "October 2, 2025",
+        time: "",
+        title: "North America",
+        items: [
+            "Stephen Ibaraki",
+            "Matthew Manos",
+            "Douglas Thomas",
+            "Jennifer Aaker",
+        ],
+    },
+    {
+        subtitle: "October 3, 2025",
+        time: "",
+        title: "Oceania",
+        items: [
+            "Tim Moriarity",
+            "Olivera Tomic",
+            "Ian Haycroft",
+        ],
+    },
+    {
+        time: "<1 hour Ma break>",
+        title: "",
+        items: [],
+    },
 ];
 
 // Add Kyoto session for October 3, 2025
@@ -506,7 +575,7 @@ function EventCard({
   return (
     <div
       className="p-6 pl-10 md:pl-6 w-full md:max-w-md relative"
-      style={{ color: lineColor }}
+      style={{ color: "#000" }}
     >
       <span
         className="absolute top-6 left-0 md:hidden w-5 h-5 rounded-full"
@@ -514,17 +583,17 @@ function EventCard({
       />
       {/* Show date before time if subtitle exists and looks like a date */}
       {event.subtitle && event.subtitle.match(/\d{4}/) && (
-        <p className="text-sm md:text-base font-semibold">{event.subtitle}</p>
+        <p className="text-sm md:text-base font-semibold" style={{ color: "#000" }}>{event.subtitle}</p>
       )}
       {displayTime && (
-        <p className="text-sm md:text-base font-semibold">{displayTime}</p>
+        <p className="text-sm md:text-base font-semibold" style={{ color: "#000" }}>{displayTime}</p>
       )}
       {/* If subtitle is not a date, show it below the title as before */}
-      <h3 className="text-xl md:text-2xl py-1 font-bold">{event.title}</h3>
-      {event.subtitle && !event.subtitle.match(/\d{4}/) && <p>{event.subtitle}</p>}
-      {showProducer && <b>Producer: [TBD] | Programming: 3 hours</b>}
+      <h3 className="text-xl md:text-2xl py-1 font-bold" style={{ color: "#000" }}>{event.title}</h3>
+      {event.subtitle && !event.subtitle.match(/\d{4}/) && <p style={{ color: "#000" }}>{event.subtitle}</p>}
+      {/* Removed producer/programming line */}
       {event.items && (
-        <ul className="mt-3 text-sm md:text-base list-disc list-inside space-y-1">
+        <ul className="mt-3 text-sm md:text-base list-disc list-inside space-y-1" style={{ color: "#000" }}>
           {event.items.map((item, i) => (
             <li key={i}>
               {/* Only convert inner times for schedule and global sections */}
@@ -601,12 +670,10 @@ export default function Timeline() {
           parentLocationOffset={locationOffset}
           stickyTitle
         />
-        <TimelineSection
-          title="Kyoto Closing Ceremony"
-          events={kyoto}
-          lineColor="#8851A5"
-        />
+        {/* Kyoto Closing Ceremony removed */}
       </div>
     </div>
   );
 }
+
+
