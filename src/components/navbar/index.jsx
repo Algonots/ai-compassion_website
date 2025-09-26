@@ -43,7 +43,7 @@ export default function Navbar() {
     };
 
     return (
-        <nav className="fixed top-1 mx-auto w-full max-w-[1800px] md:h-[5rem] z-[1000] p-4 flex items-center justify-center">
+        <nav className="fixed top-1 mx-auto w-full max-w-[1920px] md:h-[5rem] z-[1000] p-4 flex items-center justify-center">
             <div
                 className={`relative w-full px-4 py-2 md:p-0 flex items-center justify-between
                 transition-all duration-300 ease-in-out ${isScrolledStyles} ${isMobileMenuOpen ? '!bg-white !shadow-none rounded-t-2xl md:rounded-t-3xl' : 'rounded-2xl md:rounded-t-3xl'}`}
@@ -60,7 +60,7 @@ export default function Navbar() {
                         alt="logo"
                         width={500}
                         height={500}
-                        className="w-full h-full object-contain"
+                        className="w-full h-full object-contain relative right-2 md:right-0"
                     />
                 </Link>
 
@@ -70,17 +70,17 @@ export default function Navbar() {
                     onClick={handleMobileMenuToggle}
                 >
                     <div
-                        className={`w-[25px] h-[3px] ${isScrolled || isMobileMenuOpen ? 'bg-black' : 'bg-green-900'
+                        className={`w-[25px] h-[3px] ${isScrolled || isMobileMenuOpen ? 'bg-black' : 'bg-gray-900'
                             } rounded-full my-1 transition-transform duration-400 ${isMobileMenuOpen ? 'rotate-[-45deg] translate-y-[9px]' : ''
                             }`}
                     />
                     <div
-                        className={`w-[25px] h-[3px] ${isScrolled || isMobileMenuOpen ? 'bg-black' : 'bg-green-900'
+                        className={`w-[25px] h-[3px] ${isScrolled || isMobileMenuOpen ? 'bg-black' : 'bg-gray-900'
                             } rounded-full my-1 transition-opacity duration-400 ${isMobileMenuOpen ? 'opacity-0' : ''
                             }`}
                     />
                     <div
-                        className={`w-[25px] h-[3px] ${isScrolled || isMobileMenuOpen ? 'bg-black' : 'bg-green-900'
+                        className={`w-[25px] h-[3px] ${isScrolled || isMobileMenuOpen ? 'bg-black' : 'bg-gray-900'
                             } rounded-full my-1 transition-transform duration-400 ${isMobileMenuOpen ? 'rotate-[45deg] -translate-y-[9px]' : ''
                             }`}
                     />
@@ -143,7 +143,7 @@ export default function Navbar() {
                         ))}
                         <Link
                             href="https://peatix.com/us/event/4584550/"
-                            className="px-6 py-3 rounded-full text-center bg-[#E7E17E] text-black"
+                            className="px-6 py-3 rounded-full text-center bg-[#D55485] text-white"
                         >
                             Register
                         </Link>

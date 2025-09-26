@@ -1,10 +1,10 @@
 import Marquee from "react-fast-marquee";
 import Image from "next/image";
 import s1 from "@/../public/goi-peace.svg";
-import s2 from "@/../public/health.jpg";
-import s3 from "@/../public/be.jpg";
-import s4 from "@/../public/usa.jpg";
-import s5 from "@/../public/ai.jpg";
+import s2 from "@/../public/health.webp";
+import s3 from "@/../public/be.webp";
+import s4 from "@/../public/usa.webp";
+import s5 from "@/../public/ai.webp";
 
 const slider = [s1, s2, s3, s4, s5];
 
