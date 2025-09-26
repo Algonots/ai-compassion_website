@@ -3,12 +3,12 @@ import Image from "next/image";
 import plant from '@/../public/road.png';
 import pot from '@/../public/paper.png';
 import dance from '@/../public/light.png';
-import temple from '@/../public/temple.png';
+import temple from '@/../public/temple.webp';
 export default function Hero() {
   return (
-    <section className="mt-24 md:mt-8 p-4 md:px-8 lg:px-16 flex flex-col md:flex-row items-center justify-center gap-8">
+    <section className="mt-24 lg:mt-8 p-4 md:px-8 lg:px-16 flex flex-col lg:flex-row items-center justify-center gap-8">
       {/* Left Content */}
-      <div className="flex flex-col gap-4 md:gap-6 justify-center h-full w-full md:w-1/2">
+      <div className="flex flex-col gap-4 md:gap-6 justify-center h-full w-full lg:w-1/2">
         <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl">
           AI+Compassion <br />
           Global Forum 2025
@@ -32,7 +32,7 @@ export default function Hero() {
       </div>
 
       {/* Right Content - Images Grid */}
-      <div className="md:py-4 lg:py-8 grid grid-cols-2 gap-6 w-full md:w-1/2">
+      <div className="md:py-4 lg:py-8 grid grid-cols-2 gap-6 w-full lg:w-1/2">
         <div className="overflow-hidden rounded-2xl ">
           <Image
             src={plant}
