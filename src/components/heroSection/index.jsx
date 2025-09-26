@@ -1,8 +1,8 @@
 "use client";
 import Image from "next/image";
-import plant from '@/../public/1st block image.png';
-import pot from '@/../public/second block image.png';
-import dance from '@/../public/fourth block image.png';
+import plant from '@/../public/road.png';
+import pot from '@/../public/paper.png';
+import dance from '@/../public/light.png';
 import temple from '@/../public/temple.png';
 export default function Hero() {
   return (
