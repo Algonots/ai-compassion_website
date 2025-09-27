@@ -1,6 +1,6 @@
 import Image from "next/image";
 import ab1 from "@/../public/ab1.webp";
-import pillarsImg from "@/../public/pillars.png";
+import pillarsImg from "@/../public/pillars.webp";
 import {
   GlobeAltIcon,
   BookOpenIcon,
