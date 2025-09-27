@@ -55,6 +55,7 @@ const speakers = [
 
 export default function SpeakerSection() {
   const [activeIndex, setActiveIndex] = useState(null);
+  const [flippedIndex, setFlippedIndex] = useState(null);
 
   return (
     <div id="speakers" className="py-12 text-center">
@@ -71,22 +72,62 @@ export default function SpeakerSection() {
         {speakers.map((speaker, index) => (
           <div
             key={index}
-            className="relative min-w-[200px] md:min-w-[240px] max-w-[240px] aspect-[3/4] overflow-hidden rounded-3xl cursor-pointer group mx-3"
-            onClick={() => setActiveIndex(index)}
+            className="relative min-w-[200px] md:min-w-[240px] max-w-[240px] aspect-[3/4] mx-3"
+            style={{
+              perspective: "1200px",
+              display: "inline-block",
+            }}
+            onClick={() => setFlippedIndex(flippedIndex === index ? null : index)}
           >
-            <Image
-              src={speaker.img}
-              alt={speaker.name}
-              fill
-              className="object-cover"
-            />
-            {/* Overlay */}
             <div
-              className={`absolute inset-0 bg-[#E69F46] flex flex-col items-center justify-center gap-2 md:gap-4 text-center text-white px-2 transition-opacity duration-300
-                ${activeIndex === index ? "opacity-100" : "opacity-0 group-hover:opacity-100"}`}
+              className="w-full h-full"
+              style={{
+                position: "relative",
+                width: "100%",
+                height: "100%",
+                transition: "transform 0.6s",
+                transformStyle: "preserve-3d",
+                borderRadius: "1.5rem",
+                boxShadow: "0 4px 16px rgba(0,0,0,0.08)",
+                cursor: "pointer",
+                transform: flippedIndex === index ? "rotateY(180deg)" : "none",
+              }}
             >
-              <h2 className="font-semibold md:text-2xl">{speaker.name}</h2>
-              <p className="text-[0.65rem] md:text-m">{speaker.title}</p>
+              {/* Front Side */}
+              <div
+                className="absolute inset-0 w-full h-full"
+                style={{
+                  backfaceVisibility: "hidden",
+                  borderRadius: "1.5rem",
+                  overflow: "hidden",
+                }}
+              >
+                <Image
+                  src={speaker.img}
+                  alt={speaker.name}
+                  fill
+                  className="object-cover"
+                  style={{ borderRadius: "1.5rem" }}
+                />
+              </div>
+              {/* Back Side */}
+              <div
+                className="absolute inset-0 w-full h-full flex flex-col items-center justify-center px-3"
+                style={{
+                  background: "#E69F46",
+                  color: "#fff",
+                  borderRadius: "1.5rem",
+                  backfaceVisibility: "hidden",
+                  transform: "rotateY(180deg)",
+                  textAlign: "center",
+                  overflowY: "auto",
+                  padding: "1rem",
+                  boxSizing: "border-box",
+                }}
+              >
+                <h2 className="font-semibold md:text-2xl">{speaker.name}</h2>
+                <p className="text-[0.65rem] md:text-m">{speaker.title}</p>
+              </div>
             </div>
           </div>
         ))}

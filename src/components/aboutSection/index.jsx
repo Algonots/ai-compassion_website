@@ -1,6 +1,8 @@
 import Image from "next/image";
 import ab1 from "@/../public/ab1.webp";
 import pillarsImg from "@/../public/pillars.png";
+import globeImg from "@/../public/globe.png";
+import city from "@/../public/city.png";
 import {
   GlobeAltIcon,
   BookOpenIcon,
@@ -48,6 +50,255 @@ const pillars = [
     icon: <BookOpenIcon className="w-8 h-8 text-orange-600" />,
   },
 ];
+
+export function ConstraintsSection() {
+  return (
+    <section
+      className="my-11"
+      style={{
+        display: "grid",
+        gridTemplateColumns: "1fr 1fr",
+        gap: "2rem",
+        alignItems: "start",
+        padding: "4rem 2rem",
+      }}
+    >
+      {/* Left Content */}
+      <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
+        {/* Header */}
+        <div>
+          <h2 style={{ fontSize: "1.2rem", fontWeight: "600" }}>
+            Turning Constraints into Strengths
+          </h2>
+          <p style={{ fontSize: "0.9rem", color: "#555", marginTop: "0.5rem" }}>
+            Rather than viewing geographic and logistical limitations as
+            obstacles, we designed them as features that enhance our mission.
+          </p>
+        </div>
+
+        {/* First row with two cards */}
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "5fr 5fr",
+            gap: "1.5rem",
+          }}
+        >
+          {/* Intimate Gathering */}
+          <div
+            style={{
+              backgroundColor: "#ec407a",
+              color: "white",
+              padding: "3rem",
+              borderRadius: "1rem",
+              boxShadow: "8px 8px 0px #f8bbd0",
+            }}
+          >
+            <h3
+              style={{
+                marginBottom: "0.5rem",
+                fontSize: "1rem",
+                fontWeight: "600",
+              }}
+            >
+              Intimate Gathering
+            </h3>
+            <p style={{ fontSize: "0.9rem", lineHeight: "1.4" }}>
+              A small, high-trust in-person assembly in Osaka creates the
+              conditions for meaningful connection and breakthrough thinking.
+            </p>
+          </div>
+
+          {/* Global Relay */}
+          <div
+            style={{
+              backgroundColor: "#ec407a",
+              color: "white",
+              padding: "3rem",
+              borderRadius: "1rem",
+              boxShadow: "8px 8px 0px #f8bbd0",
+            }}
+          >
+            <h3
+              style={{
+                marginBottom: "0.5rem",
+                fontSize: "1rem",
+                fontWeight: "600",
+              }}
+            >
+              Global Relay
+            </h3>
+            <p
+              style={{
+                fontSize: "0.9rem",
+                lineHeight: "1.4",
+                marginBottom: "0.5rem",
+              }}
+            >
+              A 24-hour online participation structure spans three global zones,
+              ensuring diverse voices are included:
+            </p>
+            <ul
+              style={{
+                fontSize: "0.9rem",
+                lineHeight: "1.4",
+                paddingLeft: "1.2rem",
+              }}
+            >
+              <li>Asia-Pacific</li>
+              <li>Europe–Africa</li>
+              <li>Americas</li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Full-width Symbolic Completion */}
+        <div
+          style={{
+            backgroundColor: "#ec407a",
+            color: "white",
+            padding: "1.5rem",
+            borderRadius: "1rem",
+            boxShadow: "8px 8px 0px #f8bbd0",
+          }}
+        >
+          <h3
+            style={{
+              marginBottom: "0.5rem",
+              fontSize: "1rem",
+              fontWeight: "600",
+            }}
+          >
+            Symbolic Completion
+          </h3>
+          <p style={{ fontSize: "0.9rem", lineHeight: "1.4" }}>
+            Closing the event in Kyoto completes our symbolic ring, connecting
+            ancient wisdom with future innovation.
+          </p>
+        </div>
+      </div>
+
+      {/* Right Image */}
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <Image src={globeImg} alt="Globe" width={400} height={400} />
+      </div>
+    </section>
+  );
+}
+
+export function ExpoInspiration() {
+  return (
+    <section
+      style={{
+        display: "grid",
+        gridTemplateColumns: "1fr 1fr",
+        gap: "2rem",
+        alignItems: "center",
+        padding: "4rem 2rem",
+      }}
+    >
+      {/* Left Image with orange background */}
+      <div style={{ position: "relative", display: "flex", justifyContent: "center" }}>
+        {/* <div
+          style={{
+            position: "absolute",
+            bottom: "-20px",
+            right: "-20px",
+            width: "541px",
+            height: "722px",
+            backgroundColor: "#F4A640",
+            borderRadius: "1rem",
+            zIndex: 0,
+          }}
+        /> */}
+        <div
+          style={{
+            borderRadius: "1rem",
+            overflow: "hidden",
+            position: "relative",
+            zIndex: 1,
+            maxWidth: "500px",
+            width: "100%",
+          }}
+        >
+          <Image src={city} alt="City View" layout="responsive" width={500} height={500} />
+        </div>
+      </div>
+
+      {/* Right Content */}
+      <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
+        <h2 style={{ textAlign: "center", fontWeight: 700, fontSize: "1.7rem", color: "#000" }}>
+          Expo 2025 Inspiration
+        </h2>
+
+        <p style={{ textAlign: "center", fontSize: "1rem", color: "#333" }}>
+          Our Forum draws deep inspiration from the architectural and philosophical
+          foundations of Expo 2025 Osaka:
+        </p>
+
+        {/* Box 1 */}
+        <div
+          style={{
+            border: "1px solid #F4A640",
+            borderRadius: "4px",
+            padding: "20px",
+            textAlign: "center",
+          }}
+        >
+          <h3 style={{ margin: "0 0 10px 0", fontWeight: 700, fontSize: "1.2rem", color: "#0A2144" }}>
+            Design System: ID → GROUP → WORLD
+          </h3>
+          <p style={{ margin: 0, fontSize: "1rem", color: "#0A2144" }}>
+            A philosophy of connection that moves from individual identity to
+            collective collaboration to global impact.
+          </p>
+        </div>
+
+        {/* Box 2 */}
+        <div
+          style={{
+            border: "1px solid #F4A640",
+            borderRadius: "4px",
+            padding: "20px",
+            textAlign: "center",
+          }}
+        >
+          <h3 style={{ margin: "0 0 10px 0", fontWeight: 700, fontSize: "1.2rem", color: "#0A2144" }}>
+            Grand Ring
+          </h3>
+          <p style={{ margin: 0, fontSize: "1rem", color: "#0A2144" }}>
+            The world’s largest wooden structure serves as a powerful symbol of
+            unity in diversity—a continuous circle with no beginning or end.
+          </p>
+        </div>
+
+        {/* Box 3 */}
+        <div
+          style={{
+            border: "1px solid #F4A640",
+            borderRadius: "4px",
+            padding: "20px",
+            textAlign: "center",
+          }}
+        >
+          <h3 style={{ margin: "0 0 10px 0", fontWeight: 700, fontSize: "1.2rem", color: "#0A2144" }}>
+            Myaku–Myaku
+          </h3>
+          <p style={{ margin: 0, fontSize: "1rem", color: "#0A2144" }}>
+            The Expo mascot embodies the pulse of continuity and interconnection,
+            representing the heartbeat of our shared planet.
+          </p>
+        </div>
+
+        <p style={{ textAlign: "center", fontSize: "12px", color: "#333" }}>
+          Our event design intentionally mirrors these principles, creating a living
+          metaphor for harmonious coexistence.
+        </p>
+      </div>
+    </section>
+  );
+}
+
 
 export default function AboutSection() {
   // Globe layout for thematic pillars (pie segments)
@@ -148,6 +399,12 @@ export default function AboutSection() {
         space that must be filled with empathy and accountability. This Forum
         addresses this gap at a pivotal moment in technological development.
       </p>
+
+      {/* Constraints Section */}
+      <ConstraintsSection />
+
+      {/* Expo Inspiration Section */}
+      <ExpoInspiration />
 
       {/* Thematic Pillars Section */}
       <div className="mt-16">

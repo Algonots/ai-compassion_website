@@ -15,7 +15,7 @@ export default function Joinsection() {
             </p>
             <div className="flex flex-col md:flex-row justify-center items-center gap-4 w-full">
                 <Link className="w-full md:w-fit px-10 py-3 bg-[#89478D] text-white rounded-full font-semibold" href="https://peatix.com/event/4584550/" aria-label="Register Now">Register Now</Link>
-                <Link className="w-full md:w-fit px-10 py-3 border rounded-full font-semibold" href="" aria-label="Ask a question">Ask a question</Link>
+                <Link className="w-full md:w-fit px-10 py-3 border rounded-full font-semibold" href="mailto:connect@compassionai.io " aria-label="Ask a question">Ask a question</Link>
             </div>
         </div>
     )
