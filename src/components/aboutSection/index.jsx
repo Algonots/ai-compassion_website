@@ -1,8 +1,6 @@
 import Image from "next/image";
 import ab1 from "@/../public/ab1.webp";
 import pillarsImg from "@/../public/pillars.png";
-import globeImg from "@/../public/globe.png";
-import city from "@/../public/city.png";
 import {
   GlobeAltIcon,
   BookOpenIcon,
@@ -315,7 +313,7 @@ export default function AboutSection() {
   return (
     <div
       id="about"
-      className="flex flex-col gap-14 px-4 py-8 md:p-8 lg:p-16 text-[#0A2144]"
+      className="flex flex-col gap-10 px-4 py-8 md:p-8 lg:p-16 text-[#0A2144]"
     >
       {/* About Us */}
       <h1 className="text-2xl md:text-3xl font-semibold">About Us</h1>
@@ -363,7 +361,7 @@ export default function AboutSection() {
       </h2>
 
       {/* Two-Column Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Left Card */}
         <div className="rounded-2xl bg-pink-300 p-10 shadow-lg flex flex-col justify-center w-90 mx-auto">
           <h3 className="justify-center flex text-5xl font-extrabold text-gray-900">
@@ -372,7 +370,7 @@ export default function AboutSection() {
           <p className="mt-3 text-lg font-semibold text-gray-800 justify-center flex">
             GPT-5 Impact
           </p>
-          <p className="mt-4 text-sm text-gray-700">
+          <p className="mt-4 text-sm text-gray-700 text-center">
             The latest AI represents a "PhD-level expert in your pocket" with
             unprecedented reasoning abilities and multilingual mastery.
           </p>
@@ -386,7 +384,7 @@ export default function AboutSection() {
           <p className="mt-3 text-lg font-semibold text-white justify-center flex">
             Global AI Trust
           </p>
-          <p className="mt-4 text-sm text-white/90">
+          <p className="mt-4 text-sm text-white/90 text-center">
             Only slightly more than half of people worldwide express trust in
             artificial intelligence systems (47-country comprehensive study).
           </p>
@@ -394,7 +392,7 @@ export default function AboutSection() {
       </div>
 
       {/* Bottom Description */}
-      <p className="mt-1 text-sm text-gray-600 leading-relaxed max-w-3xl mx-auto">
+      <p className="mt-1 text-sm text-gray-600 leading-relaxed max-w-3xl mx-auto text-center">
         Between these growing capabilities and limited trust lies the vital
         space that must be filled with empathy and accountability. This Forum
         addresses this gap at a pivotal moment in technological development.

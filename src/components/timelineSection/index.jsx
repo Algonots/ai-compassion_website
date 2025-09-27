@@ -210,55 +210,55 @@ const global = [
 
 // Add Kyoto session for October 3, 2025
 const kyoto = [
-    {
-        time: "12:00 PM - 2:00 PM JST",
-        title: "Kyoto",
-        subtitle: "October 3, 2025",
-        items: [
-            "12:00p - 2:00p Kyoto",
-            "8:30a - 10:30a Mumbai",
-            "8:00p - 11:00p San Francisco",
-        ],
-    },
-    {
-        time: "1:00 - 2:00 PM JST",
-        title: "Cultural Integration Experience",
-        subtitle: '"Ikebana Workshop: Embodying Wa (和) and Ma (間)"',
-        items: [
-            "1:00-1:45 PM: Traditional Japanese floral art workshop",
-            "1:45-2:00 PM: Group reflection on harmony and mindful space",
-        ],
-    },
-    {
-        time: "1:00 - 2:00 PM  JST",
-        title: "Working Lunch & Academic Leadership",
-        subtitle: "“Research Frontiers in Compassionate AI”",
-        items: [
-            "1:00-1:30 PM: Working lunch with structured networking",
-            '1:30-2:00 PM: "AI Education in the Age of Empathy" + "Bridging Generations Through Technology"',
-            'Speakers: Dr. Noriko Arai (Japan) + Nikoru Kondo (14-year-old entrepreneur, Japan)'
-        ],
-    },
-    {
-        time: "2:00 PM - 3:00 PM JST",
-        title: "Innovation Showcase",
-        subtitle: "“Compassionate AI in Action”",
-        items: [
-            "2:00-2:20 PM: Healthcare AI demonstration - Alex Cahana, MD",
-            "2:20-2:40 PM: Future of Work applications - Gary A. Bolles",
-            "2:40-3:00 PM: Interactive Q&A with all presenters",
-        ],
-    },
-    {
-        time: "2:00 PM - 3:00 PM JST",
-        title: "Commitment & Celebration",
-        subtitle: '"The Ring of Co-Existence Complete"',
-        items: [
-            "2:00-2:30 PM: Final commitment ceremony and accountability partner assignments",
-            "2:30-2:45 PM: Group photo and documentation",
-            "2:45-3:00 PM: Closing circle and appreciation ceremony",
-        ],
-    }
+  {
+    time: "12:00 PM - 2:00 PM JST",
+    title: "Kyoto",
+    subtitle: "October 3, 2025",
+    items: [
+      "12:00p - 2:00p Kyoto",
+      "8:30a - 10:30a Mumbai",
+      "8:00p - 11:00p San Francisco",
+    ],
+  },
+  {
+    time: "1:00 - 2:00 PM JST",
+    title: "Cultural Integration Experience",
+    subtitle: '"Ikebana Workshop: Embodying Wa (和) and Ma (間)"',
+    items: [
+      "1:00-1:45 PM: Traditional Japanese floral art workshop",
+      "1:45-2:00 PM: Group reflection on harmony and mindful space",
+    ],
+  },
+  {
+    time: "1:00 - 2:00 PM  JST",
+    title: "Working Lunch & Academic Leadership",
+    subtitle: "“Research Frontiers in Compassionate AI”",
+    items: [
+      "1:00-1:30 PM: Working lunch with structured networking",
+      '1:30-2:00 PM: "AI Education in the Age of Empathy" + "Bridging Generations Through Technology"',
+      'Speakers: Dr. Noriko Arai (Japan) + Nikoru Kondo (14-year-old entrepreneur, Japan)'
+    ],
+  },
+  {
+    time: "2:00 PM - 3:00 PM JST",
+    title: "Innovation Showcase",
+    subtitle: "“Compassionate AI in Action”",
+    items: [
+      "2:00-2:20 PM: Healthcare AI demonstration - Alex Cahana, MD",
+      "2:20-2:40 PM: Future of Work applications - Gary A. Bolles",
+      "2:40-3:00 PM: Interactive Q&A with all presenters",
+    ],
+  },
+  {
+    time: "2:00 PM - 3:00 PM JST",
+    title: "Commitment & Celebration",
+    subtitle: '"The Ring of Co-Existence Complete"',
+    items: [
+      "2:00-2:30 PM: Final commitment ceremony and accountability partner assignments",
+      "2:30-2:45 PM: Group photo and documentation",
+      "2:45-3:00 PM: Closing circle and appreciation ceremony",
+    ],
+  }
 ];
 
 // Add pre-event schedule data
@@ -302,7 +302,7 @@ function convertTimeRange(jstRange, offset) {
   if (!jstRange) return "";
   const match = jstRange.match(/(\d{1,2}:\d{2})\s*(AM|PM)\s*-\s*(\d{1,2}:\d{2})\s*(AM|PM)/i);
   if (!match) return jstRange;
-  let [ , start, startPeriod, end, endPeriod ] = match;
+  let [, start, startPeriod, end, endPeriod] = match;
 
   function to24h(time, period) {
     let [h, m] = time.split(":").map(Number);
@@ -385,7 +385,7 @@ function TimelineSection({
   locationKey = "JST",
   locationOffset = 0,
   showLocationButtons = false,
-  onLocationChange = () => {},
+  onLocationChange = () => { },
   stickyTitle = false,
   fixedLocationKey,
   fixedLocationOffset,
@@ -400,7 +400,7 @@ function TimelineSection({
 
   // Responsive: show dropdown on all screens if showDropdown, otherwise dropdown on mobile and buttons on md+
   return (
-    <div className="mb-12">
+    <div className="">
       <div
         className={
           stickyTitle
@@ -570,8 +570,8 @@ function EventCard({
     event.time && locationKey !== "JST"
       ? `${convertTimeRange(event.time, locationOffset)} ${locationKey}`
       : event.time
-      ? `${event.time.replace("JST", "JST")}`
-      : undefined;
+        ? `${event.time.replace("JST", "JST")}`
+        : undefined;
   return (
     <div
       className="p-6 pl-10 md:pl-6 w-full md:max-w-md relative"
@@ -617,10 +617,10 @@ export default function Timeline() {
   const [locationOffset, setLocationOffset] = useState(-9);
 
   return (
-    <div id="schedule" className="py-12 flex flex-col items-center space-y-8">
+    <div id="schedule" className="py-12 px-4 flex flex-col items-center space-y-12">
       {/* Pre-Event Frame */}
       <div
-        className="border-4 border-gray-300 rounded-xl shadow-lg bg-white"
+        className="shadow-[0_2px_12px_rgba(0,0,0,0.1)] border border-gray-100 rounded-xl bg-white"
         style={{
           width: "100%",
           maxWidth: "1100px",
@@ -637,7 +637,7 @@ export default function Timeline() {
       </div>
       {/* Main Timeline Frames */}
       <div
-        className="border-4 border-gray-300 rounded-xl shadow-lg bg-white"
+        className="shadow-[0_2px_12px_rgba(0,0,0,0.1)] border border-gray-100 rounded-xl bg-white"
         style={{
           width: "100%",
           maxWidth: "1100px",
