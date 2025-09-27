@@ -1,0 +1,11 @@
+# *
+User-agent: *
+Disallow: /admin
+Disallow: /api
+Disallow: /server-scripts
+
+# Host
+Host: https://compassionai.io
+
+# Sitemaps
+Sitemap: https://compassionai.io/sitemap.xml
