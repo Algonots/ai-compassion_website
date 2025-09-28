@@ -5,8 +5,10 @@ import s2 from "@/../public/health.webp";
 import s3 from "@/../public/be.webp";
 import s4 from "@/../public/usa.webp";
 import s5 from "@/../public/ai.webp";
+import s6 from "@/../public/lm.webp";
+import s7 from "@/../public/na.webp";
 
-const slider = [s1, s2, s3, s4, s5];
+const slider = [s1, s2, s3, s4, s5, s6, s7];
 
 export default function SponsorSection() {
     return (
