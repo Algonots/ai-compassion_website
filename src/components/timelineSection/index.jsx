@@ -354,7 +354,7 @@ function TimelineSection({
         {isScheduleSection ? (
           // Custom split layout for schedule
           <div className="grid grid-cols-1 md:grid-cols-9">
-            <div className="md:col-span-4 md:pr-1 flex flex-col items-end">
+            <div className="md:col-span-4 md:pr-20 flex flex-col items-end">
               {scheduleLeft.map((event, idx) => (
                 <EventCard
                   key={idx}
