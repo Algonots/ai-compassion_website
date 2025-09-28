@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
 import hiroshi from "@/../public/hiroshi.webp";
 import gary from "@/../public/gary.webp";
@@ -61,8 +61,6 @@ const speakers = [
 ];
 
 export default function SpeakerSection() {
-  const [modalSpeaker, setModalSpeaker] = useState(null);
-
   return (
     <div id="speakers" className="py-12 text-center">
       <h1 className="text-3xl md:text-4xl font-libre font-semibold text-[#0A2144]">
@@ -78,14 +76,13 @@ export default function SpeakerSection() {
         {speakers.map((speaker, index) => (
           <div
             key={index}
-            className="relative w-full aspect-[3/4] cursor-pointer"
+            className="relative w-full aspect-[3/4]"
             style={{
               perspective: "1200px",
               minWidth: "160px",
               maxWidth: "240px",
               margin: "0 auto",
             }}
-            onClick={() => setModalSpeaker(speaker)}
           >
             <div
               className="w-full h-full"
@@ -119,39 +116,6 @@ export default function SpeakerSection() {
           </div>
         ))}
       </div>
-
-      {/* Modal Popup for Speaker */}
-      {modalSpeaker && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60"
-          onClick={() => setModalSpeaker(null)}
-        >
-          <div
-            className="bg-white rounded-2xl shadow-xl max-w-xs w-full p-6 relative flex flex-col items-center"
-            style={{ minWidth: 280 }}
-            onClick={e => e.stopPropagation()}
-          >
-            <button
-              className="absolute top-2 right-2 text-gray-400 hover:text-[#E69F46] text-2xl font-bold"
-              onClick={() => setModalSpeaker(null)}
-              aria-label="Close"
-            >
-              &times;
-            </button>
-            <div className="w-40 h-60 relative mb-4">
-              <Image
-                src={modalSpeaker.img}
-                alt={modalSpeaker.name}
-                fill
-                className="object-cover rounded-xl"
-                style={{ borderRadius: "1rem" }}
-              />
-            </div>
-            <h2 className="font-semibold text-lg mb-2 text-[#E69F46]">{modalSpeaker.name}</h2>
-            <p className="text-sm text-gray-700">{modalSpeaker.title}</p>
-          </div>
-        </div>
-      )}
     </div>
   );
 }

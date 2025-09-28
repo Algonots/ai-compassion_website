@@ -280,6 +280,10 @@ function TimelineSection({
   // Only for the schedule section, use split left/right arrays
   const isScheduleSection = title === "Complete 24-Hour Schedule";
 
+  // Prepare left/right speaker names for the grid
+  const leftSpeakers = scheduleLeft.map(e => e.items[0]);
+  const rightSpeakers = scheduleRight.map(e => e.items[0]);
+
   return (
     <div>
       <div className={stickyTitle ? "sticky top-0 z-10 bg-white border-b border-gray-200" : ""}>
@@ -349,43 +353,44 @@ function TimelineSection({
       )}
 
       <div className="relative w-full max-w-5xl mx-auto px-4 md:px-0">
-        <div className="absolute top-0 left-6 md:left-1/2 md:-translate-x-1/2 w-1 h-full" style={{ backgroundColor: lineColor }} />
+        {/* center line - hide for Osaka Opening */}
+        {title !== "Complete 24-Hour Schedule" && (
+          <div
+            className="absolute top-0 left-6 md:left-1/2 md:-translate-x-1/2 w-1 h-full"
+            style={{ backgroundColor: lineColor }}
+          />
+        )}
 
         {isScheduleSection ? (
-          // Custom split layout for schedule
-          <div className="grid grid-cols-1 md:grid-cols-9">
-            <div className="md:col-span-4 md:pr-20 flex flex-col items-end">
-              {scheduleLeft.map((event, idx) => (
-                <EventCard
-                  key={idx}
-                  event={event}
-                  lineColor={lineColor}
-                  locationKey={effectiveLocationKey}
-                  locationOffset={conversionOffset}
-                  isGlobal={false}
-                  tzLabel={tzLabel}
-                  noBullets
-                />
-              ))}
-            </div>
-            <div className="md:col-span-1 flex flex-col items-center">
-              {Array(Math.max(scheduleLeft.length, scheduleRight.length)).fill(0).map((_, idx) => (
-                <span key={idx} className="hidden md:inline-block w-5 h-5 rounded-full my-8" style={{ backgroundColor: lineColor }} />
-              ))}
-            </div>
-            <div className="md:col-span-4 md:pl-6 flex flex-col items-start">
-              {scheduleRight.map((event, idx) => (
-                <EventCard
-                  key={idx}
-                  event={event}
-                  lineColor={lineColor}
-                  locationKey={effectiveLocationKey}
-                  locationOffset={conversionOffset}
-                  isGlobal={false}
-                  tzLabel={tzLabel}
-                  noBullets
-                />
-              ))}
+          // Wider grid timeline for Complete 24-Hour Schedule
+          <div className="relative w-full max-w-6xl mx-auto px-6 md:px-8">
+            <div className="grid grid-cols-9 gap-6 md:gap-12">
+              {scheduleLeft.map((leftEvent, idx) => {
+                const rightEvent = scheduleRight[idx];
+                return (
+                  <React.Fragment key={idx}>
+                    {/* Left column */}
+                    <div className="md:col-span-4 md:pr-4 flex md:justify-end">
+                      <div className="text-lg md:text-xl font-medium">
+                        {leftEvent.items[0]}
+                      </div>
+                    </div>
+                    {/* Dot column */}
+                    <div className="col-span-1 flex justify-center">
+                      <div
+                        className="w-5 h-5 rounded-full"
+                        style={{ backgroundColor: "#89478D" }}
+                      />
+                    </div>
+                    {/* Right column */}
+                    <div className="md:col-span-4 md:pl-4 flex md:justify-start">
+                      <div className="text-lg md:text-xl font-medium">
+                        {rightEvent ? rightEvent.items[0] : ""}
+                      </div>
+                    </div>
+                  </React.Fragment>
+                );
+              })}
             </div>
           </div>
         ) : (
@@ -444,48 +449,44 @@ export default function Timeline() {
 
   return (
     <div id="schedule" className="py-12 px-4 flex flex-col items-center space-y-12">
-      <div className="shadow-[0_2px_12px_rgba(0,0,0,0.1)] border border-gray-100 rounded-xl bg-white" style={{ width: "100%", maxWidth: "1100px", boxSizing: "border-box" }}>
-        <TimelineSection title="Pre-Event Global Labs" events={preEvent} lineColor="#89478D" stickyTitle />
-      </div>
+      <TimelineSection title="Pre-Event Global Labs" events={preEvent} lineColor="#89478D" stickyTitle />
 
-      <div className="shadow-[0_2px_12px_rgba(0,0,0,0.1)] border border-gray-100 rounded-xl bg-white" style={{ width: "100%", maxWidth: "1100px", height: "700px", overflowY: "auto", boxSizing: "border-box" }}>
-        <TimelineSection
-          title="Complete 24-Hour Schedule"
-          events={[]} // pass empty, handled by split arrays
-          lineColor="#89478D"
-          showLocationButtons
-          locationKey={locationKey}
-          locationOffset={locationOffset}
-          onLocationChange={(key, offset) => {
-            setLocationKey(key);
-            setLocationOffset(offset);
-          }}
-          stickyTitle
-        />
+      <TimelineSection
+        title="Complete 24-Hour Schedule"
+        events={[]} // pass empty, handled by split arrays
+        lineColor="#89478D"
+        showLocationButtons
+        locationKey={locationKey}
+        locationOffset={locationOffset}
+        onLocationChange={(key, offset) => {
+          setLocationKey(key);
+          setLocationOffset(offset);
+        }}
+        stickyTitle
+      />
 
-        <TimelineSection
-          title="Global 24-Hour Relay Schedule"
-          events={global}
-          lineColor="#89478D"
-          showProducer
-          useParentLocation
-          parentLocationKey={locationKey}
-          parentLocationOffset={locationOffset}
-          stickyTitle
-        />
+      <TimelineSection
+        title="Global 24-Hour Relay Schedule"
+        events={global}
+        lineColor="#89478D"
+        showProducer
+        useParentLocation
+        parentLocationKey={locationKey}
+        parentLocationOffset={locationOffset}
+        stickyTitle
+      />
 
-        <TimelineSection
-          title="Kyoto Closing Ceremony"
-          events={kyoto}
-          lineColor="#89478D"
-          showProducer
-          useParentLocation
-          parentLocationKey={locationKey}
-          parentLocationOffset={locationOffset}
-          stickyTitle
+      <TimelineSection
+        title="Kyoto Closing Ceremony"
+        events={kyoto}
+        lineColor="#89478D"
+        showProducer
+        useParentLocation
+        parentLocationKey={locationKey}
+        parentLocationOffset={locationOffset}
+        stickyTitle
 />
 
-      </div>
     </div>
   );
 }
