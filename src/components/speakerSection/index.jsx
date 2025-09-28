@@ -1,6 +1,7 @@
 'use client'
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import hiroshi from "@/../public/hiroshi.webp";
 import gary from "@/../public/gary.webp";
 import kunal from "@/../public/kunal.webp";
@@ -30,35 +31,176 @@ import matsumoto from "@/../public/matsumoto.webp";
 import murakami from "@/../public/murakami.webp";
 import saionji from "@/../public/saionji.webp";
 const speakers = [
-  { name: "", title: "Hiroshi Ishiguro is Professor of Department of Systems Innovation at Osaka University and Visiting Director at Advanced Telecommunications Research Institute, specializing in interactive robotics, avatar, and android science. Creator of Geminoid, an avatar android copy of himself, Ishiguro serves as CEO of AVITA Inc., Project Manager of MOONSHOT R&D, and Thematic Project Producer of EXPO 2025 Osaka. His groundbreaking work has earned prestigious awards including the Sheikh Mohammed Bin Rashid Al Maktoum Knowledge Award.", img: hiroshi },
-  { name: "", title: "Gary A. Bolles is co-founder of SoCap Global and partner at Charrette LLC, specializing in impact, innovation, and capital strategies. A leading expert on the future of work, he authored The Next Rules of Work and created LinkedIn courses with 1.7 million learners. As Global Fellow for Transformation at Singularity University, he guides organizations on leveraging AI and exponential technologies. Previously led major technology companies and directed six technology magazines including Yahoo! Internet Life.", img: gary },
-  { name: "", title: "Kunal Sood is founder of Audacity AI, We The Planet, and X Impact Group, serving as Chief Impact Officer at the Chopra Foundation and Director of Social Impact at Stanford University's CCARE. A TED Resident and Tribeca Fellow, he holds an MBA from Kellogg, masters from UCSF and UPenn in positive psychology, and is completing his doctorate at ISB focused on developing the theory of audacity.", img: kunal },
-  { name: "", title: "Dr. Jennifer Aaker is General Atlantic Professor at Stanford Graduate School of Business and a renowned behavioral scientist specializing in purpose, meaning, and technology's impact on well-being. Winner of the Distinguished Scientific Achievement Award and MBA Professor of the Year, her bestselling books including Humor, Seriously have been translated into 20+ languages. She serves on boards of the Obama Presidential Foundation and other organizations, helping leaders foster purpose and connection in business.", img: aaker },
-  { name: "", title: "Sister Dr. Jenna is a spiritual mentor, author, and TV personality who hosts The Next Normal on YouTube and founded the Brahma Kumaris Meditation Museum in Maryland. Recipient of the Presidential Lifetime Achievement Award for National Community Service, she presented the Illuminating the Light Within fashion show for Paris 2024 Olympics. Author of Meditation: Intimate Experiences with the Divine and The Sister Gita Effect, she has appeared on major media outlets and speaks internationally on spiritual leadership.", img: jenna },
-  { name: "", title: "Stephen Ibaraki is one of the world’s leading futurists and investors, working with more than 1 million CEOs, investors, and scientists to advance AI, quantum computing, and sustainable investments. As the driving force behind AI for Good at the UN ITU, his leadership impacts industries, governments, and startups globally. Microsoft AI Awards since 2018 and a grand judge at top global innovation competitions, Stephen’s expertise is shaping the future of technology - driven economic growth.", img: stephin },
-  { name: "", title: "Dr. Alex Cahana specializes in Web 3.0 transformation in emerging markets and developing economies. Founding partner at ImpactRooms and Blockchain Healthcare Expert for UN/CEFACT, he serves on boards of AdanianLabs Africa and ACHA. With 25+ years clinical medical experience including Department of Defense, he was former Professor and Chief of Pain Medicine at University of Washington. A decorated Israeli Defense Forces Officer, he has published 100+ articles and received the University of Washington President's medal for remarkable leadership, social impact and public service.", img: alex },
-  { name: "", title: "Eleanor 'Nell' Watson, a pioneering researcher in the ethics and safety of machine intelligence, has been a driving force behind some of the most innovative AI ethics standardization and certification initiatives from organizations such as the IEEE. Serves as IEEE Ethics Maestro and chairs the Transparency Experts Focus Group. Former Executive Consultant for Apple and recognized as an Icon by the Royal Academy of Engineering for innovation. Author of Taming the Machine and columnist for Fast Company and Big Think, Watson has spoken at the UN General Assembly and World Bank.", img: nell },
-  { name: "", title: "Dr. Sandra Bond Chapman is Chief Director of Center for BrainHealth at UT Dallas and Dee Wyly Distinguished University Professor. Co-creator of The BrainHealth Project involving 32 leading experts, she has secured 50+ research grants and published 250+ peer-reviewed studies. Chapman leads development of the first BrainHealth Index and directs clinical trials focused on enhancing cognitive capacity across the lifespan, working to democratize brain health strategies globally, transforming how we approach brain health.", img: sandra },
-  { name: "", title: "Dr. Olaf Witkowski is a pioneering leader exploring artificial minds and compassionate AI technology. Founding Director of Cross Labs AI research institute in Kyoto and President of the International Society for Artificial Life, he serves as Board Director at Cross Compass AI. With a PhD from University of Tokyo and Princeton Institute alumnus, Witkowski has co-founded research ventures across three continents including YHouse Inc. in New York and centers in Kathmandu and Kyoto, focusing on diverse intelligences and consciousness.", img: olaf },
-  { name: "", title: "Dr. Theodore H. Schwartz is a neurosurgeon/neuroscientist and former David and Ursel Barnes Endowed Professor at Weill Cornell Medicine for 25 years. He has published 500+ scientific articles and lectures worldwide on minimally invasive surgical techniques he helped develop. Author of Gray Matters: A Biography of Brain Surgery, selected by The Economist as a best book of 2024, Dr. Schwartz is a Harvard alumnus whose writing appears globally and currently serves as CEO of medtech company Illumination Diagnostics.", img: schwartz },
-  { name: "", title: "Tim Moriarty is an accomplished Australian artist and digital creator specializing in aerial drone art and indigenous-inspired designs. Of Yanyuwa Aboriginal heritage from Borroloola, Northern Territory, his skin name is Bundiyan (Cheeky Brown Snake). A licensed and certified pilot creating public installations, with extensive creative strategy experience for major companies including Google, YouTube, National Museum of Australia, and Tourism Australia, his latest project is a multi-million-dollar stainless steel optically illusive emu dreaming installation for Badgerys Creek airport.", img: tim },
-  { name: "", title: "Jenna Sadhviji (Sadhvi Bhagawati Saraswati) is a spiritual leader, bestselling author, and social activist based in Rishikesh, India. With a Ph.D. from Stanford, she has lived 25+ years in the Himalayas and is President and Spiritual Head of Parmarth Niketan Ashram. Co-President of Religions for Peace and UN Advisory Council member, she authored the #1 bestseller Hollywood to the Himalayas and received the Lifetime Achievement Award from President Biden. Originally from Los Angeles, dedicated to wisdom teaching and humanitarian service.", img: sadhviji },
-  { name: "", title: "Olivera Tomic is founder of 8people Intelligence and a visionary AI transformation leader helping enterprises integrate artificial intelligence with clarity and impact. A certified AI Agent Specialist with over a decade of international experience across Australia, Asia, Europe, and Africa, she guides organizations through AI adoption complexities across telecommunications, automotive, insurance, e-commerce, and retail sectors. Her strategic approach focuses on AI consulting, solutions, and upskilling to deliver measurable business outcomes.", img: olivera },
-  { name: "", title: "Douglas Thomas is Professor at USC Iovine and Young Academy and USC Annenberg, researching the intersection of technology and culture. He founded Games & Culture, the first academic journal studying video game culture, and collaborated with John Seely Brown to develop gamer disposition, named a Harvard Business Review Breakthrough Ideas. Their book A New Culture of Learning is read worldwide. Thomas has consulted with governments on educational reform and is currently working on Bodies of Code.", img: douglas },
-  { name: "", title: "Ben Waber is a visiting scientist at MIT Media Lab and senior visiting researcher at Ritsumeikan University, recognized as a leading thinker at the intersection of management, data, workplace, and people. Former president and CEO of Humanyze, a workplace analytics company he co-founded, and senior researcher at Harvard Business School. His international bestseller People Analytics was published in 2013, and he regularly speaks at major institutions including the UN and World Economic Forum.", img: ben },
-  { name: "", title: "Ian Haycroft is an Australian entrepreneur and mentor who spent 20 years in international relief work before returning to Australia in 1999 to establish a kinesiology practice. Co-founder of a successful crowdfunding venture capital business, he combines business mentoring with individual coaching. Currently focused on writing and connecting global communities committed to conscious renewal, Haycroft is passionate about finding wisdom paths to assist positive change for humanity and the planet.", img: ian },
-  { name: "", title: "Dr. Narumi Yoshikawa holds a Ph.D. in agricultural economics specializing in agri-anthropology. She heads the Uehiro Research Center for Japan Environment Studies and serves as a specially appointed professor at RIHN, Professor at Prefectural University of Hiroshima, and Visiting Professor at Waseda University. Her research focuses on environmental studies from a cultural perspective, emphasizing social implementation through Community Supported Agriculture projects that became the foundation of Japan's organic farming movement. She designed environmental education programs connecting universities across 10 Asian countries.", img: narumi },
-  { name: "", title: "Yoichi Ochiai is a Japanese media artist, entrepreneur, and academic with a doctorate from the University of Tokyo. He serves as Associate Professor at University of Tsukuba Library; Information and Media Associate Professor and Director of the Centre for Digital Nature Development and Research. Ochiai also serves as a specially-appointed professor at Digital Hollywood University and visiting professor at Osaka University of Arts, Kyoto City University of Arts, and Kanazawa College of Art while pioneering innovative digital media art and technology, leading digital nature research and media innovation.", img: ochiai },
-  { name: "", title: "Matthew Manos is founder of verynice, a design-strategy consultancy that gives half its work away to nonprofits, serving clients including Apple, Google, UNICEF, and NASA. As Associate Dean at the Academy, he leads programs challenging students to design solutions for complex social issues. A global lecturer and author on design and social innovation, Manos created Apple Education training across 36 countries, co-designed the Iovine Young curriculum and was named by Huffington Post one of seven millennials changing the world.", img: manos },
-  { name: "", title: "Tamami Tono is an award-winning composer and graduate of Kunitachi College of Music and Keio University. Former resident composer of Yo-Yo Ma's Silk Road Ensemble and CCMIX, she has been a member of Reigakusha Gagaku Ensemble since 1990, performing traditional Gagaku and contemporary music. Winner of National Theater Composition Prize and ISCM awards, Tono creates multimedia Breathing Media performances combining traditional Gagaku with modern electronics, and has performed at Tanglewood and Lincoln Center festivals.", img: tono },
-  { name: "", title: "Ahmer Inam is a visionary AI and data leader with over two decades of experience at the forefront of artificial intelligence evolution. A member of XPRIZE Brain Trust, he has pioneered high-impact AI solutions across diverse industries including financial services, healthcare, high-tech, consumer, and retail. From early symbolic AI work in the late '90s to today's cutting-edge neuro-symbolic AI, Inam consistently develops transformative AI applications across multiple sectors, driving breakthrough AI initiatives and leading digital transformation across global markets.", img: inam },
-  { name: "", title: "Edi Pyrek is co-founder of GAIA Foundation (Global Artificial Intelligence Alliance), focusing on decentralized, compassion-based AI. In March 2023, his foundation received a Davos award for technologies that can change millions of lives. A peace negotiator between Afghan tribal leaders after 9/11, Pyrek has advised three Polish prime ministers and trained Forbes-listed individuals. Author of 10 books including for National Geographic, he's a five-time TEDx speaker and creator of Brand Religion methodology and Academy of Future co-founder.", img: edi },
-  { name: "", title: "Toshie Takahashi is Professor in the School of Culture, Media and Society and Institute for AI and Robotics at Waseda University, Tokyo, and Associate Fellow at Cambridge CFI. She has held visiting appointments at Oxford, Harvard, and Columbia, conducting cross-cultural research on robots' social impact and AI for Good. Her book Towards the age of Digital Wisdom won the Telecommunication social science award. She holds a PhD from LSE and advises Japan's Ministry of Internal Affairs and Communications, leading youth AI projects for human happiness.", img: toshie },
-  { name: "", title: "Matyas 'Maty' Bohacek is a Stanford University student researching AI model poisoning and training data attribution with Professor Hany Farid. He developed deepfake detectors including one with President Zelenskyy and created an Anderson Cooper deepfake that opened CNN's primetime news show. He also developed state-of-the-art sign language recognition systems now used in college courses. A two-time Apple WWDC Scholar and Czech Innovator of the Year, his research appears in Science and PNAS with opinion pieces in WIRED and Forbes.", img: bohacek },
-  { name: "", title: "Shoukei Matsumoto is a Pure Land Buddhist monk, AI ethics pioneer and futurist exploring how Buddhist philosophy informs ethical AI development. Currently Visiting Professor at University of Bonn for AI in the Human Context, his research focuses on AI, Buddhism, and Transperspectivity. CEO of Interbeing Inc. and international speaker on Human Literacy in the Age of AI, he advocates for Middle Path leadership and coexistence between human and machine intelligence. He is the author of bestselling books translated into 20+ languages.", img: matsumoto },
-  { name: "", title: "Taikyo Murakami is the acharya of Shingon Esoteric Buddhism and chief priest of Kogenji Temple, specializing in esoteric Buddhism and Heian-Kamakura period culture. With a master's degree from Otani Graduate School in Buddhist culture, he has conducted over 10,000 face-to-face consultations and serves as dean of Faculty of Education at Gokurakuji Temple. A clinical Buddhist chaplain involved in palliative care and secretary of WCRP Japan Youth Group, he has completed the extreme Shou Hassenmai Goma training.", img: murakami },
-  { name: "", title: "Hiroo Saionji serves as Chairman of the Goi Peace Foundation, holding Special Consultative Status with UN Economic and Social Council and official UNESCO relations. With an MBA from Michigan State University and Economics degree from Gakushuin University, he leads neutral peace initiatives worldwide through strategic partnerships with international organizations, embassies, and NGOs. Recipient of Sacred Shri Dnyaneshwar World Peace Prize (2008) and Luxembourg Peace Prize (2019), he served on Japan National Commission for UNESCO (2008-2017).", img: saionji },
+  { 
+    slug: "hiroshi-ishiguro",
+    name: "Hiroshi Ishiguro",
+    title: "Hiroshi Ishiguro is Professor of Department of Systems Innovation at Osaka University and Visiting Director at Advanced Telecommunications Research Institute, specializing in interactive robotics, avatar, and android science. Creator of Geminoid, an avatar android copy of himself, Ishiguro serves as CEO of AVITA Inc., Project Manager of MOONSHOT R&D, and Thematic Project Producer of EXPO 2025 Osaka. His groundbreaking work has earned prestigious awards including the Sheikh Mohammed Bin Rashid Al Maktoum Knowledge Award.",
+    img: hiroshi
+  },
+  { 
+    slug: "gary-a-bolles",
+    name: "Gary A. Bolles",
+    title: "Gary A. Bolles is co-founder of SoCap Global and partner at Charrette LLC, specializing in impact, innovation, and capital strategies. A leading expert on the future of work, he authored The Next Rules of Work and created LinkedIn courses with 1.7 million learners. As Global Fellow for Transformation at Singularity University, he guides organizations on leveraging AI and exponential technologies. Previously led major technology companies and directed six technology magazines including Yahoo! Internet Life.",
+    img: gary
+  },
+  { 
+    slug: "kunal-sood",
+    name: "Kunal Sood",
+    title: "Kunal Sood is founder of Audacity AI, We The Planet, and X Impact Group, serving as Chief Impact Officer at the Chopra Foundation and Director of Social Impact at Stanford University's CCARE. A TED Resident and Tribeca Fellow, he holds an MBA from Kellogg, masters from UCSF and UPenn in positive psychology, and is completing his doctorate at ISB focused on developing the theory of audacity.",
+    img: kunal
+  },
+  { 
+    slug: "jennifer-aaker",
+    name: "Dr. Jennifer Aaker",
+    title: "Dr. Jennifer Aaker is General Atlantic Professor at Stanford Graduate School of Business and a renowned behavioral scientist specializing in purpose, meaning, and technology's impact on well-being. Winner of the Distinguished Scientific Achievement Award and MBA Professor of the Year, her bestselling books including Humor, Seriously have been translated into 20+ languages. She serves on boards of the Obama Presidential Foundation and other organizations, helping leaders foster purpose and connection in business.",
+    img: aaker
+  },
+  { 
+    slug: "sister-jenna",
+    name: "Sister Dr. Jenna",
+    title: "Sister Dr. Jenna is a spiritual mentor, author, and TV personality who hosts The Next Normal on YouTube and founded the Brahma Kumaris Meditation Museum in Maryland. Recipient of the Presidential Lifetime Achievement Award for National Community Service, she presented the Illuminating the Light Within fashion show for Paris 2024 Olympics. Author of Meditation: Intimate Experiences with the Divine and The Sister Gita Effect, she has appeared on major media outlets and speaks internationally on spiritual leadership.",
+    img: jenna
+  },
+  { 
+    slug: "stephen-ibaraki",
+    name: "Stephen Ibaraki",
+    title: "Stephen Ibaraki is one of the world’s leading futurists and investors, working with more than 1 million CEOs, investors, and scientists to advance AI, quantum computing, and sustainable investments. As the driving force behind AI for Good at the UN ITU, his leadership impacts industries, governments, and startups globally. Microsoft AI Awards since 2018 and a grand judge at top global innovation competitions, Stephen’s expertise is shaping the future of technology - driven economic growth.",
+    img: stephin
+  },
+  { 
+    slug: "alex-cahana",
+    name: "Dr. Alex Cahana",
+    title: "Dr. Alex Cahana specializes in Web 3.0 transformation in emerging markets and developing economies. Founding partner at ImpactRooms and Blockchain Healthcare Expert for UN/CEFACT, he serves on boards of AdanianLabs Africa and ACHA. With 25+ years clinical medical experience including Department of Defense, he was former Professor and Chief of Pain Medicine at University of Washington. A decorated Israeli Defense Forces Officer, he has published 100+ articles and received the University of Washington President's medal for remarkable leadership, social impact and public service.",
+    img: alex
+  },
+  { 
+    slug: "nell-watson",
+    name: "Eleanor 'Nell' Watson",
+    title: "Eleanor 'Nell' Watson, a pioneering researcher in the ethics and safety of machine intelligence, has been a driving force behind some of the most innovative AI ethics standardization and certification initiatives from organizations such as the IEEE. Serves as IEEE Ethics Maestro and chairs the Transparency Experts Focus Group. Former Executive Consultant for Apple and recognized as an Icon by the Royal Academy of Engineering for innovation. Author of Taming the Machine and columnist for Fast Company and Big Think, Watson has spoken at the UN General Assembly and World Bank.",
+    img: nell
+  },
+  { 
+    slug: "sandra-bond-chapman",
+    name: "Dr. Sandra Bond Chapman",
+    title: "Dr. Sandra Bond Chapman is Chief Director of Center for BrainHealth at UT Dallas and Dee Wyly Distinguished University Professor. Co-creator of The BrainHealth Project involving 32 leading experts, she has secured 50+ research grants and published 250+ peer-reviewed studies. Chapman leads development of the first BrainHealth Index and directs clinical trials focused on enhancing cognitive capacity across the lifespan, working to democratize brain health strategies globally, transforming how we approach brain health.",
+    img: sandra
+  },
+  { 
+    slug: "olaf-witkowski",
+    name: "Dr. Olaf Witkowski",
+    title: "Dr. Olaf Witkowski is a pioneering leader exploring artificial minds and compassionate AI technology. Founding Director of Cross Labs AI research institute in Kyoto and President of the International Society for Artificial Life, he serves as Board Director at Cross Compass AI. With a PhD from University of Tokyo and Princeton Institute alumnus, Witkowski has co-founded research ventures across three continents including YHouse Inc. in New York and centers in Kathmandu and Kyoto, focusing on diverse intelligences and consciousness.",
+    img: olaf
+  },
+  { 
+    slug: "theodore-schwartz",
+    name: "Dr. Theodore H. Schwartz",
+    title: "Dr. Theodore H. Schwartz is a neurosurgeon/neuroscientist and former David and Ursel Barnes Endowed Professor at Weill Cornell Medicine for 25 years. He has published 500+ scientific articles and lectures worldwide on minimally invasive surgical techniques he helped develop. Author of Gray Matters: A Biography of Brain Surgery, selected by The Economist as a best book of 2024, Dr. Schwartz is a Harvard alumnus whose writing appears globally and currently serves as CEO of medtech company Illumination Diagnostics.",
+    img: schwartz
+  },
+  { 
+    slug: "tim-moriarty",
+    name: "Tim Moriarty",
+    title: "Tim Moriarty is an accomplished Australian artist and digital creator specializing in aerial drone art and indigenous-inspired designs. Of Yanyuwa Aboriginal heritage from Borroloola, Northern Territory, his skin name is Bundiyan (Cheeky Brown Snake). A licensed and certified pilot creating public installations, with extensive creative strategy experience for major companies including Google, YouTube, National Museum of Australia, and Tourism Australia, his latest project is a multi-million-dollar stainless steel optically illusive emu dreaming installation for Badgerys Creek airport.",
+    img: tim
+  },
+  { 
+    slug: "jenna-sadhviji",
+    name: "Jenna Sadhviji (Sadhvi Bhagawati Saraswati)",
+    title: "Jenna Sadhviji (Sadhvi Bhagawati Saraswati) is a spiritual leader, bestselling author, and social activist based in Rishikesh, India. With a Ph.D. from Stanford, she has lived 25+ years in the Himalayas and is President and Spiritual Head of Parmarth Niketan Ashram. Co-President of Religions for Peace and UN Advisory Council member, she authored the #1 bestseller Hollywood to the Himalayas and received the Lifetime Achievement Award from President Biden. Originally from Los Angeles, dedicated to wisdom teaching and humanitarian service.",
+    img: sadhviji
+  },
+  { 
+    slug: "olivera-tomic",
+    name: "Olivera Tomic",
+    title: "Olivera Tomic is founder of 8people Intelligence and a visionary AI transformation leader helping enterprises integrate artificial intelligence with clarity and impact. A certified AI Agent Specialist with over a decade of international experience across Australia, Asia, Europe, and Africa, she guides organizations through AI adoption complexities across telecommunications, automotive, insurance, e-commerce, and retail sectors. Her strategic approach focuses on AI consulting, solutions, and upskilling to deliver measurable business outcomes.",
+    img: olivera
+  },
+  { 
+    slug: "douglas-thomas",
+    name: "Douglas Thomas",
+    title: "Douglas Thomas is Professor at USC Iovine and Young Academy and USC Annenberg, researching the intersection of technology and culture. He founded Games & Culture, the first academic journal studying video game culture, and collaborated with John Seely Brown to develop gamer disposition, named a Harvard Business Review Breakthrough Ideas. Their book A New Culture of Learning is read worldwide. Thomas has consulted with governments on educational reform and is currently working on Bodies of Code.",
+    img: douglas
+  },
+  { 
+    slug: "ben-waber",
+    name: "Ben Waber",
+    title: "Ben Waber is a visiting scientist at MIT Media Lab and senior visiting researcher at Ritsumeikan University, recognized as a leading thinker at the intersection of management, data, workplace, and people. Former president and CEO of Humanyze, a workplace analytics company he co-founded, and senior researcher at Harvard Business School. His international bestseller People Analytics was published in 2013, and he regularly speaks at major institutions including the UN and World Economic Forum.",
+    img: ben
+  },
+  { 
+    slug: "ian-haycroft",
+    name: "Ian Haycroft",
+    title: "Ian Haycroft is an Australian entrepreneur and mentor who spent 20 years in international relief work before returning to Australia in 1999 to establish a kinesiology practice. Co-founder of a successful crowdfunding venture capital business, he combines business mentoring with individual coaching. Currently focused on writing and connecting global communities committed to conscious renewal, Haycroft is passionate about finding wisdom paths to assist positive change for humanity and the planet.",
+    img: ian
+  },
+  { 
+    slug: "narumi-yoshikawa",
+    name: "Dr. Narumi Yoshikawa",
+    title: "Dr. Narumi Yoshikawa holds a Ph.D. in agricultural economics specializing in agri-anthropology. She heads the Uehiro Research Center for Japan Environment Studies and serves as a specially appointed professor at RIHN, Professor at Prefectural University of Hiroshima, and Visiting Professor at Waseda University. Her research focuses on environmental studies from a cultural perspective, emphasizing social implementation through Community Supported Agriculture projects that became the foundation of Japan's organic farming movement. She designed environmental education programs connecting universities across 10 Asian countries.",
+    img: narumi
+  },
+  { 
+    slug: "yoichi-ochiai",
+    name: "Yoichi Ochiai",
+    title: "Yoichi Ochiai is a Japanese media artist, entrepreneur, and academic with a doctorate from the University of Tokyo. He serves as Associate Professor at University of Tsukuba Library; Information and Media Associate Professor and Director of the Centre for Digital Nature Development and Research. Ochiai also serves as a specially-appointed professor at Digital Hollywood University and visiting professor at Osaka University of Arts, Kyoto City University of Arts, and Kanazawa College of Art while pioneering innovative digital media art and technology, leading digital nature research and media innovation.",
+    img: ochiai
+  },
+  { 
+    slug: "matthew-manos",
+    name: "Matthew Manos",
+    title: "Matthew Manos is founder of verynice, a design-strategy consultancy that gives half its work away to nonprofits, serving clients including Apple, Google, UNICEF, and NASA. As Associate Dean at the Academy, he leads programs challenging students to design solutions for complex social issues. A global lecturer and author on design and social innovation, Manos created Apple Education training across 36 countries, co-designed the Iovine Young curriculum and was named by Huffington Post one of seven millennials changing the world.",
+    img: manos
+  },
+  { 
+    slug: "tamami-tono",
+    name: "Tamami Tono",
+    title: "Tamami Tono is an award-winning composer and graduate of Kunitachi College of Music and Keio University. Former resident composer of Yo-Yo Ma's Silk Road Ensemble and CCMIX, she has been a member of Reigakusha Gagaku Ensemble since 1990, performing traditional Gagaku and contemporary music. Winner of National Theater Composition Prize and ISCM awards, Tono creates multimedia Breathing Media performances combining traditional Gagaku with modern electronics, and has performed at Tanglewood and Lincoln Center festivals.",
+    img: tono
+  },
+  { 
+    slug: "ahmer-inam",
+    name: "Ahmer Inam",
+    title: "Ahmer Inam is a visionary AI and data leader with over two decades of experience at the forefront of artificial intelligence evolution. A member of XPRIZE Brain Trust, he has pioneered high-impact AI solutions across diverse industries including financial services, healthcare, high-tech, consumer, and retail. From early symbolic AI work in the late '90s to today's cutting-edge neuro-symbolic AI, Inam consistently develops transformative AI applications across multiple sectors, driving breakthrough AI initiatives and leading digital transformation across global markets.",
+    img: inam
+  },
+  { 
+    slug: "edi-pyrek",
+    name: "Edi Pyrek",
+    title: "Edi Pyrek is co-founder of GAIA Foundation (Global Artificial Intelligence Alliance), focusing on decentralized, compassion-based AI. In March 2023, his foundation received a Davos award for technologies that can change millions of lives. A peace negotiator between Afghan tribal leaders after 9/11, Pyrek has advised three Polish prime ministers and trained Forbes-listed individuals. Author of 10 books including for National Geographic, he's a five-time TEDx speaker and creator of Brand Religion methodology and Academy of Future co-founder.",
+    img: edi
+  },
+  { 
+    slug: "toshie-takahashi",
+    name: "Toshie Takahashi",
+    title: "Toshie Takahashi is Professor in the School of Culture, Media and Society and Institute for AI and Robotics at Waseda University, Tokyo, and Associate Fellow at Cambridge CFI. She has held visiting appointments at Oxford, Harvard, and Columbia, conducting cross-cultural research on robots' social impact and AI for Good. Her book Towards the age of Digital Wisdom won the Telecommunication social science award. She holds a PhD from LSE and advises Japan's Ministry of Internal Affairs and Communications, leading youth AI projects for human happiness.",
+    img: toshie
+  },
+  { 
+    slug: "matyas-bohacek",
+    name: "Matyas 'Maty' Bohacek",
+    title: "Matyas 'Maty' Bohacek is a Stanford University student researching AI model poisoning and training data attribution with Professor Hany Farid. He developed deepfake detectors including one with President Zelenskyy and created an Anderson Cooper deepfake that opened CNN's primetime news show. He also developed state-of-the-art sign language recognition systems now used in college courses. A two-time Apple WWDC Scholar and Czech Innovator of the Year, his research appears in Science and PNAS with opinion pieces in WIRED and Forbes.",
+    img: bohacek
+  },
+  { 
+    slug: "shoukei-matsumoto",
+    name: "Shoukei Matsumoto",
+    title: "Shoukei Matsumoto is a Pure Land Buddhist monk, AI ethics pioneer and futurist exploring how Buddhist philosophy informs ethical AI development. Currently Visiting Professor at University of Bonn for AI in the Human Context, his research focuses on AI, Buddhism, and Transperspectivity. CEO of Interbeing Inc. and international speaker on Human Literacy in the Age of AI, he advocates for Middle Path leadership and coexistence between human and machine intelligence. He is the author of bestselling books translated into 20+ languages.",
+    img: matsumoto
+  },
+  { 
+    slug: "taikyo-murakami",
+    name: "Taikyo Murakami",
+    title: "Taikyo Murakami is the acharya of Shingon Esoteric Buddhism and chief priest of Kogenji Temple, specializing in esoteric Buddhism and Heian-Kamakura period culture. With a master's degree from Otani Graduate School in Buddhist culture, he has conducted over 10,000 face-to-face consultations and serves as dean of Faculty of Education at Gokurakuji Temple. A clinical Buddhist chaplain involved in palliative care and secretary of WCRP Japan Youth Group, he has completed the extreme Shou Hassenmai Goma training.",
+    img: murakami
+  },
+  { 
+    slug: "hiroo-saionji",
+    name: "Hiroo Saionji",
+    title: "Hiroo Saionji serves as Chairman of the Goi Peace Foundation, holding Special Consultative Status with UN Economic and Social Council and official UNESCO relations. With an MBA from Michigan State University and Economics degree from Gakushuin University, he leads neutral peace initiatives worldwide through strategic partnerships with international organizations, embassies, and NGOs. Recipient of Sacred Shri Dnyaneshwar World Peace Prize (2008) and Luxembourg Peace Prize (2019), he served on Japan National Commission for UNESCO (2008-2017).",
+    img: saionji
+  }
 ];
+
 
 export default function SpeakerSection() {
   return (
@@ -71,37 +213,27 @@ export default function SpeakerSection() {
         culture, policy, and the environment.
       </p>
 
-      {/* Speakers Grid */}
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 px-4 md:px-8 max-w-6xl mx-auto">
         {speakers.map((speaker, index) => (
-          <div
-            key={index}
-            className="relative w-full aspect-[3/4]"
-            style={{
-              perspective: "1200px",
-              minWidth: "160px",
-              maxWidth: "240px",
-              margin: "0 auto",
-            }}
-          >
+          <Link key={index} href={`/speakers/${speaker.slug}`}>
             <div
-              className="w-full h-full"
+              className="relative w-full aspect-[3/4]"
               style={{
-                position: "relative",
-                width: "100%",
-                height: "100%",
-                borderRadius: "1.5rem",
-                boxShadow: "0 4px 16px rgba(0,0,0,0.08)",
-                cursor: "pointer",
+                perspective: "1200px",
+                minWidth: "160px",
+                maxWidth: "240px",
+                margin: "0 auto",
               }}
             >
-              {/* Speaker Image */}
               <div
-                className="absolute inset-0 w-full h-full"
+                className="w-full h-full"
                 style={{
-                  backfaceVisibility: "hidden",
+                  position: "relative",
+                  width: "100%",
+                  height: "100%",
                   borderRadius: "1.5rem",
-                  overflow: "hidden",
+                  boxShadow: "0 4px 16px rgba(0,0,0,0.08)",
+                  cursor: "pointer",
                 }}
               >
                 <Image
@@ -113,7 +245,7 @@ export default function SpeakerSection() {
                 />
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>
