@@ -10,7 +10,7 @@ import s7 from "@/../public/na.webp";
 import s8 from "@/../public/logo-globalai.webp";
 import s9 from "@/../public/pdie.webp";
 
-const slider = [s1, s2, s3, s4, s5, s6, s7, s8, s9];
+const slider = [s1, s2, s3, s4, s5, s6, s7,];
 
 export default function SponsorSection() {
     return (

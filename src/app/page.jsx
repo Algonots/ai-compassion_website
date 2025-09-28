@@ -5,6 +5,7 @@ import FaqSection from "@/components/faqSection";
 import TimelineSection from "@/components/timelineSection";
 import AboutSection from "@/components/aboutSection";
 import SpeakerSection from "@/components/speakerSection";
+import { PartnerSection } from "@/components/partnersection";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <SpeakerSection />
       <TimelineSection />
       <SponsorSection />
+      <PartnerSection />
       <FaqSection />
       <Joinsection />
     </>

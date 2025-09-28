@@ -14,21 +14,21 @@ const schedule = [
 ];
 
 const global = [
-  { subtitle: "October 2, 2025", time: "8:00-11:00 JST", title: "South Asia", items: ["Sadhvi Bhagawati Saraswati"] },
-  { subtitle: "October 2, 2025", time: "11:00-14:00 UTC", title: "GCC/Europe", items: ["Nell Watson"] },
-  { subtitle: "October 2, 2025", time: "14:00-17:00 UTC", title: "Africa", items: ["Gary Bolles"] },
-  { subtitle: "October 2, 2025", time: "17:00-20:00 UTC", title: "Latin America", items: ["Theodore H. Schwartz, MD"] },
-  { subtitle: "October 2, 2025", time: "20:00-23:00 UTC", title: "North America", items: ["Stephen Ibaraki", "Matthew Manos", "Douglas Thomas", "Jennifer Aaker"] },
-  { subtitle: "October 3, 2025", time: "23:00 - 2:00 (10/3) UTC", title: "Oceania", items: ["Tim Moriarity", "Olivera Tomic", "Ian Haycroft"] },
-  { time: "<1 hour Ma Reflection>", title: "", items: [] },
+  { title: "South Asia", subtitle: "October 2, 2025", time: "8:00-11:00 UTC", items: ["Sadhvi Bhagawati Saraswati"] },
+  { title: "GCC/Europe", subtitle: "October 2, 2025", time: "11:00-14:00 UTC", items: ["Nell Watson"] },
+  { title: "Africa", subtitle: "October 2, 2025", time: "14:00-17:00 UTC", items: ["Gary Bolles"] },
+  { title: "Latin America", subtitle: "October 2, 2025", time: "17:00-20:00 UTC", items: ["Theodore H. Schwartz, MD"] },
+  { title: "North America", subtitle: "October 2, 2025", time: "20:00-23:00 UTC", items: ["Stephen Ibaraki", "Matthew Manos", "Douglas Thomas", "Jennifer Aaker"] },
+  { title: "Oceania", subtitle: "October 3, 2025", time: "23:00 - 2:00 (10/3) UTC", items: ["Tim Moriarity", "Olivera Tomic", "Ian Haycroft"] },
+  { time: "<1 hour Ma break>", title: "", items: [] },
 ];
 
 const kyoto = [
   {
-    time: "12:00 PM - 2:00 PM JST",
     title: "Kyoto",
     subtitle: "October 3, 2025",
-    items: ["Shoukei Matsumoto"],
+    time: "3:00-5:00 (10/3) UTC",
+    items: [],
   },
 
 ];
