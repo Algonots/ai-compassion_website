@@ -3,22 +3,30 @@ import React, { useState } from "react";
 
 /* ------------------ DATA ------------------ */
 const schedule = [
-  { time: "", title: "Tamami Tono", subtitle: "", items: [] },
-  { time: "", title: "Dr. Olaf Witkowski", subtitle: "", items: [] },
-  { time: "", title: "Sister Jenna", subtitle: "", items: [] },
-  { time: "", title: "Toshie Takahashi", subtitle: "", items: [] },
-  { time: "", title: "Toshie Takahashi", subtitle: "", items: [] },
-  { time: "", title: "Hiroshi Ishiguro & Edi Pyrek", subtitle: "", items: [] },
-  { time: "", title: "Alex Cahana", subtitle: "", items: [] },
-  { time: "", title: "Yoichi Ochiai / Narumi Yoshikawa", subtitle: "", items: [] },
+  { time: "", title: "", subtitle: "", items: ["Tamami Tono"] },
+  { time: "", title: "", subtitle: "", items: ["Dr. Olaf Witkowski"] },
+  { time: "", title: "", subtitle: "", items: ["Sister Jenna"] },
+  { time: "", title: "", subtitle: "", items: ["Toshie Takahashi"] },
+  { time: "", title: "", subtitle: "", items: ["Hiroshi Ishiguro & Edi Pyrek"] },
+  { time: "", title: "", subtitle: "", items: ["Alex Cahana"] },
+  { time: "", title: "", subtitle: "", items: ["Yoichi Ochiai / Narumi Yoshikawa"] },
+
+  // 🔽 Additional names you had before
+  { time: "", title: "", subtitle: "", items: ["Jean Alfonso-Decena"] },
+  { time: "", title: "", subtitle: "", items: ["Hiroo Saionji"] },
+  { time: "", title: "", subtitle: "", items: ["Ben Weber"] },
+  { time: "", title: "", subtitle: "", items: ["Kunal Sood"] },
+  { time: "", title: "", subtitle: "", items: ["Ahmer Inam"] },
+  { time: "", title: "", subtitle: "", items: ["Taikyo Murakami / Narumi Yoshikawa"] },
 ];
+
 
 const global = [
   { title: "South Asia", subtitle: "October 2, 2025", time: "8:00-11:00 UTC", items: ["Sadhvi Bhagawati Saraswati"] },
   { title: "GCC/Europe", subtitle: "October 2, 2025", time: "11:00-14:00 UTC", items: ["Nell Watson"] },
   { title: "Africa", subtitle: "October 2, 2025", time: "14:00-17:00 UTC", items: ["Gary Bolles"] },
   { title: "Latin America", subtitle: "October 2, 2025", time: "17:00-20:00 UTC", items: ["Theodore H. Schwartz, MD"] },
-  { title: "North America", subtitle: "October 2, 2025", time: "20:00-23:00 UTC", items: ["Stephen Ibaraki", "Matthew Manos", "Douglas Thomas", "Jennifer Aaker"] },
+  { title: "North America", subtitle: "October 2, 2025", time: "20:00-23:00 UTC", items: ["Stephen Ibaraki / Maty Bohacek", "Matthew Manos", "Douglas Thomas", "Jennifer Aaker"] },
   { title: "Oceania", subtitle: "October 3, 2025", time: "23:00 - 2:00 (10/3) UTC", items: ["Tim Moriarity", "Olivera Tomic", "Ian Haycroft"] },
   { time: "<1 hour Ma break>", title: "", items: [] },
 ];
@@ -184,7 +192,7 @@ function convertAnyItem(item, locationOffset, locationKey) {
 
 /* ------------------ PRESENTATIONAL COMPONENTS ------------------ */
 
-function EventCard({ event, lineColor, locationKey = "UTC", locationOffset = 0, isGlobal = false, tzLabel }) {
+function EventCard({ event, lineColor, locationKey = "UTC", locationOffset = 0, isGlobal = false, tzLabel, noBullets = false }) {
   // compute displayTime
   let displayTime;
   const hasTime = event.time && event.time.toString().trim().length > 0;
@@ -210,11 +218,19 @@ function EventCard({ event, lineColor, locationKey = "UTC", locationOffset = 0, 
       {event.subtitle && !/\d{4}/.test(event.subtitle) && <p>{event.subtitle}</p>}
 
       {items.length > 0 && (
-        <ul className="mt-3 text-sm md:text-base list-disc list-inside space-y-1">
-          {items.map((it, i) => (
-            <li key={i}>{convertAnyItem(it, locationOffset, locationKey)}</li>
-          ))}
-        </ul>
+        noBullets ? (
+          <div className="mt-3 text-sm md:text-base space-y-1">
+            {items.map((it, i) => (
+              <div key={i}>{convertAnyItem(it, locationOffset, locationKey)}</div>
+            ))}
+          </div>
+        ) : (
+          <ul className="mt-3 text-sm md:text-base list-disc list-inside space-y-1">
+            {items.map((it, i) => (
+              <li key={i}>{convertAnyItem(it, locationOffset, locationKey)}</li>
+            ))}
+          </ul>
+        )
       )}
     </div>
   );
@@ -243,6 +259,25 @@ function TimelineSection({
 
   const tzLabel = locations.find(l => l.key === effectiveLocationKey)?.label || effectiveLocationKey;
   const conversionOffset = locations.find(l => l.key === effectiveLocationKey)?.offset ?? effectiveLocationOffset ?? 0;
+
+  // List of titles/items to always left-align
+  const alwaysLeftAlign = [
+    "Tamami Tono",
+    "Sister Jenna",
+    "Hiroshi Ishiguro & Edi Pyrek",
+    "Yoichi Ochiai / Narumi Yoshikawa"
+  ];
+
+  // Helper to check if event should be left-aligned
+  function isLeftAligned(event) {
+    // Check if event.title or first item matches any in alwaysLeftAlign
+    if (alwaysLeftAlign.includes(event.title)) return true;
+    if (event.items && event.items.length > 0 && alwaysLeftAlign.includes(event.items[0])) return true;
+    return false;
+  }
+
+  // Only alternate for the schedule section
+  const isScheduleSection = title === "Complete 24-Hour Schedule";
 
   return (
     <div>
@@ -315,41 +350,49 @@ function TimelineSection({
       <div className="relative w-full max-w-5xl mx-auto px-4 md:px-0">
         <div className="absolute top-0 left-6 md:left-1/2 md:-translate-x-1/2 w-1 h-full" style={{ backgroundColor: lineColor }} />
 
-        {events.map((event, index) => (
-          <div key={index} className="relative grid grid-cols-1 md:grid-cols-9 items-start">
-            <div className="md:col-span-4 md:pr-6 flex md:justify-end">
-              {index % 2 === 0 && (
-                <EventCard
-                  event={event}
-                  lineColor={lineColor}
-                  locationKey={effectiveLocationKey}
-                  locationOffset={conversionOffset}
-                  isGlobal={title === "Global 24-Hour Relay Schedule"}
-                  tzLabel={tzLabel}
-                />
-              )}
-            </div>
+        {events.map((event, index) => {
+          // Alternate left/right for schedule section, else use previous logic
+          const leftAlign = isScheduleSection ? index % 2 === 0 : (isLeftAligned(event) || index % 2 === 0);
+          const noBullets = title === "Complete 24-Hour Schedule";
 
-            <div className="md:col-span-1 flex justify-center">
-              <div className="hidden md:flex items-start">
-                <span className="w-5 h-5 rounded-full mt-6" style={{ backgroundColor: lineColor }} />
+          return (
+            <div key={index} className="relative grid grid-cols-1 md:grid-cols-9 items-start">
+              <div className={leftAlign ? "md:col-span-4 md:pr-2 flex md:justify-end" : "md:col-span-4"} >
+                {leftAlign && (
+                  <EventCard
+                    event={event}
+                    lineColor={lineColor}
+                    locationKey={effectiveLocationKey}
+                    locationOffset={conversionOffset}
+                    isGlobal={title === "Global 24-Hour Relay Schedule"}
+                    tzLabel={tzLabel}
+                    noBullets={noBullets}
+                  />
+                )}
+              </div>
+
+              <div className="md:col-span-1 flex justify-center">
+                <div className="hidden md:flex items-start">
+                  <span className="w-5 h-5 rounded-full mt-6" style={{ backgroundColor: lineColor }} />
+                </div>
+              </div>
+
+              <div className={leftAlign ? "md:col-span-4" : "md:col-span-4 md:pl-2 flex md:justify-start"}>
+                {!leftAlign && (
+                  <EventCard
+                    event={event}
+                    lineColor={lineColor}
+                    locationKey={effectiveLocationKey}
+                    locationOffset={conversionOffset}
+                    isGlobal={title === "Global 24-Hour Relay Schedule"}
+                    tzLabel={tzLabel}
+                    noBullets={noBullets}
+                  />
+                )}
               </div>
             </div>
-
-            <div className="md:col-span-4 md:pl-6 flex md:justify-start">
-              {index % 2 === 1 && (
-                <EventCard
-                  event={event}
-                  lineColor={lineColor}
-                  locationKey={effectiveLocationKey}
-                  locationOffset={conversionOffset}
-                  isGlobal={title === "Global 24-Hour Relay Schedule"}
-                  tzLabel={tzLabel}
-                />
-              )}
-            </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );
