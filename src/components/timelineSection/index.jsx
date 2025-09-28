@@ -343,7 +343,7 @@ function TimelineSection({
         <div className="w-full flex flex-col items-center my-6">
           <h2 className="text-2xl md:text-3xl font-bold text-[#89478D] text-center mb-1">Osaka: USA Pavilion Opening</h2>
           <div className="text-base md:text-lg text-gray-700 text-center">
-            October 2, 2025:&nbsp;{convertUtcRangeToTarget("2:00-8:00", conversionOffset, tzLabel)}
+            October 2, 2025:&nbsp;{convertUtcRangeToTarget("05:00 - 11:00", conversionOffset, tzLabel)}
           </div>
         </div>
       )}

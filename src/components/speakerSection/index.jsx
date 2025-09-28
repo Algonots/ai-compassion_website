@@ -1,7 +1,6 @@
 'use client'
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
-import Marquee from "react-fast-marquee";
 import hiroshi from "@/../public/hiroshi.webp";
 import gary from "@/../public/gary.webp";
 import kunal from "@/../public/kunal.webp";
@@ -62,23 +61,7 @@ const speakers = [
 ];
 
 export default function SpeakerSection() {
-  const [activeIndex, setActiveIndex] = useState(null);
-  const [flippedIndex, setFlippedIndex] = useState(null);
-  const [showGrid, setShowGrid] = useState(false);
   const [modalSpeaker, setModalSpeaker] = useState(null);
-  const marqueeRef = useRef(null);
-
-  // Manual marquee navigation
-  const handleMarqueeScroll = dir => {
-    if (marqueeRef.current) {
-      // react-fast-marquee exposes a scroll method via ref (v3+)
-      // fallback: scroll the container directly
-      const el = marqueeRef.current.containerRef?.current || marqueeRef.current;
-      if (el && el.scrollBy) {
-        el.scrollBy({ left: dir * 300, behavior: "smooth" });
-      }
-    }
-  };
 
   return (
     <div id="speakers" className="py-12 text-center">
@@ -90,158 +73,54 @@ export default function SpeakerSection() {
         culture, policy, and the environment.
       </p>
 
-      {/* View More / View Less Button */}
-      <div className="mb-6">
-        <button
-          className="px-6 py-2 rounded-full font-semibold border-2 border-[#E69F46] text-[#E69F46] hover:bg-[#E69F46] hover:text-white transition"
-          onClick={() => setShowGrid(v => !v)}
-        >
-          {showGrid ? "View Less" : "View More"}
-        </button>
-      </div>
-
-      {/* Marquee with navigation buttons */}
-      {!showGrid && (
-        <div className="relative w-full">
-          <button
-            aria-label="Scroll Left"
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-[#E69F46] hover:text-white text-[#E69F46] rounded-full shadow px-2 py-2 md:px-3 md:py-3 transition"
-            style={{ display: "block" }}
-            onClick={() => handleMarqueeScroll(-1)}
+      {/* Speakers Grid */}
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 px-4 md:px-8 max-w-6xl mx-auto">
+        {speakers.map((speaker, index) => (
+          <div
+            key={index}
+            className="relative w-full aspect-[3/4] cursor-pointer"
+            style={{
+              perspective: "1200px",
+              minWidth: "160px",
+              maxWidth: "240px",
+              margin: "0 auto",
+            }}
+            onClick={() => setModalSpeaker(speaker)}
           >
-            <svg width="24" height="24" fill="none" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
-          </button>
-          <button
-            aria-label="Scroll Right"
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-[#E69F46] hover:text-white text-[#E69F46] rounded-full shadow px-2 py-2 md:px-3 md:py-3 transition"
-            style={{ display: "block" }}
-            onClick={() => handleMarqueeScroll(1)}
-          >
-            <svg width="24" height="24" fill="none" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
-          </button>
-          <Marquee
-            pauseOnHover
-            speed={50}
-            gradient={false}
-            ref={marqueeRef}
-            style={{ paddingLeft: "48px", paddingRight: "48px" }}
-          >
-            {speakers.map((speaker, index) => (
-              <div
-                key={index}
-                className="relative min-w-[200px] md:min-w-[240px] max-w-[240px] aspect-[3/4] mx-3"
-                style={{
-                  perspective: "1200px",
-                  display: "inline-block",
-                }}
-                onClick={() => setFlippedIndex(flippedIndex === index ? null : index)}
-              >
-                <div
-                  className="w-full h-full"
-                  style={{
-                    position: "relative",
-                    width: "100%",
-                    height: "100%",
-                    transition: "transform 0.6s",
-                    transformStyle: "preserve-3d",
-                    borderRadius: "1.5rem",
-                    boxShadow: "0 4px 16px rgba(0,0,0,0.08)",
-                    cursor: "pointer",
-                    transform: flippedIndex === index ? "rotateY(180deg)" : "none",
-                  }}
-                >
-                  {/* Front Side */}
-                  <div
-                    className="absolute inset-0 w-full h-full"
-                    style={{
-                      backfaceVisibility: "hidden",
-                      borderRadius: "1.5rem",
-                      overflow: "hidden",
-                    }}
-                  >
-                    <Image
-                      src={speaker.img}
-                      alt={speaker.name}
-                      fill
-                      className="object-cover"
-                      style={{ borderRadius: "1.5rem" }}
-                    />
-                  </div>
-                  {/* Back Side */}
-                  <div
-                    className="absolute inset-0 w-full h-full flex flex-col items-center justify-center px-3"
-                    style={{
-                      background: "#E69F46",
-                      color: "#fff",
-                      borderRadius: "1.5rem",
-                      backfaceVisibility: "hidden",
-                      transform: "rotateY(180deg)",
-                      textAlign: "center",
-                      overflowY: "auto",
-                      padding: "1rem",
-                      boxSizing: "border-box",
-                    }}
-                  >
-                    <h2 className="font-semibold md:text-2xl">{speaker.name}</h2>
-                    <p className="text-[0.65rem] md:text-m">{speaker.title}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </Marquee>
-        </div>
-      )}
-
-      {/* Grid View */}
-      {showGrid && (
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 px-4 md:px-8 max-w-6xl mx-auto">
-          {speakers.map((speaker, index) => (
             <div
-              key={index}
-              className="relative w-full aspect-[3/4] cursor-pointer"
+              className="w-full h-full"
               style={{
-                perspective: "1200px",
-                minWidth: "160px",
-                maxWidth: "240px",
-                margin: "0 auto",
+                position: "relative",
+                width: "100%",
+                height: "100%",
+                borderRadius: "1.5rem",
+                boxShadow: "0 4px 16px rgba(0,0,0,0.08)",
+                cursor: "pointer",
               }}
-              onClick={() => setModalSpeaker(speaker)}
             >
+              {/* Speaker Image */}
               <div
-                className="w-full h-full"
+                className="absolute inset-0 w-full h-full"
                 style={{
-                  position: "relative",
-                  width: "100%",
-                  height: "100%",
+                  backfaceVisibility: "hidden",
                   borderRadius: "1.5rem",
-                  boxShadow: "0 4px 16px rgba(0,0,0,0.08)",
-                  cursor: "pointer",
+                  overflow: "hidden",
                 }}
               >
-                {/* Front Side */}
-                <div
-                  className="absolute inset-0 w-full h-full"
-                  style={{
-                    backfaceVisibility: "hidden",
-                    borderRadius: "1.5rem",
-                    overflow: "hidden",
-                  }}
-                >
-                  <Image
-                    src={speaker.img}
-                    alt={speaker.name}
-                    fill
-                    className="object-cover"
-                    style={{ borderRadius: "1.5rem" }}
-                  />
-                </div>
+                <Image
+                  src={speaker.img}
+                  alt={speaker.name}
+                  fill
+                  className="object-cover"
+                  style={{ borderRadius: "1.5rem" }}
+                />
               </div>
             </div>
-          ))}
-        </div>
-      )}
+          </div>
+        ))}
+      </div>
 
-      {/* Modal Popup for Speaker (only in grid view) */}
+      {/* Modal Popup for Speaker */}
       {modalSpeaker && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60"
