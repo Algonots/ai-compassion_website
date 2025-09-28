@@ -22,24 +22,24 @@ const scheduleRight = [
 ];
 
 const global = [
-  { title: "South Asia", subtitle: "October 2, 2025", time: "8:00-11:00 UTC", items: ["Sadhvi Bhagawati Saraswati"] },
-  { title: "GCC/Europe", subtitle: "October 2, 2025", time: "11:00-14:00 UTC", items: ["Nell Watson"] },
-  { title: "Africa", subtitle: "October 2, 2025", time: "14:00-17:00 UTC", items: ["Gary Bolles"] },
-  { title: "Latin America", subtitle: "October 2, 2025", time: "17:00-20:00 UTC", items: ["Theodore H. Schwartz, MD"] },
-  { title: "North America", subtitle: "October 2, 2025", time: "20:00-23:00 UTC", items: ["Stephen Ibaraki / Maty Bohacek", "Matthew Manos", "Douglas Thomas", "Jennifer Aaker"] },
-  { title: "Oceania", subtitle: "October 3, 2025", time: "23:00 - 2:00 (10/3) UTC", items: ["Tim Moriarity", "Olivera Tomic", "Ian Haycroft"] },
-  { time: "<1 hour Ma break>", title: "", items: [] },
+  { title: "South Asia", subtitle: "October 2, 2025", time: "11:00-14:00 UTC", items: ["Sadhvi Bhagawati Saraswati"] },
+  { title: "GCC/Europe", subtitle: "October 2, 2025", time: "14:00-17:00 UTC", items: ["Nell Watson"] },
+  { title: "Africa", subtitle: "October 2, 2025", time: "17:00-20:00 UTC", items: ["Gary Bolles"] },
+  { title: "Latin America", subtitle: "October 2, 2025", time: "20:00-23:00 UTC", items: ["Theodore H. Schwartz, MD"] },
+  { title: "North America", subtitle: "October 2, 2025", time: "23:00-02:00 UTC", items: ["Stephen Ibaraki / Maty Bohacek", "Matthew Manos", "Douglas Thomas", "Jennifer Aaker"] },
+  { title: "Oceania", subtitle: "October 3, 2025", time: "02:00 - 05:00 (10/3) UTC", items: ["Tim Moriarity", "Olivera Tomic", "Ian Haycroft"] },
+  { time: "<1 hour Ma Reflection>", title: "", items: [] },
 ];
 
 const kyoto = [
   {
     title: "Kyoto",
     subtitle: "October 3, 2025",
-    time: "3:00-5:00 (10/3) UTC",
+    time: "15:00-17:00 UTC",
     items: ["Shoukei Matsumoto"],
   },
-
 ];
+
 
 const preEvent = [
   { title: "Lab A", items: ["Los Angeles (PDT): Sept 29, 8:00–9:00 PM", "Vienna (CEST): Sept 30, 5:00–6:00 AM", "Tokyo (JST): Sept 30, 12:00–1:00 PM"] },
@@ -47,16 +47,16 @@ const preEvent = [
 ];
 
 const locations = [
-  { label: "UTC", key: "UTC", offset: -9 },
-  { label: "San Francisco (PDT)", key: "PDT", offset: -16 },
-  { label: "Osaka (JST)", key: "JST", offset: 0 },
-  { label: "Mumbai (IST)", key: "IST", offset: -3.5 },
-  { label: "Abu Dhabi (GST)", key: "GST", offset: -5 },
-  { label: "London (BST)", key: "BST", offset: -8 },
-  { label: "New York (EDT)", key: "EDT", offset: -13 },
-  { label: "Lagos (WAT)", key: "WAT", offset: -8 },
-  { label: "Rio de Janeiro (BRT)", key: "BRT", offset: -12 },
-  { label: "Sydney (AEST)", key: "AEST", offset: +1 },
+  { label: "UTC", key: "UTC", offset: 0 },
+  { label: "San Francisco (PDT)", key: "PDT", offset: -7 },
+  { label: "Osaka (JST)", key: "JST", offset: 9 },
+  { label: "Mumbai (IST)", key: "IST", offset: 5.5 },
+  { label: "Abu Dhabi (GST)", key: "GST", offset: 4 },
+  { label: "London (BST)", key: "BST", offset: 1 },
+  { label: "New York (EDT)", key: "EDT", offset: -4 },
+  { label: "Lagos (WAT)", key: "WAT", offset: 1 },
+  { label: "Rio de Janeiro (BRT)", key: "BRT", offset: -3 },
+  { label: "Sydney (AEST)", key: "AEST", offset: 10 },
 ];
 
 /* ------------------ TIME HELPERS ------------------ */
@@ -67,10 +67,11 @@ function formatTimeFromMins(mins) {
   mins = Math.round((mins + 24 * 60) % (24 * 60));
   let h = Math.floor(mins / 60);
   const m = mins % 60;
-  const period = h >= 12 ? "PM" : "AM";
+  const period = h >= 12 ? "AM" : "PM";  // 👈 correct logic
   const displayH = h % 12 === 0 ? 12 : h % 12;
   return `${displayH}:${pad(m)} ${period}`;
 }
+
 
 // parse tokens like "11:00", "11:00am", "11:00 AM", "23:30", "11:00a", "5p"
 function parseTimeToken(token) {
@@ -439,7 +440,7 @@ function TimelineSection({
 
 export default function Timeline() {
   const [locationKey, setLocationKey] = useState("UTC");
-  const [locationOffset, setLocationOffset] = useState(-9);
+  const [locationOffset, setLocationOffset] = useState(0);
 
   return (
     <div id="schedule" className="py-12 px-4 flex flex-col items-center space-y-12">
@@ -474,15 +475,16 @@ export default function Timeline() {
         />
 
         <TimelineSection
-  title="Kyoto Closing Ceremony"
-  events={kyoto}
-  lineColor="#89478D"
-  showProducer
-  useParentLocation
-  parentLocationKey={locationKey}
-  parentLocationOffset={locationOffset}
-  stickyTitle
+          title="Kyoto Closing Ceremony"
+          events={kyoto}
+          lineColor="#89478D"
+          showProducer
+          useParentLocation
+          parentLocationKey={locationKey}
+          parentLocationOffset={locationOffset}
+          stickyTitle
 />
+
       </div>
     </div>
   );
