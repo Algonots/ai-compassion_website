@@ -2,24 +2,24 @@
 import React, { useState } from "react";
 
 /* ------------------ DATA ------------------ */
-const schedule = [
+const scheduleLeft = [
   { time: "", title: "", subtitle: "", items: ["Tamami Tono"] },
-  { time: "", title: "", subtitle: "", items: ["Dr. Olaf Witkowski"] },
   { time: "", title: "", subtitle: "", items: ["Sister Jenna"] },
-  { time: "", title: "", subtitle: "", items: ["Toshie Takahashi"] },
   { time: "", title: "", subtitle: "", items: ["Hiroshi Ishiguro & Edi Pyrek"] },
-  { time: "", title: "", subtitle: "", items: ["Alex Cahana"] },
   { time: "", title: "", subtitle: "", items: ["Yoichi Ochiai / Narumi Yoshikawa"] },
-
-  // 🔽 Additional names you had before
-  { time: "", title: "", subtitle: "", items: ["Jean Alfonso-Decena"] },
   { time: "", title: "", subtitle: "", items: ["Hiroo Saionji"] },
-  { time: "", title: "", subtitle: "", items: ["Ben Weber"] },
   { time: "", title: "", subtitle: "", items: ["Kunal Sood"] },
-  { time: "", title: "", subtitle: "", items: ["Ahmer Inam"] },
   { time: "", title: "", subtitle: "", items: ["Taikyo Murakami / Narumi Yoshikawa"] },
 ];
 
+const scheduleRight = [
+  { time: "", title: "", subtitle: "", items: ["Dr. Olaf Witkowski"] },
+  { time: "", title: "", subtitle: "", items: ["Toshie Takahashi"] },
+  { time: "", title: "", subtitle: "", items: ["Alex Cahana"] },
+  { time: "", title: "", subtitle: "", items: ["Jean Alfonso-Decena"] },
+  { time: "", title: "", subtitle: "", items: ["Ben Weber"] },
+  { time: "", title: "", subtitle: "", items: ["Ahmer Inam"] },
+];
 
 const global = [
   { title: "South Asia", subtitle: "October 2, 2025", time: "8:00-11:00 UTC", items: ["Sadhvi Bhagawati Saraswati"] },
@@ -36,7 +36,7 @@ const kyoto = [
     title: "Kyoto",
     subtitle: "October 3, 2025",
     time: "3:00-5:00 (10/3) UTC",
-    items: [],
+    items: ["Shoukei Matsumoto"],
   },
 
 ];
@@ -276,7 +276,7 @@ function TimelineSection({
     return false;
   }
 
-  // Only alternate for the schedule section
+  // Only for the schedule section, use split left/right arrays
   const isScheduleSection = title === "Complete 24-Hour Schedule";
 
   return (
@@ -350,49 +350,86 @@ function TimelineSection({
       <div className="relative w-full max-w-5xl mx-auto px-4 md:px-0">
         <div className="absolute top-0 left-6 md:left-1/2 md:-translate-x-1/2 w-1 h-full" style={{ backgroundColor: lineColor }} />
 
-        {events.map((event, index) => {
-          // Alternate left/right for schedule section, else use previous logic
-          const leftAlign = isScheduleSection ? index % 2 === 0 : (isLeftAligned(event) || index % 2 === 0);
-          const noBullets = title === "Complete 24-Hour Schedule";
+        {isScheduleSection ? (
+          // Custom split layout for schedule
+          <div className="grid grid-cols-1 md:grid-cols-9">
+            <div className="md:col-span-4 md:pr-1 flex flex-col items-end">
+              {scheduleLeft.map((event, idx) => (
+                <EventCard
+                  key={idx}
+                  event={event}
+                  lineColor={lineColor}
+                  locationKey={effectiveLocationKey}
+                  locationOffset={conversionOffset}
+                  isGlobal={false}
+                  tzLabel={tzLabel}
+                  noBullets
+                />
+              ))}
+            </div>
+            <div className="md:col-span-1 flex flex-col items-center">
+              {Array(Math.max(scheduleLeft.length, scheduleRight.length)).fill(0).map((_, idx) => (
+                <span key={idx} className="hidden md:inline-block w-5 h-5 rounded-full my-8" style={{ backgroundColor: lineColor }} />
+              ))}
+            </div>
+            <div className="md:col-span-4 md:pl-6 flex flex-col items-start">
+              {scheduleRight.map((event, idx) => (
+                <EventCard
+                  key={idx}
+                  event={event}
+                  lineColor={lineColor}
+                  locationKey={effectiveLocationKey}
+                  locationOffset={conversionOffset}
+                  isGlobal={false}
+                  tzLabel={tzLabel}
+                  noBullets
+                />
+              ))}
+            </div>
+          </div>
+        ) : (
+          events.map((event, index) => {
+            const leftAlign = isLeftAligned(event) || index % 2 === 0;
+            const noBullets = false;
+            return (
+              <div key={index} className="relative grid grid-cols-1 md:grid-cols-9 items-start">
+                <div className={leftAlign ? "md:col-span-4 md:pr-2 flex md:justify-end" : "md:col-span-4"}>
+                  {leftAlign && (
+                    <EventCard
+                      event={event}
+                      lineColor={lineColor}
+                      locationKey={effectiveLocationKey}
+                      locationOffset={conversionOffset}
+                      isGlobal={title === "Global 24-Hour Relay Schedule"}
+                      tzLabel={tzLabel}
+                      noBullets={noBullets}
+                    />
+                  )}
+                </div>
 
-          return (
-            <div key={index} className="relative grid grid-cols-1 md:grid-cols-9 items-start">
-              <div className={leftAlign ? "md:col-span-4 md:pr-2 flex md:justify-end" : "md:col-span-4"} >
-                {leftAlign && (
-                  <EventCard
-                    event={event}
-                    lineColor={lineColor}
-                    locationKey={effectiveLocationKey}
-                    locationOffset={conversionOffset}
-                    isGlobal={title === "Global 24-Hour Relay Schedule"}
-                    tzLabel={tzLabel}
-                    noBullets={noBullets}
-                  />
-                )}
-              </div>
+                <div className="md:col-span-1 flex justify-center">
+                  <div className="hidden md:flex items-start">
+                    <span className="w-5 h-5 rounded-full mt-6" style={{ backgroundColor: lineColor }} />
+                  </div>
+                </div>
 
-              <div className="md:col-span-1 flex justify-center">
-                <div className="hidden md:flex items-start">
-                  <span className="w-5 h-5 rounded-full mt-6" style={{ backgroundColor: lineColor }} />
+                <div className={leftAlign ? "md:col-span-4" : "md:col-span-4 md:pl-2 flex md:justify-start"}>
+                  {!leftAlign && (
+                    <EventCard
+                      event={event}
+                      lineColor={lineColor}
+                      locationKey={effectiveLocationKey}
+                      locationOffset={conversionOffset}
+                      isGlobal={title === "Global 24-Hour Relay Schedule"}
+                      tzLabel={tzLabel}
+                      noBullets={noBullets}
+                    />
+                  )}
                 </div>
               </div>
-
-              <div className={leftAlign ? "md:col-span-4" : "md:col-span-4 md:pl-2 flex md:justify-start"}>
-                {!leftAlign && (
-                  <EventCard
-                    event={event}
-                    lineColor={lineColor}
-                    locationKey={effectiveLocationKey}
-                    locationOffset={conversionOffset}
-                    isGlobal={title === "Global 24-Hour Relay Schedule"}
-                    tzLabel={tzLabel}
-                    noBullets={noBullets}
-                  />
-                )}
-              </div>
-            </div>
-          );
-        })}
+            );
+          })
+        )}
       </div>
     </div>
   );
@@ -413,7 +450,7 @@ export default function Timeline() {
       <div className="shadow-[0_2px_12px_rgba(0,0,0,0.1)] border border-gray-100 rounded-xl bg-white" style={{ width: "100%", maxWidth: "1100px", height: "700px", overflowY: "auto", boxSizing: "border-box" }}>
         <TimelineSection
           title="Complete 24-Hour Schedule"
-          events={schedule}
+          events={[]} // pass empty, handled by split arrays
           lineColor="#89478D"
           showLocationButtons
           locationKey={locationKey}
