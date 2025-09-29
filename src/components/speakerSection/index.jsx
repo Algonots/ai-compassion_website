@@ -30,6 +30,7 @@ import bohacek from "@/../public/bohacek.webp";
 import matsumoto from "@/../public/matsumoto.webp";
 import murakami from "@/../public/murakami.webp";
 import saionji from "@/../public/saionji.webp";
+import tahara from "@/../public/tahara.webp";
 const speakers = [
   { 
     slug: "hiroshi-ishiguro",
@@ -198,6 +199,12 @@ const speakers = [
     name: "Hiroo Saionji",
     title: "Hiroo Saionji serves as Chairman of the Goi Peace Foundation, holding Special Consultative Status with UN Economic and Social Council and official UNESCO relations. With an MBA from Michigan State University and Economics degree from Gakushuin University, he leads neutral peace initiatives worldwide through strategic partnerships with international organizations, embassies, and NGOs. Recipient of Sacred Shri Dnyaneshwar World Peace Prize (2008) and Luxembourg Peace Prize (2019), he served on Japan National Commission for UNESCO (2008-2017).",
     img: saionji
+  },
+  { 
+    slug: "masato-tahara",
+    name: "Masato Tahara",
+    title: "Masato Tahara pursued graduate studies in physics, focusing on complex systems, quantum mechanics, and phase transitions to explore principles of life. Through learning facilitation, he discovered deep connections between facilitation principles and physics concepts. With generative AI emergence, he recognized structural similarities between AI's mathematical foundations and quantum mechanics, expanding into Physics × AI × Facilitation. He develops AI applications and digital facilitation methods, working to transcend language, cognitive, diversity, and task barriers for a more diverse and inclusive society.",
+    img: tahara
   }
 ];
 
