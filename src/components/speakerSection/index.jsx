@@ -74,11 +74,11 @@ const speakers = [
     title: "Dr. Alex Cahana specializes in Web 3.0 transformation in emerging markets and developing economies. Founding partner at ImpactRooms and Blockchain Healthcare Expert for UN/CEFACT, he serves on boards of AdanianLabs Africa and ACHA. With 25+ years clinical medical experience including Department of Defense, he was former Professor and Chief of Pain Medicine at University of Washington. A decorated Israeli Defense Forces Officer, he has published 100+ articles and received the University of Washington President's medal for remarkable leadership, social impact and public service.",
     img: alex
   },
-  { 
-    slug: "nell-watson",
-    name: "Eleanor 'Nell' Watson",
-    title: "Eleanor 'Nell' Watson, a pioneering researcher in the ethics and safety of machine intelligence, has been a driving force behind some of the most innovative AI ethics standardization and certification initiatives from organizations such as the IEEE. Serves as IEEE Ethics Maestro and chairs the Transparency Experts Focus Group. Former Executive Consultant for Apple and recognized as an Icon by the Royal Academy of Engineering for innovation. Author of Taming the Machine and columnist for Fast Company and Big Think, Watson has spoken at the UN General Assembly and World Bank.",
-    img: nell
+   { 
+    slug: "jenna-sadhviji",
+    name: "Jenna Sadhviji (Sadhvi Bhagawati Saraswati)",
+    title: "Jenna Sadhviji (Sadhvi Bhagawati Saraswati) is a spiritual leader, bestselling author, and social activist based in Rishikesh, India. With a Ph.D. from Stanford, she has lived 25+ years in the Himalayas and is President and Spiritual Head of Parmarth Niketan Ashram. Co-President of Religions for Peace and UN Advisory Council member, she authored the #1 bestseller Hollywood to the Himalayas and received the Lifetime Achievement Award from President Biden. Originally from Los Angeles, dedicated to wisdom teaching and humanitarian service.",
+    img: sadhviji
   },
   { 
     slug: "sandra-bond-chapman",
@@ -105,10 +105,10 @@ const speakers = [
     img: tim
   },
   { 
-    slug: "jenna-sadhviji",
-    name: "Jenna Sadhviji (Sadhvi Bhagawati Saraswati)",
-    title: "Jenna Sadhviji (Sadhvi Bhagawati Saraswati) is a spiritual leader, bestselling author, and social activist based in Rishikesh, India. With a Ph.D. from Stanford, she has lived 25+ years in the Himalayas and is President and Spiritual Head of Parmarth Niketan Ashram. Co-President of Religions for Peace and UN Advisory Council member, she authored the #1 bestseller Hollywood to the Himalayas and received the Lifetime Achievement Award from President Biden. Originally from Los Angeles, dedicated to wisdom teaching and humanitarian service.",
-    img: sadhviji
+    slug: "nell-watson",
+    name: "Eleanor 'Nell' Watson",
+    title: "Eleanor 'Nell' Watson, a pioneering researcher in the ethics and safety of machine intelligence, has been a driving force behind some of the most innovative AI ethics standardization and certification initiatives from organizations such as the IEEE. Serves as IEEE Ethics Maestro and chairs the Transparency Experts Focus Group. Former Executive Consultant for Apple and recognized as an Icon by the Royal Academy of Engineering for innovation. Author of Taming the Machine and columnist for Fast Company and Big Think, Watson has spoken at the UN General Assembly and World Bank.",
+    img: nell
   },
   { 
     slug: "olivera-tomic",

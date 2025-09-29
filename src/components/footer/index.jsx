@@ -10,14 +10,14 @@ export default function Footer() {
                 <b className="font-libre py-3">Have a specific question?</b>
                 <p>
                     General inquiries{" "}
-                    <Link className="underline" href="mailto:ai@aicompassion.world">
-                        ai@aicompassion.world
+                    <Link className="underline" href="mailto:contact@compassionai.io">
+                        contact@compassionai.io
                     </Link>
                 </p>
                 <p>
                     Academic partnerships{" "}
-                    <Link className="underline" href="mailto:ai@aicompassion.world">
-                        ai@aicompassion.world
+                    <Link className="underline" href="mailto:contact@compassionai.io">
+                        contact@compassionai.io
                     </Link>
                 </p>
                 <p>
@@ -28,8 +28,8 @@ export default function Footer() {
                 </p>
                 <p>
                     Media inquiries contact main organizers through{" "}
-                    <Link className="underline" href="mailto:ai@aicompassion.world">
-                        ai@aicompassion.world
+                    <Link className="underline" href="mailto:contact@compassionai.io">
+                        contact@compassionai.io
                     </Link>
                 </p>
             </div>
