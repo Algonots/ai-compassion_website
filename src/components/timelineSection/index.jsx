@@ -362,35 +362,45 @@ function TimelineSection({
         )}
 
         {isScheduleSection ? (
-          // Wider grid timeline for Complete 24-Hour Schedule
-          <div className="relative w-full max-w-6xl mx-auto px-6 md:px-8">
-            <div className="grid grid-cols-9 gap-6 md:gap-12">
-              {scheduleLeft.map((leftEvent, idx) => {
-                const rightEvent = scheduleRight[idx];
-                return (
-                  <React.Fragment key={idx}>
-                    {/* Left column */}
-                    <div className="md:col-span-4 md:pr-4 flex md:justify-end">
-                      <div className="text-lg md:text-xl font-medium">
-                        {leftEvent.items[0]}
+          <div className="relative w-full max-w-6xl mx-auto px-2 md:px-8">
+            {/* Mobile: show as list */}
+            <div className="block md:hidden">
+              <ul className="list-disc pl-6 space-y-2">
+                {scheduleLeft.map((leftEvent, idx) => (
+                  <li key={`left-${idx}`}>{leftEvent.items[0]}</li>
+                ))}
+                {scheduleRight.map((rightEvent, idx) => (
+                  <li key={`right-${idx}`}>{rightEvent.items[0]}</li>
+                ))}
+              </ul>
+            </div>
+            {/* Desktop: show as grid with dots */}
+            <div className="hidden md:block">
+              <div className="grid grid-cols-9 gap-12">
+                {scheduleLeft.map((leftEvent, idx) => {
+                  const rightEvent = scheduleRight[idx];
+                  return (
+                    <React.Fragment key={idx}>
+                      <div className="md:col-span-4 md:pr-4 flex md:justify-end">
+                        <div className="text-xl font-medium">
+                          {leftEvent.items[0]}
+                        </div>
                       </div>
-                    </div>
-                    {/* Dot column */}
-                    <div className="col-span-1 flex justify-center">
-                      <div
-                        className="w-5 h-5 rounded-full"
-                        style={{ backgroundColor: "#89478D" }}
-                      />
-                    </div>
-                    {/* Right column */}
-                    <div className="md:col-span-4 md:pl-4 flex md:justify-start">
-                      <div className="text-lg md:text-xl font-medium">
-                        {rightEvent ? rightEvent.items[0] : ""}
+                      <div className="col-span-1 flex justify-center">
+                        <div
+                          className="w-5 h-5 rounded-full"
+                          style={{ backgroundColor: "#89478D" }}
+                        />
                       </div>
-                    </div>
-                  </React.Fragment>
-                );
-              })}
+                      <div className="md:col-span-4 md:pl-4 flex md:justify-start">
+                        <div className="text-xl font-medium">
+                          {rightEvent ? rightEvent.items[0] : ""}
+                        </div>
+                      </div>
+                    </React.Fragment>
+                  );
+                })}
+              </div>
             </div>
           </div>
         ) : (
