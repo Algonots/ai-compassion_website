@@ -11,6 +11,8 @@ export default function GaryABolles() {
         height={300}
         className="mx-auto rounded-2xl shadow-md"
       />
+  <p className="text-sm font-bold mt-6">Photo Credits : Mitsutoshi Watanabi
+</p>
       <h1 className="text-3xl font-bold mt-6">Yoichi Ochiai
 </h1>
       <p className="mt-4 text-lg text-gray-700">
