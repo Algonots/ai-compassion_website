@@ -53,134 +53,49 @@ const pillars = [
 
 export function ConstraintsSection() {
   return (
-    <section
-      className="my-11"
-      style={{
-        display: "grid",
-        gridTemplateColumns: "1fr 1fr",
-        gap: "2rem",
-        alignItems: "start",
-        padding: "4rem 2rem",
-      }}
-    >
+    <section className="my-11 grid grid-cols-1 md:grid-cols-2 gap-8 items-start px-4 md:px-8 py-8">
       {/* Left Content */}
-      <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
+      <div className="flex flex-col gap-6">
         {/* Header */}
         <div>
-          <h2 style={{ fontSize: "1.2rem", fontWeight: "600" }}>
-            Turning Constraints into Strengths
-          </h2>
-          <p style={{ fontSize: "0.9rem", color: "#555", marginTop: "0.5rem" }}>
-            Rather than viewing geographic and logistical limitations as
-            obstacles, we designed them as features that enhance our mission.
+          <h2 className="text-lg font-semibold">Turning Constraints into Strengths</h2>
+          <p className="text-sm text-gray-600 mt-2">
+            Rather than viewing geographic and logistical limitations as obstacles, we designed them as features that enhance our mission.
           </p>
         </div>
-
         {/* First row with two cards */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "5fr 5fr",
-            gap: "1.5rem",
-          }}
-        >
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {/* Intimate Gathering */}
-          <div
-            style={{
-              backgroundColor: "#ec407a",
-              color: "white",
-              padding: "3rem",
-              borderRadius: "1rem",
-              boxShadow: "8px 8px 0px #f8bbd0",
-            }}
-          >
-            <h3
-              style={{
-                marginBottom: "0.5rem",
-                fontSize: "1rem",
-                fontWeight: "600",
-              }}
-            >
-              Intimate Gathering
-            </h3>
-            <p style={{ fontSize: "0.9rem", lineHeight: "1.4" }}>
-              A small, high-trust in-person assembly in Osaka creates the
-              conditions for meaningful connection and breakthrough thinking.
+          <div className="bg-pink-500 text-white p-6 rounded-xl shadow-lg">
+            <h3 className="mb-2 text-base font-semibold">Intimate Gathering</h3>
+            <p className="text-sm leading-relaxed">
+              A small, high-trust in-person assembly in Osaka creates the conditions for meaningful connection and breakthrough thinking.
             </p>
           </div>
-
           {/* Global Relay */}
-          <div
-            style={{
-              backgroundColor: "#ec407a",
-              color: "white",
-              padding: "3rem",
-              borderRadius: "1rem",
-              boxShadow: "8px 8px 0px #f8bbd0",
-            }}
-          >
-            <h3
-              style={{
-                marginBottom: "0.5rem",
-                fontSize: "1rem",
-                fontWeight: "600",
-              }}
-            >
-              Global Relay
-            </h3>
-            <p
-              style={{
-                fontSize: "0.9rem",
-                lineHeight: "1.4",
-                marginBottom: "0.5rem",
-              }}
-            >
-              A 24-hour online participation structure spans three global zones,
-              ensuring diverse voices are included:
+          <div className="bg-pink-500 text-white p-6 rounded-xl shadow-lg">
+            <h3 className="mb-2 text-base font-semibold">Global Relay</h3>
+            <p className="text-sm leading-relaxed mb-2">
+              A 24-hour online participation structure spans three global zones, ensuring diverse voices are included:
             </p>
-            <ul
-              style={{
-                fontSize: "0.9rem",
-                lineHeight: "1.4",
-                paddingLeft: "1.2rem",
-              }}
-            >
+            <ul className="text-sm leading-relaxed pl-5 list-disc">
               <li>Asia-Pacific</li>
               <li>Europe–Africa</li>
               <li>Americas</li>
             </ul>
           </div>
         </div>
-
         {/* Full-width Symbolic Completion */}
-        <div
-          style={{
-            backgroundColor: "#ec407a",
-            color: "white",
-            padding: "1.5rem",
-            borderRadius: "1rem",
-            boxShadow: "8px 8px 0px #f8bbd0",
-          }}
-        >
-          <h3
-            style={{
-              marginBottom: "0.5rem",
-              fontSize: "1rem",
-              fontWeight: "600",
-            }}
-          >
-            Symbolic Completion
-          </h3>
-          <p style={{ fontSize: "0.9rem", lineHeight: "1.4" }}>
-            Closing the event in Kyoto completes our symbolic ring, connecting
-            ancient wisdom with future innovation.
+        <div className="bg-pink-500 text-white p-4 rounded-xl shadow-lg">
+          <h3 className="mb-2 text-base font-semibold">Symbolic Completion</h3>
+          <p className="text-sm leading-relaxed">
+            Closing the event in Kyoto completes our symbolic ring, connecting ancient wisdom with future innovation.
           </p>
         </div>
       </div>
-
       {/* Right Image */}
-      <div style={{ display: "flex", justifyContent: "center" }}>
-        <Image src={globeImg} alt="Globe" width={400} height={400} />
+      <div className="flex justify-center items-center">
+        <Image src={globeImg} alt="Globe" width={300} height={300} className="w-full max-w-xs md:max-w-md h-auto" />
       </div>
     </section>
   );
@@ -188,117 +103,47 @@ export function ConstraintsSection() {
 
 export function ExpoInspiration() {
   return (
-    <section
-      style={{
-        display: "grid",
-        gridTemplateColumns: "1fr 1fr",
-        gap: "2rem",
-        alignItems: "center",
-        padding: "4rem 2rem",
-      }}
-    >
-      {/* Left Image with orange background */}
-      <div style={{ position: "relative", display: "flex", justifyContent: "center" }}>
-        {/* <div
-          style={{
-            position: "absolute",
-            bottom: "-20px",
-            right: "-20px",
-            width: "541px",
-            height: "722px",
-            backgroundColor: "#F4A640",
-            borderRadius: "1rem",
-            zIndex: 0,
-          }}
-        /> */}
-        <div
-          style={{
-            borderRadius: "1rem",
-            overflow: "hidden",
-            position: "relative",
-            zIndex: 1,
-            maxWidth: "500px",
-            width: "100%",
-          }}
-        >
+    <section className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center px-4 md:px-8 py-8">
+      {/* Left Image */}
+      <div className="flex justify-center items-center">
+        <div className="rounded-xl overflow-hidden w-full max-w-xs md:max-w-md">
           <Image src={city} alt="City View" layout="responsive" width={500} height={500} />
         </div>
       </div>
-
       {/* Right Content */}
-      <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
-        <h2 style={{ textAlign: "center", fontWeight: 700, fontSize: "1.7rem", color: "#000" }}>
-          Expo 2025 Inspiration
-        </h2>
-
-        <p style={{ textAlign: "center", fontSize: "1rem", color: "#333" }}>
-          Our Forum draws deep inspiration from the architectural and philosophical
-          foundations of Expo 2025 Osaka:
+      <div className="flex flex-col gap-6">
+        <h2 className="text-center font-bold text-xl md:text-2xl text-gray-900">Expo 2025 Inspiration</h2>
+        <p className="text-center text-base text-gray-700">
+          Our Forum draws deep inspiration from the architectural and philosophical foundations of Expo 2025 Osaka:
         </p>
-
         {/* Box 1 */}
-        <div
-          style={{
-            border: "1px solid #F4A640",
-            borderRadius: "4px",
-            padding: "20px",
-            textAlign: "center",
-          }}
-        >
-          <h3 style={{ margin: "0 0 10px 0", fontWeight: 700, fontSize: "1.2rem", color: "#0A2144" }}>
-            Design System: ID → GROUP → WORLD
-          </h3>
-          <p style={{ margin: 0, fontSize: "1rem", color: "#0A2144" }}>
-            A philosophy of connection that moves from individual identity to
-            collective collaboration to global impact.
+        <div className="border border-yellow-400 rounded p-5 text-center">
+          <h3 className="mb-2 font-bold text-lg text-[#0A2144]">Design System: ID → GROUP → WORLD</h3>
+          <p className="text-base text-[#0A2144]">
+            A philosophy of connection that moves from individual identity to collective collaboration to global impact.
           </p>
         </div>
-
         {/* Box 2 */}
-        <div
-          style={{
-            border: "1px solid #F4A640",
-            borderRadius: "4px",
-            padding: "20px",
-            textAlign: "center",
-          }}
-        >
-          <h3 style={{ margin: "0 0 10px 0", fontWeight: 700, fontSize: "1.2rem", color: "#0A2144" }}>
-            Grand Ring
-          </h3>
-          <p style={{ margin: 0, fontSize: "1rem", color: "#0A2144" }}>
-            The world’s largest wooden structure serves as a powerful symbol of
-            unity in diversity—a continuous circle with no beginning or end.
+        <div className="border border-yellow-400 rounded p-5 text-center">
+          <h3 className="mb-2 font-bold text-lg text-[#0A2144]">Grand Ring</h3>
+          <p className="text-base text-[#0A2144]">
+            The world’s largest wooden structure serves as a powerful symbol of unity in diversity—a continuous circle with no beginning or end.
           </p>
         </div>
-
         {/* Box 3 */}
-        <div
-          style={{
-            border: "1px solid #F4A640",
-            borderRadius: "4px",
-            padding: "20px",
-            textAlign: "center",
-          }}
-        >
-          <h3 style={{ margin: "0 0 10px 0", fontWeight: 700, fontSize: "1.2rem", color: "#0A2144" }}>
-            Myaku–Myaku
-          </h3>
-          <p style={{ margin: 0, fontSize: "1rem", color: "#0A2144" }}>
-            The Expo mascot embodies the pulse of continuity and interconnection,
-            representing the heartbeat of our shared planet.
+        <div className="border border-yellow-400 rounded p-5 text-center">
+          <h3 className="mb-2 font-bold text-lg text-[#0A2144]">Myaku–Myaku</h3>
+          <p className="text-base text-[#0A2144]">
+            The Expo mascot embodies the pulse of continuity and interconnection, representing the heartbeat of our shared planet.
           </p>
         </div>
-
-        <p style={{ textAlign: "center", fontSize: "12px", color: "#333" }}>
-          Our event design intentionally mirrors these principles, creating a living
-          metaphor for harmonious coexistence.
+        <p className="text-center text-xs text-gray-600">
+          Our event design intentionally mirrors these principles, creating a living metaphor for harmonious coexistence.
         </p>
       </div>
     </section>
   );
 }
-
 
 export default function AboutSection() {
   // Globe layout for thematic pillars (pie segments)
@@ -347,26 +192,23 @@ export default function AboutSection() {
             </p>
           </div>
         </div>
-
-        <div className="w-full xl:w-1/2">
+        <div className="w-full xl:w-1/2 flex justify-center items-center">
           <Image
             src={ab1}
             alt="About Us"
-            className="w-[95%] h-[95%] shadow-[25px_25px_0px_rgba(255,205,119,0.8)] lg:shadow-[35px_35px_0px_rgba(255,205,119,0.8)] rounded-t-[5rem] rounded-r-[5rem]"
+            className="w-[95%] h-[95%] shadow-[25px_25px_0px_rgba(255,205,119,0.8)] lg:shadow-[35px_35px_0px_rgba(255,205,119,0.8)] rounded-t-[3rem] rounded-r-[3rem]"
           />
         </div>
       </div>
-
       {/* Section Title */}
       <h2 className="text-2xl font-bold text-gray-900 mt-15 justify-center flex">
         Why Now : The Critical Moment
       </h2>
-
       {/* Two-Column Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Left Card */}
-        <div className="rounded-2xl bg-pink-300 p-10 shadow-lg flex flex-col justify-center w-90 mx-auto">
-          <h3 className="justify-center flex text-5xl font-extrabold text-gray-900">
+        <div className="rounded-2xl bg-pink-300 p-8 md:p-10 shadow-lg flex flex-col justify-center w-full mx-auto">
+          <h3 className="justify-center flex text-4xl md:text-5xl font-extrabold text-gray-900">
             5
           </h3>
           <p className="mt-3 text-lg font-semibold text-gray-800 justify-center flex">
@@ -377,10 +219,9 @@ export default function AboutSection() {
             unprecedented reasoning abilities and multilingual mastery.
           </p>
         </div>
-
         {/* Right Card */}
-        <div className="rounded-2xl bg-purple-400 p-10 shadow-lg flex flex-col justify-center w-90 mx-auto">
-          <h3 className="text-5xl font-extrabold text-white justify-center flex">
+        <div className="rounded-2xl bg-purple-400 p-8 md:p-10 shadow-lg flex flex-col justify-center w-full mx-auto">
+          <h3 className="text-4xl md:text-5xl font-extrabold text-white justify-center flex">
             54%
           </h3>
           <p className="mt-3 text-lg font-semibold text-white justify-center flex">
@@ -392,20 +233,16 @@ export default function AboutSection() {
           </p>
         </div>
       </div>
-
       {/* Bottom Description */}
       <p className="mt-1 text-sm text-gray-600 leading-relaxed max-w-3xl mx-auto text-center">
         Between these growing capabilities and limited trust lies the vital
         space that must be filled with empathy and accountability. This Forum
         addresses this gap at a pivotal moment in technological development.
       </p>
-
       {/* Constraints Section */}
       <ConstraintsSection />
-
       {/* Expo Inspiration Section */}
       <ExpoInspiration />
-
       {/* Thematic Pillars Section */}
       <div className="mt-16">
         <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
@@ -417,11 +254,10 @@ export default function AboutSection() {
           experts who embody both technical expertise and humanistic values,
           ensuring a holistic approach to AI development.
         </p>
-
         {/* Globe Pie Layout */}
         <div className="flex flex-col md:flex-row items-center justify-center gap-8">
           {/* Left 3 pillar descriptions */}
-          <div className="flex flex-col gap-12 items-end justify-center flex-1">
+          <div className="flex flex-col gap-8 md:gap-12 items-end justify-center flex-1">
             <div className="max-w-xs text-right">
               <h3 className="font-bold">{pillars[0].title}</h3>
               <p className="text-gray-600 text-sm">{pillars[0].description}</p>
@@ -436,17 +272,11 @@ export default function AboutSection() {
             </div>
           </div>
           {/* Globe Pie */}
-          <div
-            className="relative"
-            style={{ width: 320, height: 320, minWidth: 320 }}
-          >
-            {/* Center Globe Image */}
-            <div className="items-center">
-              <Image src={pillarsImg} alt="Pillars Globe" width={1000} height={1000} />
-            </div>
+          <div className="relative w-[220px] h-[220px] md:w-[320px] md:h-[320px] min-w-[220px] md:min-w-[320px] flex items-center justify-center">
+            <Image src={pillarsImg} alt="Pillars Globe" width={1000} height={1000} className="w-full h-full" />
           </div>
           {/* Right 3 pillar descriptions */}
-          <div className="flex flex-col gap-12 items-start justify-center flex-1">
+          <div className="flex flex-col gap-8 md:gap-12 items-start justify-center flex-1">
             <div className="max-w-xs text-left">
               <h3 className="font-bold">{pillars[1].title}</h3>
               <p className="text-gray-600 text-sm">{pillars[1].description}</p>
@@ -465,4 +295,3 @@ export default function AboutSection() {
     </div>
   );
 }
-
