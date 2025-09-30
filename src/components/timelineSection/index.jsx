@@ -6,7 +6,7 @@ const scheduleLeft = [
   { time: "", title: "", subtitle: "", items: ["Tamami Tono"] },
   { time: "", title: "", subtitle: "", items: ["Sister Jenna"] },
   { time: "", title: "", subtitle: "", items: ["Hiroshi Ishiguro & Edi Pyrek"] },
-  { time: "", title: "", subtitle: "", items: ["Yoichi Ochiai / Narumi Yoshikawa"] },
+  { time: "", title: "", subtitle: "", items: ["Yoichi Ochiai"] },
   { time: "", title: "", subtitle: "", items: ["Hiroo Saionji"] },
   { time: "", title: "", subtitle: "", items: ["Kunal Sood"] },
   { time: "", title: "", subtitle: "", items: ["Taikyo Murakami / Narumi Yoshikawa"] },
@@ -22,19 +22,18 @@ const scheduleRight = [
 ];
 
 const global = [
-  { title: "South Asia", subtitle: "October 2, 2025", time: "11:00-14:00 UTC", items: ["Prof. Prakash Singh Bisen","Anupam Trivedi","Devendra Kumar Jain","Saurabh Bhatt"]},
-  { title: "GCC/Europe", subtitle: "October 2, 2025", time: "14:00-17:00 UTC", items: ["Nell Watson"] },
-  { title: "Africa", subtitle: "October 2, 2025", time: "17:00-20:00 UTC", items: ["Nell Watson","Gary Bolles","Alexis Stokes"] },
-  { title: "Latin America", subtitle: "October 2, 2025", time: "20:00-23:00 UTC", items: ["Valeria Soler","WarīNkwī Flores","Pico Velásquez","Christopher Krohn","Justin Breen"] },
-  { title: "North America", subtitle: "October 2, 2025", time: "23:00-02:00 UTC", items: ["Stephen Ibaraki / Maty Bohacek", "Matthew Manos", "Douglas Thomas", "Jennifer Aaker"] },
-  { title: "Oceania", subtitle: "October 3, 2025", time: "02:00 - 05:00 (10/3) UTC", items: ["Tim Moriarity", "Olivera Tomic", "Ian Haycroft"] },
-  { time: "14:00 - 15:00", title: "1 hour Ma Reflection", items: [] },
+  { subtitle: "Avkash Chauhan", title: "South Asia", time: "11:00-14:00 UTC", items: ["Prof. Prakash Singh Bisen","Anupam Trivedi","Devendra Kumar Jain","Saurabh Bhatt"]},
+  { subtitle: "Walied Albasheer", title: "GCC/Europe", time: "14:00-17:00 UTC", items: ["Nell Watson"] },
+  { subtitle: "Dr. Lee Kironget", title: "Africa", time: "17:00-20:00 UTC", items: ["Nell Watson","Gary Bolles","Alexis Stokes"] },
+  { subtitle: "Marques Anderson", title: "Latin America", time: "20:00-23:00 UTC", items: ["Valeria Soler","WarīNkwī Flores","Pico Velásquez","Christopher Krohn","Justin Breen"] },
+  { subtitle: "Ani Chahal Honan", title: "North America", time: "23:00-02:00 UTC", items: ["Stephen Ibaraki / Maty Bohacek", "Matthew Manos", "Douglas Thomas", "Jennifer Aaker"] },
+  { subtitle: "Jun Suto", time: "14:00 - 15:00", title: "1 hour Ma Reflection", items: [] },
 ];
 
 const kyoto = [
   {
+    subtitle: "Jean Alfonso-Decena",
     title: "Kyoto",
-    subtitle: "October 3, 2025",
     time: "15:00-17:00 UTC",
     items: ["Shoukei Matsumoto","Sadhvi Bhagawati Saraswati"],
   },
@@ -213,10 +212,13 @@ function EventCard({ event, lineColor, locationKey = "UTC", locationOffset = 0, 
   return (
     <div className="p-6 pl-10 md:pl-6 w-full md:max-w-md relative" style={{ color: "#000" }}>
       <span className="absolute top-6 left-0 md:hidden w-5 h-5 rounded-full" style={{ backgroundColor: lineColor }} />
+      {/* Render subtitle above the title if present */}
+      {event.subtitle && (
+        <div className="text-base md:text-lg font-semibold mb-1">{event.subtitle}</div>
+      )}
       {event.subtitle && /\d{4}/.test(event.subtitle) && <p className="text-sm md:text-base font-semibold">{event.subtitle}</p>}
       {displayTime && <p className="text-sm md:text-base font-semibold">{displayTime}</p>}
       <h3 className="text-xl md:text-2xl py-1 font-bold">{event.title}</h3>
-      {event.subtitle && !/\d{4}/.test(event.subtitle) && <p>{event.subtitle}</p>}
 
       {items.length > 0 && (
         noBullets ? (
@@ -345,6 +347,7 @@ function TimelineSection({
       {/* Special note for Osaka opening (keeps your previous behaviour) */}
       {title === "Complete 24-Hour Schedule" && (
         <div className="w-full flex flex-col items-center my-6">
+          <p className="font-bold text-[#89478D] text-center mb-1">"Jean Alfonso-Decena"</p>
           <h2 className="text-2xl md:text-3xl font-bold text-[#89478D] text-center mb-1">Osaka: USA Pavilion Opening</h2>
           <div className="text-base md:text-lg text-gray-700 text-center">
             October 2, 2025:&nbsp;{convertUtcRangeToTarget("05:00 - 11:00", conversionOffset, tzLabel)}
