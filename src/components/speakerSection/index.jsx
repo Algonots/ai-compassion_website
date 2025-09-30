@@ -36,6 +36,11 @@ import prakash from "@/../public/prakash.png";
 import anupam from "@/../public/anupam.png";
 import dev from "@/../public/dev.png";
 import saurabh from "@/../public/saurabh.png";
+import valeria from "@/../public/valeria.png";
+import flores from "@/../public/flores.png";
+import pico from "@/../public/pico.png";
+import krohn from "@/../public/krohn.png";
+import breen from "@/../public/breen.png";
 const speakers = [
   { 
     slug: "hiroshi-ishiguro",
@@ -240,6 +245,36 @@ const speakers = [
     name: "Saurabh Bhatt",
     title: "Saurabh Bhatt is Founder and CEO of A5E Consulting, a Mumbai-based digital transformation solutions company. A Chartered Accountant with executive education from Columbia Business School and MIT in Digital Transformation, he brings unique expertise blending financial acumen and technology. His distinguished career includes leadership roles at TCS (Global Program Director), Nielsen (Executive Director for 100+ countries), and Reliance (CIO, Petrochemical), driving large-scale business transformation programs. He has been an active angel investor since 2018.",
     img: saurabh
+  },
+   { 
+    slug: "valeria-soler",
+    name: "Valeria Soler",
+    title: "Valeria Soler connects people, ideas, and resources to spark inclusive futures in technology, ensuring Latin American women and youth have a voice in AI. She leads two international initiatives in Colombia: Women in AI (launching the first South American chapter) and Young AI Leaders Bogotá, a UN-backed hub applying AI to SDG challenges. With experience across government, academia, and deep-tech startups, she bridges policy, design, and innovation as an artist, podcaster, and facilitator.",
+    img: valeria
+  },
+  { 
+    slug: "warīNkwī-flores",
+    name: "WarīNkwī Flores",
+    title: "WarīNkwī Flores is a first-generation Kara and Kichwa Nations PhD student, IDX International Indigenous Data Sovereignty and AI Governance scholar, Founder/PI of Kinray Hub, and ancestral land trustee of the Chichupampa Clan, Kutakachi Pueblo. Their work intersects rights, data, technology, nature, and culture within Indigenous biocomplexity systems. Flores designs rights-based research and innovation frameworks for land reunion, Indigenous institutionality, and sovereignty, committed to community resilience and trans-systems worldviews.",
+    img: flores
+  },
+  { 
+    slug: "pico-velásquez",
+    name: "Pico Velásquez ",
+    title: "Pico Velásquez is an Architect and Founder/CEO of VIIRA, pioneering conscious cities by merging AI, data, and design. With a Master's in Computational Design from Harvard and 15+ years experience, she has led projects at BIG (Google HQ), Cirque du Soleil, Hard Rock Casino, and Journey (Saudi Arabia digital twins). Recognized by Forbes, UN, and WEF, Velásquez has spoken at COP28, SXSW, LEAP, and Harvard on Future Cities, AI, and blockchain, advancing conscious technologies for regenerative urban futures.",
+    img: pico
+  },
+  { 
+    slug: "christopher-krohn",
+    name: "Christopher Krohn",
+    title: "Chris Krohn operates at the intersection of technology, innovation, and systems design, developing multi-stakeholder ecosystems and programs for Fortune companies, VCs, startups, and cities. Co-founder of ism and founder of Hermetic (an earth-focused venture and technology group) and BxC (Blockchain x Climate Leadership Network), he spent nearly a decade as Director of IDEO's Climate Portfolio, investing in and accelerating circular economy and climate solutions globally while designing incubators, pilots, and investment funds.",
+    img: krohn
+  },
+  { 
+    slug: "justin-breen",
+    name: "Justin Breen",
+    title: "Justin Breen is Co-Founder/CEO of The Epic F.I.T. Network, named one of the Top 5 Masterminds globally by Business Traveler USA Magazine. Co-Founder of Corvia.AI, an education platform teaching AI song creation, he authored Epic Life with foreword by Dr. Peter Diamandis, reaching #1 on Amazon Kindle and making Wall Street Journal and USA Today bestseller lists. His upcoming book Epic Journey features an introduction from Dr. Deepak Chopra with Gary Sinise documentary narration.Chris Krohn operates at the intersection of technology, innovation, and systems design, developing multi-stakeholder ecosystems and programs for Fortune companies, VCs, startups, and cities. Co-founder of ism and founder of Hermetic (an earth-focused venture and technology group) and BxC (Blockchain x Climate Leadership Network), he spent nearly a decade as Director of IDEO's Climate Portfolio, investing in and accelerating circular economy and climate solutions globally while designing incubators, pilots, and investment funds.",
+    img: breen
   },
 ];
 
