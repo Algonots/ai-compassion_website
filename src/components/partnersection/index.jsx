@@ -5,9 +5,11 @@ import p2 from "@/../public/pdie.webp";
 import p3 from "@/../public/mulearn logo.png";
 import p4 from "@/../public/purple.png";
 import p5 from "@/../public/na.webp";
+import p6 from "@/../public/650.png";
+import p7 from "@/../public/intuitio.jpg";
 // Add or remove partner images as needed
 
-const partners = [p1, p2, p3, p4, p5];
+const partners = [p1, p2, p3, p4, p5, p6, p7];
 
 export function PartnerSection() {
     return (
