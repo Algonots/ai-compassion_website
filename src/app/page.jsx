@@ -6,6 +6,7 @@ import TimelineSection from "@/components/timelineSection";
 import AboutSection from "@/components/aboutSection";
 import SpeakerSection from "@/components/speakerSection";
 import { PartnerSection } from "@/components/partnersection";
+import MeetMyTeam from "@/components/meetmyteam";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <TimelineSection />
       <SponsorSection />
       <PartnerSection />
+      <MeetMyTeam />
       <FaqSection />
       <Joinsection />
     </>
