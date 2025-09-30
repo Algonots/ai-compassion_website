@@ -1,5 +1,5 @@
 import Image from "next/image";
-import jenna from "@/../public/sadhviji.webp";
+import jenna from "@/../public/sadhviji.png";
 
 export default function GaryABolles() {
   return (

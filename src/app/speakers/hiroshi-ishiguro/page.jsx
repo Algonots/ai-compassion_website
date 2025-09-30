@@ -13,7 +13,7 @@ export default function HiroshiIshiguroPage() {
       />
       <h1 className="text-3xl font-bold mt-6">Hiroshi Ishiguro</h1>
       <p className="mt-4 text-lg text-gray-700">
-        Hiroshi Ishiguro is Professor of Department of Systems Innovation at Osaka University and Visiting Director at ATR, specializing in interactive robotics, avatar, and android science...
+        Hiroshi Ishiguro is Professor of Department of Systems Innovation at Osaka University and Visiting Director at Advanced Telecommunications Research Institute, specializing in interactive robotics, avatar, and android science. Creator of Geminoid, an avatar android copy of himself, Ishiguro serves as CEO of AVITA Inc., Project Manager of MOONSHOT R&D, and Thematic Project Producer of EXPO 2025 Osaka. His groundbreaking work has earned prestigious awards including the Sheikh Mohammed Bin Rashid Al Maktoum Knowledge Award.
       </p>
     </div>
   );

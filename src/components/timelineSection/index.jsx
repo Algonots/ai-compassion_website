@@ -22,13 +22,13 @@ const scheduleRight = [
 ];
 
 const global = [
-  { title: "South Asia", subtitle: "October 2, 2025", time: "11:00-14:00 UTC", items: ["Sadhvi Bhagawati Saraswati"] },
+  { title: "South Asia", subtitle: "October 2, 2025", time: "11:00-14:00 UTC", items: ["Prof. Prakash Singh Bisen","Anupam Trivedi","Devendra Kumar Jain","Saurabh Bhatt"]},
   { title: "GCC/Europe", subtitle: "October 2, 2025", time: "14:00-17:00 UTC", items: ["Nell Watson"] },
-  { title: "Africa", subtitle: "October 2, 2025", time: "17:00-20:00 UTC", items: ["Gary Bolles"] },
-  { title: "Latin America", subtitle: "October 2, 2025", time: "20:00-23:00 UTC", items: ["Theodore H. Schwartz, MD"] },
+  { title: "Africa", subtitle: "October 2, 2025", time: "17:00-20:00 UTC", items: ["Nell Watson","Gary Bolles","Alexis Stokes"] },
+  { title: "Latin America", subtitle: "October 2, 2025", time: "20:00-23:00 UTC", items: ["Valeria Soler","WarīNkwī Flores","Pico Velásquez","Christopher Krohn","Justin Breen"] },
   { title: "North America", subtitle: "October 2, 2025", time: "23:00-02:00 UTC", items: ["Stephen Ibaraki / Maty Bohacek", "Matthew Manos", "Douglas Thomas", "Jennifer Aaker"] },
   { title: "Oceania", subtitle: "October 3, 2025", time: "02:00 - 05:00 (10/3) UTC", items: ["Tim Moriarity", "Olivera Tomic", "Ian Haycroft"] },
-  { time: "<1 hour Ma Reflection>", title: "", items: [] },
+  { time: "14:00 - 15:00", title: "1 hour Ma Reflection", items: [] },
 ];
 
 const kyoto = [
@@ -36,7 +36,7 @@ const kyoto = [
     title: "Kyoto",
     subtitle: "October 3, 2025",
     time: "15:00-17:00 UTC",
-    items: ["Shoukei Matsumoto"],
+    items: ["Shoukei Matsumoto","Sadhvi Bhagawati Saraswati"],
   },
 ];
 

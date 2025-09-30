@@ -14,7 +14,7 @@ import sandra from "@/../public/sandra.webp";
 import olaf from "@/../public/olaf1.webp";
 import schwartz from "@/../public/schwartz.webp";
 import tim from "@/../public/tim.webp";
-import sadhviji from "@/../public/sadhviji.webp";
+import sadhviji from "@/../public/sadhviji.png";
 import olivera from "@/../public/olivera.webp";
 import douglas from "@/../public/douglas.webp";
 import ben from "@/../public/ben.webp";
@@ -31,6 +31,11 @@ import matsumoto from "@/../public/matsumoto.webp";
 import murakami from "@/../public/murakami.webp";
 import saionji from "@/../public/saionji.webp";
 import tahara from "@/../public/tahara.webp";
+import alexis from "@/../public/alexis.png";
+import prakash from "@/../public/prakash.png";
+import anupam from "@/../public/anupam.png";
+import dev from "@/../public/dev.png";
+import saurabh from "@/../public/saurabh.png";
 const speakers = [
   { 
     slug: "hiroshi-ishiguro",
@@ -75,8 +80,8 @@ const speakers = [
     img: alex
   },
    { 
-    slug: "jenna-sadhviji",
-    name: "Jenna Sadhviji (Sadhvi Bhagawati Saraswati)",
+    slug: "sadhvi-bhagawati-saraswati",
+    name: "Sadhvi Bhagawati Saraswati",
     title: "Jenna Sadhviji (Sadhvi Bhagawati Saraswati) is a spiritual leader, bestselling author, and social activist based in Rishikesh, India. With a Ph.D. from Stanford, she has lived 25+ years in the Himalayas and is President and Spiritual Head of Parmarth Niketan Ashram. Co-President of Religions for Peace and UN Advisory Council member, she authored the #1 bestseller Hollywood to the Himalayas and received the Lifetime Achievement Award from President Biden. Originally from Los Angeles, dedicated to wisdom teaching and humanitarian service.",
     img: sadhviji
   },
@@ -205,7 +210,37 @@ const speakers = [
     name: "Masato Tahara",
     title: "Masato Tahara pursued graduate studies in physics, focusing on complex systems, quantum mechanics, and phase transitions to explore principles of life. Through learning facilitation, he discovered deep connections between facilitation principles and physics concepts. With generative AI emergence, he recognized structural similarities between AI's mathematical foundations and quantum mechanics, expanding into Physics × AI × Facilitation. He develops AI applications and digital facilitation methods, working to transcend language, cognitive, diversity, and task barriers for a more diverse and inclusive society.",
     img: tahara
-  }
+  },
+  { 
+    slug: "dr-alexis-j-stokes-burks",
+    name: "Dr. Alexis J. Stokes-Burks",
+    title: "Dr. Alexis J. Stokes-Burks is an accomplished equity and inclusion strategist, keynote speaker, and leadership development facilitator with over 15 years of experience. She is the Founder and Chief Strategist of Stokes Strategy & Consulting, partnering with universities, nonprofit, and corporate organizations to build policies, practices and a culture where everyone can thrive. She previously served as Associate Chief Diversity and Inclusion Officer at Harvard University and Assistant Dean at Harvard School of Engineering.",
+    img: alexis
+  },
+  { 
+    slug: "prakash-singh-bisen",
+    name: "Prakash Singh Bisen",
+    title: "Prof. Prakash Singh Bisen is Director at Madhav Institute of Technology and Science, Gwalior, since March 2007, with over 32 years of academic experience. He previously served as Vice Chancellor of Jiwaji University and Director of Bundelkhand University. Holding a D.Sc. in Plant Biotechnology, Prof. Bisen has advised prestigious bodies including the Ministry of Human Resource Development, Ministry of Environment, UPSC, UGC, and Jawaharlal Nehru University, contributing significantly to India's higher education and scientific policy landscape.",
+    img: prakash
+  },
+  { 
+    slug: "anupam-trivedi",
+    name: "Anupam Trivedi",
+    title: "Anupam Trivedi transitioned from over two decades (1995-2017) in pharmaceutical sales and marketing to entrepreneurship and spiritual exploration. With an M.Pharm and MBA, he specialized in diabetes, cardiovascular care, and ophthalmology across European and Latin American markets. In 2017, he established a chain of pharmacy stores and dhanyabhagya.com, bridging traditional wisdom with modern commerce. He founded dharmsanatan.com (Hindi) and bhavambhavaani.com (English) to promote Sanatana Dharma, integrating ancient Vedic wisdom with contemporary living for holistic wellbeing.",
+    img: anupam
+  },
+  { 
+    slug: "devendra-kumar-jain",
+    name: "Devendra Kumar Jain",
+    title: "Dr. Devendra Kumar Jain is Professor of Accounting and Finance at UPES School of Business in Dehradun, India, with over four decades spanning banking and academia. His banking career began in 1982 with Andhra Bank, progressing to senior positions across multiple countries including FOREX Manager at Crane Bank in Uganda, Head of Operations/Risk/Compliance at International Commercial Bank in The Gambia, and CEO at Exchange & Finance (Fiji) Ltd, providing strategic leadership in currency trading and money transfer operations.",
+    img: dev
+  },
+  { 
+    slug: "saurabh-bhatt",
+    name: "Saurabh Bhatt",
+    title: "Saurabh Bhatt is Founder and CEO of A5E Consulting, a Mumbai-based digital transformation solutions company. A Chartered Accountant with executive education from Columbia Business School and MIT in Digital Transformation, he brings unique expertise blending financial acumen and technology. His distinguished career includes leadership roles at TCS (Global Program Director), Nielsen (Executive Director for 100+ countries), and Reliance (CIO, Petrochemical), driving large-scale business transformation programs. He has been an active angel investor since 2018.",
+    img: saurabh
+  },
 ];
 
 

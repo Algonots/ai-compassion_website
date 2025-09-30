@@ -129,8 +129,8 @@ export default function Navbar() {
           <Image
             src={logoImage}
             alt="logo"
-            width={500}
-            height={500}
+            width={900}
+            height={900}
             className="w-full h-full object-contain"
           />
         </Link>
@@ -195,7 +195,7 @@ export default function Navbar() {
             href="https://peatix.com/us/event/4584550/"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-6 py-2 rounded-full bg-[#D55485] hover:bg-[#D55485]/80 transition-colors duration-200 text-white font-medium text-sm"
+            className=" padding-8px px-6 py-2 rounded-full bg-[#D55485] hover:bg-[#D55485]/80 transition-colors duration-200 text-white font-medium text-sm"
           >
             Register
           </Link>
