@@ -24,7 +24,7 @@ const scheduleRight = [
 
 const global = [
   { subtitle: "", title: "South Asia", time: "11:00-14:00 UTC", items: ["(Avkash Chauhan ( Moderator))","Sadhvi Bhagawati Saraswati","Prof. Prakash Singh Bisen","Anupam Trivedi","Devendra Kumar Jain","Saurabh Bhatt"]},
-  { subtitle: "", title: "GCC/Europe", time: "14:00-17:00 UTC", items: ["(Walied Albasheer (Moderator))"] },
+  { subtitle: "", title: "GCC/Europe", time: "14:00-17:00 UTC", items: ["(Walied Albasheer (Moderator))","Ahmed Khbeer","Anas Almarie","Waleed Akaeha","Mohamed Elyas","Manel Chada El Islam Benmahcene","Sara Hegazy","Aliaa Mohamed","Haytham El-Azaizy","Mohamed Osman","Raed Habbis","Dr. Anour F A DAFA-ALLA","Krishna Raj","Dr. Fady Ismaeel","Manal Rifki"] },
   { subtitle: "", title: "Africa", time: "17:00-20:00 UTC", items: ["(Dr. Lee Kironget (Moderator))","Nell Watson","Gary Bolles","Alexis Stokes"] },
   { subtitle: "", title: "Latin America", time: "20:00-23:00 UTC", items: ["(Marques Anderson (Moderator))","Valeria Soler","WarīNkwī Flores","Pico Velásquez","Christopher Krohn","Justin Breen"] },
   { subtitle: "", title: "North America", time: "23:00-02:00 UTC", items: ["(Ani Chahal Honan (Moderator))","Stephen Ibaraki / Maty Bohacek", "Matthew Manos", "Douglas Thomas", "Jennifer Aaker"] },
