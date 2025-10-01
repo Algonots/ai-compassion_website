@@ -8,7 +8,7 @@ const producers = [
   { name: "Marques Anderson", subtitle: "Regional Producer - Latin America", img: "/marques.jpg" },
   { name: "Ani Chahal Honan", subtitle: "Regional Producer - North America", img: "/ani.jpg" },
   { name: "Jun Suto", subtitle: "Regional Producer - Kyoto,Osaka", img: "/jun.png" },
-  { name: "Chris Edwald", subtitle: "Regional Producer - Kyoto", img: "/chris.png" },
+  { name: "Chris Ewald", subtitle: "Regional Producer - Kyoto", img: "/chris.png" },
   { name: " Chiristina", subtitle: "Regional Producer - Oceania", img: "/christina.jpg" },
   // { name: "Producer 9", subtitle: "", img: "/producer9.png" },
 ];
