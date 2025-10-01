@@ -28,6 +28,7 @@ const global = [
   { subtitle: "", title: "Africa", time: "17:00-20:00 UTC", items: ["Dr. Lee Kironget (Moderator)","Nell Watson","Gary Bolles","Alexis Stokes"] },
   { subtitle: "", title: "Latin America", time: "20:00-23:00 UTC", items: ["Marques Anderson (Moderator)","Valeria Soler","WarīNkwī Flores","Pico Velásquez","Christopher Krohn","Justin Breen"] },
   { subtitle: "", title: "North America", time: "23:00-02:00 UTC", items: ["Ani Chahal Honan (Moderator)","Stephen Ibaraki / Maty Bohacek", "Matthew Manos", "Douglas Thomas", "Jennifer Aaker"] },
+  { subtitle: "", title: "Oceania", time: "02:00-05:00 UTC", items: ["Tim Moriarity","Olivera Tomic", "Ian Haycroft"] },
   { subtitle: "", time: "14:00 - 15:00", title: "1 hour Ma Reflection", items: ["Jun Suto (Moderator)"] },
 ];
 
