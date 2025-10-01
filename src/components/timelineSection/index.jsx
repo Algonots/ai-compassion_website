@@ -3,7 +3,7 @@ import React, { useState } from "react";
 
 /* ------------------ DATA ------------------ */
 const scheduleLeft = [
-  { time: "", title: "", subtitle: "", items: ["Jean Alfonso-Decena"] },
+  { time: "", title: "", subtitle: "", items: ["Jean Alfonso-Decena (Moderator)"] },
   { time: "", title: "", subtitle: "", items: ["Tamami Tono"] },
   { time: "", title: "", subtitle: "", items: ["Sister Jenna"] },
   { time: "", title: "", subtitle: "", items: ["Hiroshi Ishiguro & Edi Pyrek"] },
