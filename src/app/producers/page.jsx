@@ -3,7 +3,7 @@ import React from "react";
 // Example producers data (replace with real data as needed)
 const producers = [
   { name: "Avkash Chauhan", subtitle: "", img: "/avkash.jpg" },
-  { name: "Walied Albasheer", subtitle: "", img: "/producer2.png" },
+  { name: "Walied Albasheer", subtitle: "", img: "/walied.jpg" },
   { name: "Dr. Lee Kironget", subtitle: "", img: "/lee.jpg" },
   { name: "Marques Anderson", subtitle: "", img: "/marques.jpg" },
   { name: "Ani Chahal Honan", subtitle: "", img: "/ani.jpg" },

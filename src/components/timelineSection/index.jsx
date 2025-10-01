@@ -3,39 +3,41 @@ import React, { useState } from "react";
 
 /* ------------------ DATA ------------------ */
 const scheduleLeft = [
+  { time: "", title: "", subtitle: "", items: ["Jean Alfonso-Decena"] },
   { time: "", title: "", subtitle: "", items: ["Tamami Tono"] },
   { time: "", title: "", subtitle: "", items: ["Sister Jenna"] },
   { time: "", title: "", subtitle: "", items: ["Hiroshi Ishiguro & Edi Pyrek"] },
   { time: "", title: "", subtitle: "", items: ["Yoichi Ochiai"] },
   { time: "", title: "", subtitle: "", items: ["Hiroo Saionji"] },
   { time: "", title: "", subtitle: "", items: ["Kunal Sood"] },
-  { time: "", title: "", subtitle: "", items: ["Taikyo Murakami / Narumi Yoshikawa"] },
+  
 ];
 
 const scheduleRight = [
+  { time: "", title: "", subtitle: "", items: ["Taikyo Murakami / Narumi Yoshikawa"] },
   { time: "", title: "", subtitle: "", items: ["Dr. Olaf Witkowski"] },
   { time: "", title: "", subtitle: "", items: ["Toshie Takahashi"] },
   { time: "", title: "", subtitle: "", items: ["Alex Cahana"] },
-  { time: "", title: "", subtitle: "", items: ["Jean Alfonso-Decena"] },
   { time: "", title: "", subtitle: "", items: ["Ben Weber"] },
   { time: "", title: "", subtitle: "", items: ["Ahmer Inam"] },
 ];
 
 const global = [
-  { subtitle: "Avkash Chauhan", title: "South Asia", time: "11:00-14:00 UTC", items: ["Sadhvi Bhagawati Saraswati","Prof. Prakash Singh Bisen","Anupam Trivedi","Devendra Kumar Jain","Saurabh Bhatt"]},
-  { subtitle: "Walied Albasheer", title: "GCC/Europe", time: "14:00-17:00 UTC", items: [""] },
-  { subtitle: "Dr. Lee Kironget", title: "Africa", time: "17:00-20:00 UTC", items: ["Nell Watson","Gary Bolles","Alexis Stokes"] },
-  { subtitle: "Marques Anderson", title: "Latin America", time: "20:00-23:00 UTC", items: ["Valeria Soler","WarīNkwī Flores","Pico Velásquez","Christopher Krohn","Justin Breen"] },
-  { subtitle: "Ani Chahal Honan", title: "North America", time: "23:00-02:00 UTC", items: ["Stephen Ibaraki / Maty Bohacek", "Matthew Manos", "Douglas Thomas", "Jennifer Aaker"] },
-  { subtitle: "Jun Suto", time: "14:00 - 15:00", title: "1 hour Ma Reflection", items: [] },
+  { subtitle: "", title: "South Asia", time: "11:00-14:00 UTC", items: ["Avkash Chauhan ( Moderator)","Sadhvi Bhagawati Saraswati","Prof. Prakash Singh Bisen","Anupam Trivedi","Devendra Kumar Jain","Saurabh Bhatt"]},
+  { subtitle: "", title: "GCC/Europe", time: "14:00-17:00 UTC", items: ["Walied Albasheer (Moderator"] },
+  { subtitle: "", title: "Africa", time: "17:00-20:00 UTC", items: ["Dr. Lee Kironget (Moderator)","Nell Watson","Gary Bolles","Alexis Stokes"] },
+  { subtitle: "", title: "Latin America", time: "20:00-23:00 UTC", items: ["Marques Anderson (Moderator)","Valeria Soler","WarīNkwī Flores","Pico Velásquez","Christopher Krohn","Justin Breen"] },
+  { subtitle: "", title: "North America", time: "23:00-02:00 UTC", items: ["Ani Chahal Honan (Moderator)","Stephen Ibaraki / Maty Bohacek", "Matthew Manos", "Douglas Thomas", "Jennifer Aaker"] },
+  { subtitle: "", time: "14:00 - 15:00", title: "1 hour Ma Reflection", items: ["Jun Suto (Moderator)"] },
 ];
 
 const kyoto = [
   {
-    subtitle: "Jean Alfonso-Decena",
+    subtitle: "",
     title: "Kyoto",
     time: "15:00-17:00 UTC",
-    items: ["Shoukei Matsumoto"],
+    items: [
+      "Shoukei Matsumoto"],
   },
 ];
 
@@ -347,7 +349,6 @@ function TimelineSection({
       {/* Special note for Osaka opening (keeps your previous behaviour) */}
       {title === "Complete 24-Hour Schedule" && (
         <div className="w-full flex flex-col items-center my-6">
-          <p className="font-bold text-[#89478D] text-center mb-1">"Jean Alfonso-Decena"</p>
           <h2 className="text-2xl md:text-3xl font-bold text-[#89478D] text-center mb-1">Osaka: USA Pavilion Opening</h2>
           <div className="text-base md:text-lg text-gray-700 text-center">
             October 2, 2025:&nbsp;{convertUtcRangeToTarget("05:00 - 11:00", conversionOffset, tzLabel)}
