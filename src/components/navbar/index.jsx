@@ -24,12 +24,12 @@ export default function Navbar() {
           { href: '#contact', label: 'Contact' },
         ]
       : [
-          { href: '/', label: 'Home' },
-          { href: '/about', label: 'About' },
-          { href: '/speakers', label: 'Speakers' },
-          { href: '/schedule', label: 'Schedule' },
-          { href: '/faq', label: 'FAQ' },
-          { href: '/contact', label: 'Contact' },
+          { href: '/#', label: 'Home' },
+          { href: '/#about', label: 'About' },
+          { href: '/#speakers', label: 'Speakers' },
+          { href: '/#schedule', label: 'Schedule' },
+          { href: '/#faq', label: 'FAQ' },
+          { href: '/#contact', label: 'Contact' },
         ];
 
   useEffect(() => {
