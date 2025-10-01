@@ -2,15 +2,15 @@ import React from "react";
 
 // Example producers data (replace with real data as needed)
 const producers = [
+  { name: "Avkash Chauhan", subtitle: "", img: "/producer1.png" },
+  { name: "Walied Albasheer", subtitle: "", img: "/producer2.png" },
+  { name: "Dr. Lee Kironget", subtitle: "", img: "/producer3.png" },
+  { name: "Marques Anderson", subtitle: "", img: "/producer4.png" },
+  { name: "Ani Chahal Honan", subtitle: "", img: "/producer5.png" },
+  { name: "Jun Suto", subtitle: "", img: "/producer6.png" },
   { name: "Chris Edwald", subtitle: "", img: "/chris.png" },
-  { name: "Producer 2", subtitle: "", img: "/producer2.png" },
-  { name: "Producer 3", subtitle: "Creative Producer", img: "/producer3.png" },
-  { name: "Producer 4", subtitle: "Technical Producer", img: "/producer4.png" },
-  { name: "Producer 5", subtitle: "Line Producer", img: "/producer5.png" },
-  { name: "Producer 6", subtitle: "Supervising Producer", img: "/producer6.png" },
-  { name: "Producer 7", subtitle: "Field Producer", img: "/producer7.png" },
-  { name: "Producer 8", subtitle: "Co-Producer", img: "/producer8.png" },
-  { name: "Producer 9", subtitle: "Consulting Producer", img: "/producer9.png" },
+  { name: " Chiristina", subtitle: "r", img: "/producer8.png" },
+  { name: "Producer 9", subtitle: "", img: "/producer9.png" },
 ];
 
 export default function ProducersPage() {
