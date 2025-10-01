@@ -36,7 +36,7 @@ export default function Footer() {
 
             <div className="flex items-center gap-6">
               <a href="https://x.com/ai_compassion"> <FaXTwitter size={42} /></a>
-                <FaDiscord size={45} />
+               <a href="https://discord.gg/QmWJ28fNk"> <FaDiscord size={45} /></a>
             </div>
         </div>
     )
