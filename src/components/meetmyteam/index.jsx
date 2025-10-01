@@ -19,7 +19,7 @@ const team = [
 export default function MeetMyTeam() {
   return (
     <div className="w-full max-w-5xl mx-auto py-12 px-4">
-      <h2 className="text-3xl font-bold mb-8 text-center text-[#0A2144BF]">Meet My Team</h2>
+      <h2 className="text-3xl font-bold mb-8 text-center text-[#0A2144BF]">Meet The Team</h2>
       <div className="grid grid-cols-2 md:grid-cols-6 gap-6">
         {team.map((member, idx) => {
           const lowerImg =
