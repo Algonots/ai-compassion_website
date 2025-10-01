@@ -6,7 +6,7 @@ const team = [
   { name: "Chris Ewald", role: "", img: "/chris.png" },
   { name: "Anuka Roinishvili", role: "", img: "/anuka.png" },
   { name: "Naomi Yamazaki", role: "", img: "/naomi.png" },
-  { name: "Maki Kawamura", role: "", img: "/maki.png" },
+  { name: "Maki Kawamura", role: "", img: "/maki.jpg" },
   { name: "Deepu Nath", role: "", img: "/deepu.png" },
   { name: "Akshaya Sita Rajesh", role: "", img: "/akshaya.png" },
   { name: "Rasha Hasoon", role: "", img: "/rasha.png" },

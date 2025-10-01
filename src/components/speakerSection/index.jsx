@@ -26,7 +26,7 @@ import tono from "@/../public/tono.webp";
 import inam from "@/../public/inam.webp";
 import edi from "@/../public/edi.webp";
 import toshie from "@/../public/toshie.webp";
-import bohacek from "@/../public/bohacek.webp";
+// import bohacek from "@/../public/bohacek.webp";
 import matsumoto from "@/../public/matsumoto.webp";
 import murakami from "@/../public/murakami.webp";
 import saionji from "@/../public/saionji.webp";
@@ -186,12 +186,12 @@ const speakers = [
     title: "Toshie Takahashi is Professor in the School of Culture, Media and Society and Institute for AI and Robotics at Waseda University, Tokyo, and Associate Fellow at Cambridge CFI. She has held visiting appointments at Oxford, Harvard, and Columbia, conducting cross-cultural research on robots' social impact and AI for Good. Her book Towards the age of Digital Wisdom won the Telecommunication social science award. She holds a PhD from LSE and advises Japan's Ministry of Internal Affairs and Communications, leading youth AI projects for human happiness.",
     img: toshie
   },
-  { 
-    slug: "matyas-bohacek",
-    name: "Matyas 'Maty' Bohacek",
-    title: "Matyas 'Maty' Bohacek is a Stanford University student researching AI model poisoning and training data attribution with Professor Hany Farid. He developed deepfake detectors including one with President Zelenskyy and created an Anderson Cooper deepfake that opened CNN's primetime news show. He also developed state-of-the-art sign language recognition systems now used in college courses. A two-time Apple WWDC Scholar and Czech Innovator of the Year, his research appears in Science and PNAS with opinion pieces in WIRED and Forbes.",
-    img: bohacek
-  },
+  // { 
+  //   slug: "matyas-bohacek",
+  //   name: "Matyas 'Maty' Bohacek",
+  //   title: "Matyas 'Maty' Bohacek is a Stanford University student researching AI model poisoning and training data attribution with Professor Hany Farid. He developed deepfake detectors including one with President Zelenskyy and created an Anderson Cooper deepfake that opened CNN's primetime news show. He also developed state-of-the-art sign language recognition systems now used in college courses. A two-time Apple WWDC Scholar and Czech Innovator of the Year, his research appears in Science and PNAS with opinion pieces in WIRED and Forbes.",
+  //   img: bohacek
+  // },
   { 
     slug: "shoukei-matsumoto",
     name: "Shoukei Matsumoto",
@@ -253,13 +253,13 @@ const speakers = [
     img: valeria
   },
   { 
-    slug: "warīNkwī-flores",
+    slug: "warinkwi-flores",
     name: "WarīNkwī Flores",
     title: "WarīNkwī Flores is a first-generation Kara and Kichwa Nations PhD student, IDX International Indigenous Data Sovereignty and AI Governance scholar, Founder/PI of Kinray Hub, and ancestral land trustee of the Chichupampa Clan, Kutakachi Pueblo. Their work intersects rights, data, technology, nature, and culture within Indigenous biocomplexity systems. Flores designs rights-based research and innovation frameworks for land reunion, Indigenous institutionality, and sovereignty, committed to community resilience and trans-systems worldviews.",
     img: flores
   },
   { 
-    slug: "pico-velásquez",
+    slug: "pico-velasquez",
     name: "Pico Velásquez ",
     title: "Pico Velásquez is an Architect and Founder/CEO of VIIRA, pioneering conscious cities by merging AI, data, and design. With a Master's in Computational Design from Harvard and 15+ years experience, she has led projects at BIG (Google HQ), Cirque du Soleil, Hard Rock Casino, and Journey (Saudi Arabia digital twins). Recognized by Forbes, UN, and WEF, Velásquez has spoken at COP28, SXSW, LEAP, and Harvard on Future Cities, AI, and blockchain, advancing conscious technologies for regenerative urban futures.",
     img: pico
@@ -324,6 +324,14 @@ export default function SpeakerSection() {
             </div>
           </Link>
         ))}
+      </div>
+      <div className="mt-8">
+        <a
+          href="/producers"
+          className="inline-block px-6 py-3 bg-[#89478D] text-white font-semibold rounded-lg shadow hover:bg-[#6d346e] transition"
+        >
+          Click to View Producers
+        </a>
       </div>
     </div>
   );

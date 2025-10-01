@@ -22,8 +22,8 @@ const scheduleRight = [
 ];
 
 const global = [
-  { subtitle: "Avkash Chauhan", title: "South Asia", time: "11:00-14:00 UTC", items: ["Prof. Prakash Singh Bisen","Anupam Trivedi","Devendra Kumar Jain","Saurabh Bhatt"]},
-  { subtitle: "Walied Albasheer", title: "GCC/Europe", time: "14:00-17:00 UTC", items: ["Nell Watson"] },
+  { subtitle: "Avkash Chauhan", title: "South Asia", time: "11:00-14:00 UTC", items: ["Sadhvi Bhagawati Saraswati","Prof. Prakash Singh Bisen","Anupam Trivedi","Devendra Kumar Jain","Saurabh Bhatt"]},
+  { subtitle: "Walied Albasheer", title: "GCC/Europe", time: "14:00-17:00 UTC", items: [""] },
   { subtitle: "Dr. Lee Kironget", title: "Africa", time: "17:00-20:00 UTC", items: ["Nell Watson","Gary Bolles","Alexis Stokes"] },
   { subtitle: "Marques Anderson", title: "Latin America", time: "20:00-23:00 UTC", items: ["Valeria Soler","WarīNkwī Flores","Pico Velásquez","Christopher Krohn","Justin Breen"] },
   { subtitle: "Ani Chahal Honan", title: "North America", time: "23:00-02:00 UTC", items: ["Stephen Ibaraki / Maty Bohacek", "Matthew Manos", "Douglas Thomas", "Jennifer Aaker"] },
@@ -35,7 +35,7 @@ const kyoto = [
     subtitle: "Jean Alfonso-Decena",
     title: "Kyoto",
     time: "15:00-17:00 UTC",
-    items: ["Shoukei Matsumoto","Sadhvi Bhagawati Saraswati"],
+    items: ["Shoukei Matsumoto"],
   },
 ];
 
