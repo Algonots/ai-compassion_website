@@ -292,38 +292,32 @@ export default function SpeakerSection() {
 
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 px-4 md:px-8 max-w-6xl mx-auto">
         {speakers.map((speaker, index) => (
-          <Link key={index} href={`/speakers/${speaker.slug}`}>
-            <div
-              className="relative w-full aspect-[3/4]"
-              style={{
-                perspective: "1200px",
-                minWidth: "160px",
-                maxWidth: "240px",
-                margin: "0 auto",
-              }}
-            >
-              <div
-                className="w-full h-full"
-                style={{
-                  position: "relative",
-                  width: "100%",
-                  height: "100%",
-                  borderRadius: "1.5rem",
-                  boxShadow: "0 4px 16px rgba(0,0,0,0.08)",
-                  cursor: "pointer",
-                }}
-              >
-                <Image
-                  src={speaker.img}
-                  alt={speaker.name}
-                  fill
-                  className="object-cover"
-                  style={{ borderRadius: "1.5rem" }}
-                />
-              </div>
-            </div>
-          </Link>
-        ))}
+  <Link key={index} href={`/speakers/${speaker.slug}`}>
+    <div
+      className="relative w-full aspect-[3/4] group"
+      style={{
+        perspective: "1200px",
+        minWidth: "160px",
+        maxWidth: "240px",
+        margin: "0 auto",
+      }}
+    >
+      <div
+        className="w-full h-full rounded-2xl overflow-hidden shadow-md 
+                   transition duration-300 transform 
+                   group-hover:scale-105 group-hover:shadow-2xl group-hover:shadow-[#0A214455]"
+      >
+        <Image
+          src={speaker.img}
+          alt={speaker.name}
+          fill
+          className="object-cover rounded-2xl"
+        />
+      </div>
+    </div>
+  </Link>
+))}
+
       </div>
       <div className="mt-8">
         <a
