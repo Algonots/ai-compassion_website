@@ -2,15 +2,15 @@ import React from "react";
 
 // Example producers data (replace with real data as needed)
 const producers = [
-  { name: "Avkash Chauhan", subtitle: "", img: "/producer1.png" },
+  { name: "Avkash Chauhan", subtitle: "", img: "/avkash.jpg" },
   { name: "Walied Albasheer", subtitle: "", img: "/producer2.png" },
-  { name: "Dr. Lee Kironget", subtitle: "", img: "/producer3.png" },
-  { name: "Marques Anderson", subtitle: "", img: "/producer4.png" },
-  { name: "Ani Chahal Honan", subtitle: "", img: "/producer5.png" },
-  { name: "Jun Suto", subtitle: "", img: "/producer6.png" },
+  { name: "Dr. Lee Kironget", subtitle: "", img: "/lee.jpg" },
+  { name: "Marques Anderson", subtitle: "", img: "/marques.jpg" },
+  { name: "Ani Chahal Honan", subtitle: "", img: "/ani.jpg" },
+  { name: "Jun Suto", subtitle: "", img: "/jun.png" },
   { name: "Chris Edwald", subtitle: "", img: "/chris.png" },
-  { name: " Chiristina", subtitle: "r", img: "/producer8.png" },
-  { name: "Producer 9", subtitle: "", img: "/producer9.png" },
+  { name: " Chiristina", subtitle: "r", img: "/christina.jpg" },
+  // { name: "Producer 9", subtitle: "", img: "/producer9.png" },
 ];
 
 export default function ProducersPage() {
