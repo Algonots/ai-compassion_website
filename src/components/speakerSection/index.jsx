@@ -52,6 +52,7 @@ import haythem from "@/../public/haythem.png";
 import osman from "@/../public/osman.png";
 import habibi from "@/../public/habibi.png";
 import dafa from "@/../public/dafa.png";
+import krishna from "@/../public/krishna.png";
 const speakers = [
   {
     slug: "hiroshi-ishiguro",
@@ -352,6 +353,12 @@ const speakers = [
     name: "Dr. Anour F A Dafa-Alla",
     title: "Anas Almarie is an award-winning digital growth consultant and engineer with 17 years of experience, leading Social Station Branding & Marketing Agency in Dubai. He serves Fortune 500 companies and local businesses with branding, digital marketing, AI, and social media solutions. As Digital Marketing Institute trainer and LinkedIn Solutions Advisor, he maintains 98% satisfaction feedback. A keynote speaker featured on Dubai Eye, Sky News Arabia, Al Arabiya, and CNBC Arabia, Almarie speaks at events across the MENA region.",
     img: dafa
+  },
+  { 
+    slug: "krishna-raj",
+    name: "Krishna Raj",
+    title: "Anas Almarie is an award-winning digital growth consultant and engineer with 17 years of experience, leading Social Station Branding & Marketing Agency in Dubai. He serves Fortune 500 companies and local businesses with branding, digital marketing, AI, and social media solutions. As Digital Marketing Institute trainer and LinkedIn Solutions Advisor, he maintains 98% satisfaction feedback. A keynote speaker featured on Dubai Eye, Sky News Arabia, Al Arabiya, and CNBC Arabia, Almarie speaks at events across the MENA region.",
+    img: krishna
   },
 ];
 
