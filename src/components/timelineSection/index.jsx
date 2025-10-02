@@ -27,7 +27,7 @@ const global = [
   { subtitle: "", title: "GCC/Europe", time: "14:00-17:00 UTC", items: ["Walied Albasheer (Moderator)","Ahmed Khbeer","Anas Almarie","Waleed Akaeha","Mohamed Elyas","Manel Chada El Islam Benmahcene","Sara Hegazy","Aliaa Mohamed","Haytham El-Azaizy","Mohamed Osman","Raed Habbis","Dr. Anour F A DAFA-ALLA","Krishna Raj","Dr. Fady Ismaeel","Manal Rifki"] },
   { subtitle: "", title: "Africa", time: "17:00-20:00 UTC", items: ["Dr. Lee Kironget (Moderator)","Nell Watson","Gary Bolles","Alexis Stokes","Sofia Couto da Rocha"] },
   { subtitle: "", title: "Latin America", time: "20:00-23:00 UTC", items: ["Marques Anderson (Moderator)","Valeria Soler","WarīNkwī Flores","Pico Velásquez","Christopher Krohn","Justin Breen"] },
-  { subtitle: "", title: "North America", time: "23:00-02:00 UTC", items: ["Ani Chahal Honan (Moderator)","Stephen Ibaraki", "Matthew Manos", "Douglas Thomas", "Jennifer Aaker"] },
+  { subtitle: "", title: "North America", time: "23:00-02:00 UTC", items: ["Ani Chahal Honan (Moderator)","Stephen Ibaraki", "Matthew Manos", "Douglas Thomas", "Jennifer Aaker","Stephen Butler"] },
   { subtitle: "", title: "Oceania", time: "02:00-05:00 UTC", items: ["Tim Moriarity","Olivera Tomic", "Ian Haycroft"] },
   { subtitle: "", time: "14:00 - 15:00", title: "1 hour Ma Reflection", items: ["Jun Suto (Moderator)","Regional Producers"] },
 ];
