@@ -41,8 +41,9 @@ import flores from "@/../public/flores.png";
 import pico from "@/../public/pico.png";
 import krohn from "@/../public/krohn.png";
 import breen from "@/../public/breen.png";
+import anas from "@/../public/anas.png";
 const speakers = [
-  { 
+  {
     slug: "hiroshi-ishiguro",
     name: "Hiroshi Ishiguro",
     title: "Hiroshi Ishiguro is Professor of Department of Systems Innovation at Osaka University and Visiting Director at Advanced Telecommunications Research Institute, specializing in interactive robotics, avatar, and android science. Creator of Geminoid, an avatar android copy of himself, Ishiguro serves as CEO of AVITA Inc., Project Manager of MOONSHOT R&D, and Thematic Project Producer of EXPO 2025 Osaka. His groundbreaking work has earned prestigious awards including the Sheikh Mohammed Bin Rashid Al Maktoum Knowledge Award.",
@@ -275,6 +276,12 @@ const speakers = [
     name: "Justin Breen",
     title: "Justin Breen is Co-Founder/CEO of The Epic F.I.T. Network, named one of the Top 5 Masterminds globally by Business Traveler USA Magazine. Co-Founder of Corvia.AI, an education platform teaching AI song creation, he authored Epic Life with foreword by Dr. Peter Diamandis, reaching #1 on Amazon Kindle and making Wall Street Journal and USA Today bestseller lists. His upcoming book Epic Journey features an introduction from Dr. Deepak Chopra with Gary Sinise documentary narration.Chris Krohn operates at the intersection of technology, innovation, and systems design, developing multi-stakeholder ecosystems and programs for Fortune companies, VCs, startups, and cities. Co-founder of ism and founder of Hermetic (an earth-focused venture and technology group) and BxC (Blockchain x Climate Leadership Network), he spent nearly a decade as Director of IDEO's Climate Portfolio, investing in and accelerating circular economy and climate solutions globally while designing incubators, pilots, and investment funds.",
     img: breen
+  },
+   { 
+    slug: "anas-almarie",
+    name: "Anas Almarie",
+    title: "Anas Almarie is an award-winning digital growth consultant and engineer with 17 years of experience, leading Social Station Branding & Marketing Agency in Dubai. He serves Fortune 500 companies and local businesses with branding, digital marketing, AI, and social media solutions. As Digital Marketing Institute trainer and LinkedIn Solutions Advisor, he maintains 98% satisfaction feedback. A keynote speaker featured on Dubai Eye, Sky News Arabia,",
+    img: anas
   },
 ];
 
