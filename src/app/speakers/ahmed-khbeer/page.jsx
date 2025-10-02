@@ -16,7 +16,6 @@ export default function GaryABolles() {
       <p className="mt-4 text-lg text-gray-700">
         Ahmed Khbeer is Partner and Group CEO at Tafaseel BPO, growing the company from seven employees to 2000+ across six countries (UAE, KSA, Egypt, Qatar, Bahrain, US), earning top CX awards and attracting global investment. Founder and CEO of OnBoard, UAE's first People-as-a-Service EOR subscription platform, and Co-Founder of
 Rannah.ae, the world's first automated on-demand call center subscription platform. Board member at Dubai Chamber of Commerce Contact Centers Business Group, currently building Sonic AI, the Middle East’s first voice AI Unicorn.
-Region: GCC/Europe
       </p>
     </div>
   );
