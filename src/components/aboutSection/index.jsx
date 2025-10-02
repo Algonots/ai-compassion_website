@@ -222,7 +222,7 @@ export default function AboutSection() {
         {/* Right Card */}
         <div className="rounded-2xl bg-purple-400 p-8 md:p-10 shadow-lg flex flex-col justify-center w-full mx-auto">
           <h3 className="text-4xl md:text-5xl font-extrabold text-white justify-center flex">
-            54%
+            32%
           </h3>
           <p className="mt-3 text-lg font-semibold text-white justify-center flex">
             Global AI Trust
