@@ -49,6 +49,7 @@ import chada from "@/../public/chada.png";
 import sara from "@/../public/sara.png";
 import aliaa from "@/../public/aliaa.png";
 import haythem from "@/../public/haythem.png";
+import osman from "@/../public/osman.png";
 const speakers = [
   {
     slug: "hiroshi-ishiguro",
@@ -331,6 +332,12 @@ const speakers = [
     name: "Haytham El-Azaizy",
     title: "Anas Almarie is an award-winning digital growth consultant and engineer with 17 years of experience, leading Social Station Branding & Marketing Agency in Dubai. He serves Fortune 500 companies and local businesses with branding, digital marketing, AI, and social media solutions. As Digital Marketing Institute trainer and LinkedIn Solutions Advisor, he maintains 98% satisfaction feedback. A keynote speaker featured on Dubai Eye, Sky News Arabia, Al Arabiya, and CNBC Arabia, Almarie speaks at events across the MENA region.",
     img: haythem
+  },
+  { 
+    slug: "mohamed-osman",
+    name: "Mohamed Osman",
+    title: "Anas Almarie is an award-winning digital growth consultant and engineer with 17 years of experience, leading Social Station Branding & Marketing Agency in Dubai. He serves Fortune 500 companies and local businesses with branding, digital marketing, AI, and social media solutions. As Digital Marketing Institute trainer and LinkedIn Solutions Advisor, he maintains 98% satisfaction feedback. A keynote speaker featured on Dubai Eye, Sky News Arabia, Al Arabiya, and CNBC Arabia, Almarie speaks at events across the MENA region.",
+    img: osman
   },
 ];
 
