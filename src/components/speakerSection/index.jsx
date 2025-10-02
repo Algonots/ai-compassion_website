@@ -58,6 +58,8 @@ import manal from "@/../public/manal.png";
 import sofia from "@/../public/sofia.png";
 import ani from "@/../public/ani.png";
 import butler from "@/../public/butler.png";
+import nichol from "@/../public/nichol.png";
+import dekai from "@/../public/dekai.png";
 const speakers = [
   {
     slug: "hiroshi-ishiguro",
@@ -394,6 +396,18 @@ const speakers = [
     name: "Executive Director, Compassion Institute",
     title: "Anas Almarie is an award-winning digital growth consultant and engineer with 17 years of experience, leading Social Station Branding & Marketing Agency in Dubai. He serves Fortune 500 companies and local businesses with branding, digital marketing, AI, and social media solutions. As Digital Marketing Institute trainer and LinkedIn Solutions Advisor, he maintains 98% satisfaction feedback. A keynote speaker featured on Dubai Eye, Sky News Arabia, Al Arabiya, and CNBC Arabia, Almarie speaks at events across the MENA region.",
     img: butler
+  },
+  { 
+    slug: "nichol-bradford",
+    name: "Nichol Bradford",
+    title: "Anas Almarie is an award-winning digital growth consultant and engineer with 17 years of experience, leading Social Station Branding & Marketing Agency in Dubai. He serves Fortune 500 companies and local businesses with branding, digital marketing, AI, and social media solutions. As Digital Marketing Institute trainer and LinkedIn Solutions Advisor, he maintains 98% satisfaction feedback. A keynote speaker featured on Dubai Eye, Sky News Arabia, Al Arabiya, and CNBC Arabia, Almarie speaks at events across the MENA region.",
+    img: nichol
+  },
+  { 
+    slug: "de-kai",
+    name: "DE KAI",
+    title: "Anas Almarie is an award-winning digital growth consultant and engineer with 17 years of experience, leading Social Station Branding & Marketing Agency in Dubai. He serves Fortune 500 companies and local businesses with branding, digital marketing, AI, and social media solutions. As Digital Marketing Institute trainer and LinkedIn Solutions Advisor, he maintains 98% satisfaction feedback. A keynote speaker featured on Dubai Eye, Sky News Arabia, Al Arabiya, and CNBC Arabia, Almarie speaks at events across the MENA region.",
+    img: dekai
   },
 ];
 
